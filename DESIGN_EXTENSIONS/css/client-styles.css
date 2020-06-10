@@ -1,0 +1,35 @@
+/* general css */
+
+#client-login.main, #client-signup.main{
+	margin-top: -6%;
+}
+
+#client-dataview.main{
+	margin-top: -9.65%;
+}
+
+.page-bg{
+	z-index: -1;
+	background-image:url(../img/pantawid-bg.png);
+	background-size: cover;
+	background-position: top center;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.form-control,
+.is-focused .form-control {
+  background-image: linear-gradient(to top, #00000f 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+.is-focused [class^='bmd-label'],
+.is-focused [class*=' bmd-label'] {
+  color: #00000f;
+  font-size: 101%;
+}
+
+.form-input{
+	font-size: 1rem;
+}
