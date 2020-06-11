@@ -41,8 +41,14 @@
           <li class="nav-item">
             <a class="nav-link" href="javascript:;">Information<div class="ripple-container"></div></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;">Updates<div class="ripple-container"></div></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Updates
+              <div class="ripple-container"></div></a>
+            <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item dropdown" href="javascript:;">Family Session Venue</a>
+              <a class="dropdown-item dropdown" href="javascript:;">History Log</a>
+            </div>
           </li>
         </ul>
         <ul class="navbar-nav navbar-right">
@@ -57,7 +63,7 @@
   <div class="page-header header-filter page-bg">
   </div>
 
-  <div class="main main-raised mx-0 mb-3 rounded-0" id="client-dataview">
+  <div class="main main-raised mx-0 mb-3 pb-4 rounded-0" id="client-dataview">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -324,7 +330,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
   <script>
+    $(document).ready(function() {
+      $(".dropdown-toggle").dropdown();
+    });
+
     $(document).ready(function() {
       $('.dataviewTable').DataTable();
     });
