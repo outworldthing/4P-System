@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>4ps | Login</title>
+  <title>4ps | Education Balance</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0," name="viewport" />
@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="title text-center">
-              <h1 class="title">Client Login</h1>
+              <h1 class="title"><img src="../DESIGN_EXTENSIONS\img\family.jpg">Education Balance</h1>
             </div>
           </div>
         </div>
@@ -37,23 +37,29 @@
             <div class="row justify-content-center">
               <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group">
-                  <label for="loginUsername">Username</label>
+                  <label for="loginUsername">TOTAL BALANCE:</label>
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">face</i>
-                    </span>
-                    <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="loginUsername" id="loginUsername" placeholder="Enter Username">
+                        <i class="material-icons">money</i>
+                      </span>
+                    <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="educationtotalbalance" id="loginUsername" placeholder="TOTAL BALANCE">
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <div class="row justify-content-center">
               <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group">
-                  <label for="loginPassword">Password</label>
+                  <label for="loginPassword">CASH IN BALANCE: </label>
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">vpn_key</i>
+                      <i class="material-icons">money</i>
                     </span>
-                    <input type="password" Required pattern=".{6,15}" class="form-input form-control p-3" name="loginPassword" id="loginPassword" placeholder="Enter Password">
+                    <input type="password" Required pattern=".{6,15}" class="form-input form-control p-3" name="educationcashinbalance" id="loginPassword" placeholder="CASH IN BALANCE">
                   </div>
                 </div>
               </div>
@@ -63,8 +69,7 @@
         <div class="row justify-content-center mt-5">
           <div class="col-md-8">
             <div class="form-group text-center">
-              <p class="lead">Not a member yet? <a class="lead text-info" href="clientsignup.html">Register Now!</a></p>
-              <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Login</button>
+              <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">CASH IN</button>
             </div>
           </div>
         </div>
