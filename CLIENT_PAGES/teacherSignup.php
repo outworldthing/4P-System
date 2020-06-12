@@ -16,16 +16,13 @@
 	<!-- CSS -->
 	<link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
 </head>
-
 <body>
-
 	<div class="page-header header-filter page-bg">
 	</div>
-
+	
 	<div class="main main-raised mx-0 mb-3 rounded-0" id="client-signup">
 		<div class="container">
 			<form class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
-
 				<div class="row">
 					<div class="col-md-12 ml-auto mr-auto">
 						<div class="title text-center">
@@ -33,284 +30,152 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row">
-					<div class="col-6 border-right border-dark">
-						<h3 class="title">Basic Info</h3>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupFirstName">First Name</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupFirstName" id="signupFirstName" placeholder="Enter First Name">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupMiddleName">Middle Name</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupMiddleName" id="signupMiddleName" placeholder="Enter Middle Name">
-											</div>
-										</div>
+					<div class="col-md-12">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupFirstName">First Name</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" name="signupFirstName" id="signupFirstName" placeholder="Enter First Name">
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupMiddleName">Last Name</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupLastName" id="signupLastName" placeholder="Enter Last Name">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupSuffix">Suffix (if any)</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupSuffix" id="signupSuffix" placeholder="Enter Suffix">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupLastName">Gender</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<select id="inputState" class="form-control">
-													<option value="" disabled selected hidden>Select...</option>
-													<option value="Male">Male</option>
-													<option value="Female">Female</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupContactNumber">Contact Number</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupContactNumber" id="signupContactNumber" placeholder="Enter Contact Number" pattern="^[0-9]+$" title="Please Use The Numbers 0-9">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 col-md-12">
-								<div class="row justify-content-left">
-									<div class="col-lg-12 col-md-12 col-sm-12">
-										<div class="form-group">
-											<label for="signupUsername">Username</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" pattern=".{6,15}" name="signupUsername" id="signupUsername" placeholder="Enter Username">
-											</div>
-											<p><small>Please use 6 to 15 characters.</small></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 col-md-12">
-								<div class="row justify-content-left">
-									<div class="col-lg-12 col-md-12 col-sm-12">
-										<div class="form-group">
-											<label for="signupPassword">Password</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">vpn_key</i>
-												</span>
-												<input type="password" class="form-input form-control p-3" pattern=".{6,15}" name="signupPassword" id="signupPassword" placeholder="Enter Password">
-											</div>
-											<p><small>Please use 6 to 15 characters.</small></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 col-md-12">
-								<div class="row justify-content-left">
-									<div class="col-lg-12 col-md-12 col-sm-12">
-										<div class="form-group">
-											<label for="signupConfirmPassword">Confirm Password</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">vpn_key</i>
-												</span>
-												<input type="password" class="form-input form-control p-3" pattern=".{6,15}" name="signupConfirmPassword" id="signupConfirmPassword" placeholder="Please Confirm Password">
-											</div>
-											<p><small>Please use 6 to 15 characters.</small></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-6">
-						<h3 class="title">Address</h3>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupRegion">Region</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<select id="signupRegion" class="form-control">
-													<option value="" disabled selected hidden>Select...</option>
-													<option value="NCR">NCR</option>
-													<option value="RegionI">Region I</option>
-													<option value="CAR">CAR</option>
-													<option value="Region II">Region II</option>
-													<option value="Region III">Region III</option>
-													<option value="Region IV-A">Region IV-A</option>
-													<option value="Mimaropa">Mimaropa</option>
-													<option value="Region V">Region V</option>
-													<option value="Region VI">Region VI</option>
-													<option value="Region VII">Region VII</option>
-													<option value="Region VIII">Region VIII</option>
-													<option value="Region IX">Region IX</option>
-													<option value="Region X">Region X</option>
-													<option value="Region XI">Region XI</option>
-													<option value="Region XII">Region XII</option>
-													<option value="Region XIII">Region XIII</option>
-													<option value="BARMM">BARMM</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupMiddleName">Province</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupRegion" id="signupRegion" placeholder="Enter Province">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupMunicipality">Municipality</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupMunicipality" id="signupMunicipality" placeholder="Enter Municipality">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupBarangay">Barangay</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupBarangay" id="signupBarangay" placeholder="Enter Barangay">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupStreet">Street</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupStreet" id="signupStreet" placeholder="Enter Street">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupSubdivision">Subdivision</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupSubdivision" id="signupSubdivision" placeholder="Enter Subdivision">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row justify-content-left">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label for="signupStreet">Household Number</label>
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">face</i>
-												</span>
-												<input type="text" class="form-input form-control p-3" name="signupHouseholdNumber" id="signupHouseholdNumber" placeholder="Enter Household Number">
-											</div>
-										</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupMiddleName">Middle Name</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" name="signupMiddleName" id="signupMiddleName" placeholder="Enter Middle Name">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
-
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupMiddleName">Last Name</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" name="signupLastName" id="signupLastName" placeholder="Enter Last Name">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupSuffix">Suffix (if any)</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" name="signupSuffix" id="signupSuffix" placeholder="Enter Suffix">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupLastName">Gender</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<select id="inputState" class="form-control">
+											<option value="" disabled selected hidden>Select...</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="signupContactNumber">Contact Number</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" name="signupContactNumber" id="signupContactNumber" placeholder="Enter Contact Number" pattern="^[0-9]+$" title="Please Use The Numbers 0-9">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="row justify-content-left">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="signupUsername">Username</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-input form-control p-3" pattern=".{6,15}" name="signupUsername" id="signupUsername" placeholder="Enter Username">
+									</div>
+									<p><small>Please use 6 to 15 characters.</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="row justify-content-left">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="signupPassword">Password</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">vpn_key</i>
+										</span>
+										<input type="password" class="form-input form-control p-3" pattern=".{6,15}" name="signupPassword" id="signupPassword" placeholder="Enter Password">
+									</div>
+									<p><small>Please use 6 to 15 characters.</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="row justify-content-left">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="signupConfirmPassword">Confirm Password</label>
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="material-icons">vpn_key</i>
+										</span>
+										<input type="password" class="form-input form-control p-3" pattern=".{6,15}" name="signupConfirmPassword" id="signupConfirmPassword" placeholder="Please Confirm Password">
+									</div>
+									<p><small>Please use 6 to 15 characters.</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="row justify-content-center mt-5">
 					<div class="col-md-8">
 						<div class="form-group text-center">
-							<p class="lead">Already a member? <a class="lead text-info" href="teacherlogin.html">Login Here!</a></p>
+							<p class="lead">Already a member? <a class="lead text-info" href="teacherLogin.php">Login Here!</a></p>
 							<button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Register</button>
 						</div>
 					</div>
@@ -318,7 +183,6 @@
 			</form>
 		</div>
 	</div>
-
 	<!--   Core JS Files   -->
 	<script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
 	<script src="../DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>
@@ -337,5 +201,4 @@
 	<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 	<script src="../DESIGN_EXTENSIONS/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
 </body>
-
 </html>
