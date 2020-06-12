@@ -53,7 +53,7 @@
         </ul>
         <ul class="navbar-nav navbar-right">
           <li class="nav-item">
-            <a href="clientlogin.html" class="nav-link nav-item btn">Signout<div class="ripple-container"></div></a>
+            <a href="clientlogin.php" class="nav-link nav-item btn">Signout<div class="ripple-container"></div></a>
           </li>
         </ul>
       </div>

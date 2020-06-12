@@ -16,9 +16,7 @@
 	<!-- CSS -->
 	<link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
 </head>
-
 <body>
-
 	<div class="page-header header-filter page-bg">
 	</div>
 	
@@ -177,7 +175,7 @@
 				<div class="row justify-content-center mt-5">
 					<div class="col-md-8">
 						<div class="form-group text-center">
-							<p class="lead">Already a member? <a class="lead text-info" href="teacherlogin.html">Login Here!</a></p>
+							<p class="lead">Already a member? <a class="lead text-info" href="teacherLogin.php">Login Here!</a></p>
 							<button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Register</button>
 						</div>
 					</div>
@@ -185,7 +183,6 @@
 			</form>
 		</div>
 	</div>
-
 	<!--   Core JS Files   -->
 	<script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
 	<script src="../DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>
@@ -204,5 +201,4 @@
 	<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 	<script src="../DESIGN_EXTENSIONS/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
 </body>
-
 </html>
