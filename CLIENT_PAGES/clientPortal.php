@@ -36,29 +36,44 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-12">
+						<div class="col-lg-6 col-md-4 col-sm-12">
 							<div class="card ml-auto mr-auto pt-3 mt-4" style="width: 18rem; height: 25rem;">
-								<img src="../DESIGN_EXTENSIONS/img/deposit.png" class="image-fluid ml-auto mr-auto" width="50%" alt="guy reading">
+								<img src="../DESIGN_EXTENSIONS/img/deposit.png" class="image-fluid ml-auto mr-auto" width="50%" alt="deposit">
 								<div class="card-body text-center">
 									<h3 class="card-title p-4">Cash In</h3>
 									<a href="#" class="btn btn-primary stretched-link">Enter</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="card ml-auto mr-auto pt-3 mt-4" style="width: 18rem; height: 25rem;">
-								<img src="../DESIGN_EXTENSIONS/img/family.jpg" class="image-fluid ml-auto mr-auto" width="50%" alt="calendar">
+								<img src="../DESIGN_EXTENSIONS/img/family.jpg" class="image-fluid ml-auto mr-auto" width="50%" alt="family">
 								<div class="card-body text-center">
 									<h4 class="card-title p-4">Family Basic Information</h4>
 									<a href="#" class="btn btn-primary stretched-link">Enter</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-12 ">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-lg-6 col-md-4 col-sm-12 ">
 							<div class="card ml-auto mr-auto pt-3 mt-4" style="width: 18rem; height: 25rem;">
-								<img src="../DESIGN_EXTENSIONS/img/logbook.png" class="image-fluid ml-auto mr-auto pt-4 pb-2" width="50%" alt="guy reading">
+								<img src="../DESIGN_EXTENSIONS/img/logbook.png" class="image-fluid ml-auto mr-auto pt-4 pb-2" width="50%" alt="logbook">
 								<div class="card-body text-center">
-									<h3 class="card-title p-4" styl>History Logs</h3>
+									<h3 class="card-title p-4" >History Logs</h3>
+									<a href="#" class="btn btn-primary stretched-link">Enter</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="card ml-auto mr-auto pt-3 mt-4" style="width: 18rem; height: 25rem;">
+								<img src="../DESIGN_EXTENSIONS/img/picnic.png" class="image-fluid ml-auto mr-auto" width="75%" alt="picnic">
+								<div class="card-body text-center">
+									<h4 class="card-title p-4">Family Session Venues</h4>
 									<a href="#" class="btn btn-primary stretched-link">Enter</a>
 								</div>
 							</div>
