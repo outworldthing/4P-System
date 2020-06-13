@@ -29,7 +29,7 @@
 			</ul>
 			<ul class="navbar-nav navbar-right">
 				<li class="nav-item">
-					<a href="teacherLogin.php" class="nav-link nav-item btn btn-primary">Signout<div class="ripple-container"></div></a>
+					<a href="login/logIn.php" class="nav-link nav-item btn btn-primary">Signout<div class="ripple-container"></div></a>
 				</li>
 			</ul>
 		</div>

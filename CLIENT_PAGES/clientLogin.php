@@ -24,7 +24,7 @@
 
   <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-login">
     <div class="container">
-        <form method="POST" action="clientDataview.html" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+        <form method="POST" action="clientPortal.php" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="title text-center">

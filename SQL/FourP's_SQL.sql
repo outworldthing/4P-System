@@ -1,4 +1,4 @@
-Create Table FourP;
+Create database FourP;
 use FourP;
 
 Create table Family(
@@ -43,7 +43,7 @@ EducationID int not null auto_increment ,
 MemberID int not null,
 EducationBank int not null,
 EducatonBenefitReceivedDate date,
-Primary Key (EducationIDs)
+Primary Key (EducationID)
 );
 
 Create Table School(
@@ -88,16 +88,11 @@ foreign key (MemberID) references Members(MemberID)on delete cascade on update c
 foreign key (SchoolID) references School(SchoolID)on delete cascade on update cascade
 );
 
-Create table Hospital(
-HospitalID int not null auto_increment,
-HospitalName varchar(50) not null,
-Primary key (HospitalID)
-);
-
 Create table Prenatal(
 PrenatalID int not null auto_increment,
 PrenatalDate date not null,
 HospitalID int not null,
+MemberID int not null,
 DoctorFName varchar(50) not null,
 DoctorMName varchar(50) ,
 DoctorLName varchar(50) not null,	
@@ -186,7 +181,7 @@ DoctorLName varchar(50) not null,
 DoctorSuffix varchar(50),
 DewormingGenericName varchar(50) not null,
 DateOfSession date,
-Primary Key (CheckupAndVaccineID),
+Primary Key (DewormingID),
 foreign key (MemberID) references Members(MemberID)on delete cascade on update cascade
 );
 
@@ -206,10 +201,10 @@ Create Table Student(
 StudentID int not null auto_increment,
 MemberID int not null,
 Primary Key (StudentID),
-foreign key (MemberID) references Members(MemberID) on delete cascade on update cascade,
+foreign key (MemberID) references Members(MemberID) on delete cascade on update cascade
 );
 
-Create Table Section(
+Create Table Sections(
 SectionID int not null auto_increment,
 SectionName varchar(50) not null,
 StudentID int not null,
