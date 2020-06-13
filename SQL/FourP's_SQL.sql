@@ -193,7 +193,7 @@ TeacherLname varchar(50) not null,
 TeacherSuffix varchar(50),
 TeacherBirthDate date not null,
 TeacherUsername varchar(50),
-TecherPassword varchar(50),
+TeacherPassword varchar(50),
 Primary Key (TeacherID)
 );
 

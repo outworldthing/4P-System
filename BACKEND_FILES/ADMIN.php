@@ -18,7 +18,7 @@ class ADMIN {
         $this->servername = "localhost";
         $this->username = "root";
         $this->password = "rootPass123";
-        $this->database = "FourP's_SQL";
+        $this->database = "FourP";
 
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
         if (!$this->conn) {

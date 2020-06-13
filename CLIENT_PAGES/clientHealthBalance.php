@@ -26,14 +26,20 @@
         echo $username . '<br>';
         echo $password . '<br>';
         echo $MemberID . '<br>';
+        
+        include '../BACKEND_FILES/CLIENT.php';
+        $CLIENT = new CLIENT();
+        $FamilyID= $CLIENT->returnFamilyIDfromUserPass($username, $password);
+        $Balance= $CLIENT->getHealthBalance($FamilyID);
         ?>
         <div class="page-header header-filter page-bg">
         </div>
 
         <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-login">
             <div class="container">
-                <form action="" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                <form action="../CLIENT_PROCESSES/clientHealthCashInProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                    <input type="hidden" name="FamilyID" value="<?php echo $FamilyID; ?>" />
                     <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                     <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
                     <div class="row">
@@ -53,7 +59,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="healthtotalbalance" id="loginUsername" placeholder="TOTAL BALANCE" disabled>
+                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="healthtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +76,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="number" class="form-input form-control p-3" name="healthcashinbalance" id="loginPassword" placeholder="CASH IN BALANCE" required >
+                                            <input type="number" class="form-input form-control p-3" name="healthcashinbalance" id="loginPassword" placeholder="<?php if($Balance<0){echo 'Account Inactive';}else{ echo"CASH IN";}?>" required <?php if($Balance<0){echo 'disabled';}?>>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +86,7 @@
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">CASH IN</button>
+                                <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit" <?php if($Balance<0){echo 'disabled';}?>>CASH IN</button>
                             </div>
                         </div>
                     </div>

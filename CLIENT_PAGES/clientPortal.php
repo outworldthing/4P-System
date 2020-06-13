@@ -27,7 +27,7 @@
         
         include '../BACKEND_FILES/CLIENT.php';
         $CLIENT = new CLIENT();
-        if ($CLIENT->ConfirmUsernamePassword($username, $password) == FALSE) {
+        if ($CLIENT->ConfirmUsernamePassword($username, $password) == TRUE) {
             $MemberID = $CLIENT->returnAccountMemberID($username, $password);
             ?>
             <div class="page-header header-filter page-bg">

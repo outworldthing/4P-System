@@ -26,6 +26,10 @@
         echo $username . '<br>';
         echo $password . '<br>';
         echo $MemberID . '<br>';
+        
+        include '../BACKEND_FILES/CLIENT.php';
+        $CLIENT = new CLIENT();
+        $Balance = $CLIENT->getEducationBalance($MemberID);
         ?>
         <div class="page-header header-filter page-bg">
         </div>
@@ -53,7 +57,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="educationtotalbalance" id="loginUsername" placeholder="TOTAL BALANCE" disabled>
+                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="educationtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +74,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="number" required  class="form-input form-control p-3" name="educationcashinbalance" id="loginPassword" placeholder="CASH IN BALANCE">
+                                            <input type="number" required  class="form-input form-control p-3" name="educationcashinbalance" id="loginPassword" placeholder="<?php if($Balance<0){echo 'Account Inactive';}else{ echo 'CASH IN';}?>" <?php if($Balance<0){echo 'disabled';}?>>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +84,7 @@
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">CASH IN</button>
+                                <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit" <?php if($Balance<0){echo 'disabled';}?>>CASH IN</button>
                             </div>
                         </div>
                     </div>

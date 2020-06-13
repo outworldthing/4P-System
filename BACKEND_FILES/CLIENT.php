@@ -175,4 +175,80 @@ class CLIENT {
         return FALSE;
     }
 
+    function getHealthBalance($FamilyID) {
+        try {
+            $command = "Select HealthBank from FamilyAccount where FamilyID= '" . $FamilyID . "'";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0) {
+                while ($rows = mysqli_fetch_assoc($result)) {
+                    return $rows['HealthBank'];
+                }
+            }
+        } catch (Exception $exc) {
+            echo "Family Acount does not exist";
+        }
+        return -1;
+    }
+
+    function getEducationBalance($MemberID) {
+        try {
+            $command = "Select EducationBank from EducationAccount where MemberID= '" . $MemberID . "'";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0) {
+                while ($rows = mysqli_fetch_assoc($result)) {
+                    return $rows['EducationBank'];
+                }
+            }
+        } catch (Exception $exc) {
+            echo "Family Acount does not exist";
+        }
+        return -1;
+    }
+
+    function checkAmount($cash_in, $balance) {
+        if ($balance > $cash_in) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    function UpdateLogEntry($MemberID, $Message) {
+        try {
+            $command = "Inser from UpdateLog(MemberID,UpdateLogDetails,DateOfPublish) values('" . $MemberID . "','" . $Message . "',curdate())";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0) {
+                return TRUE;
+            }
+        } catch (Exception $exc) {
+            echo "Cannot insert Update Log";
+        }
+        return FALSE;
+    }
+
+    function deductHealthBalance($FamilyID, $cash_in) {
+        try {
+            $commands="Update FamilyAccount Set HealthBank=((Select HealthBank from FamilyAccount where FamilyID='".$FamilyID."')-'".$cash_in."') where FamilyID='".$FamilyID."'";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0) {
+                return TRUE;
+            }
+        } catch (Exception $exc) {
+            echo "Deducting of Health Balance Failed";
+        }
+        RETURN FALSE;
+    }
+
+    function deductEducationBalance($MemberID, $cash_in) {
+        try {
+            $commands="Update EducationAccount Set EducationBank=((Select EducationBank from EducationAccount where MemberID='".$MemberID."')-'".$cash_in."') where MemberID='".$MemberID."'";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0) {
+                return TRUE;
+            }
+        } catch (Exception $exc) {
+            echo "Deducting of Education Balance Failed";
+        }
+        return FALSE;
+    }
 }

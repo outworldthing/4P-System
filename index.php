@@ -89,7 +89,7 @@
                                     <img src="../DESIGN_EXTENSIONS/img/teacher.jpg" class="image-fluid ml-auto mr-auto" width="50%" alt="guy reading">
                                     <div class="card-body text-center">
                                         <h4 class="card-title px-4 pb-4 pt-2">Teacher</h4>
-                                        <a href="CLIENT_PAGES/teacherLogin.php" class="btn btn-primary stretched-link">Enter</a>
+                                        <a href="TEACHER_PAGES/teacherLogin.php" class="btn btn-primary stretched-link">Enter</a>
                                     </div>
                                 </div>
                             </div>
