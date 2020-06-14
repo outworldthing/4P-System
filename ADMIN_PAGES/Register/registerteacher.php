@@ -183,7 +183,7 @@ The above copyright notice and this permission notice shall be included in all c
                                             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
                                             <div class="row">
                                                 <div class="card-header">
-                                                    <h4 class="card-title">Pregnant</h4>
+                                                    <h4 class="card-title">Teacher</h4>
                                                     <p class="card-category">Enter complete information</p>
                                                 </div>
                                             </div>
@@ -226,6 +226,12 @@ The above copyright notice and this permission notice shall be included in all c
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Section Handled</label>
                                                         <input type="text" name="Section" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">School</label>
+                                                        <input type="text" name="School" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>

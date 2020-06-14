@@ -187,6 +187,7 @@ foreign key (MemberID) references Members(MemberID)on delete cascade on update c
 
 Create Table Teacher(
 TeacherID int not null auto_increment,
+SchoolID int not null,
 TeacherFname varchar(50) not null,
 TeacherMname varchar(50) ,
 TeacherLname varchar(50) not null,
@@ -194,7 +195,8 @@ TeacherSuffix varchar(50),
 TeacherBirthDate date not null,
 TeacherUsername varchar(50),
 TeacherPassword varchar(50),
-Primary Key (TeacherID)
+Primary Key (TeacherID),
+Foreign key (SchoolID) references School(SchoolID)
 );
 
 Create Table Student(
