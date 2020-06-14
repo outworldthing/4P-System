@@ -11,554 +11,497 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    $username = htmlspecialchars($_REQUEST['loginUsername']);
+    $password = htmlspecialchars($_REQUEST['loginPassword']);
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../../DESIGN_EXTENSIONS/img/4pslogo.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Pantawid Pamilyang Pilipino Program
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="../../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
-</head>
+    include '../../BACKEND_FILES/ADMIN.php';
+    $ADMIN = new ADMIN();
+    ?>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="../../DESIGN_EXTENSIONS/img/4pslogo.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>
+            Pantawid Pamilyang Pilipino Program
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <!-- CSS Files -->
+        <link href="../../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
+    </head>
 
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo">
-		<a href="http://www.creative-tim.com" class="simple-text logo-normal">
-		<img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
-		  Welcome Admin
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active ">
-            <a class="nav-link" href="./familysession.html">
-              <i class="material-icons">library_books</i>
-              <p>Family Session</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./deworming.html">
-              <i class="material-icons">library_books</i>
-              <p>Deworming</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./checkup.html">
-              <i class="material-icons">library_books</i>
-              <p>Check-up/Vaccine</p>
-            </a>
-          </li>
-		  <li class="nav-item ">
-            <a class="nav-link" href="./healthbenefit.html">
-              <i class="material-icons">library_books</i>
-              <p>Health Benefit</p>
-            </a>
-          </li>
-		  <li class="nav-item ">
-            <a class="nav-link" href="./educationbenefit.html">
-              <i class="material-icons">library_books</i>
-              <p>Education Benefit</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Issue Deworming</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
+    <body class="">
+        <div class="wrapper ">
+            <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
+                <!--
+                  Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+          
+                  Tip 2: you can also add an image using data-image tag
+                -->
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                        <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
+                        Welcome Admin
+                    </a></div>
+                <div class="sidebar-wrapper">
+                    <ul class="nav">
+                        <li class="nav">
+                            <form action="./familysession.php" method="POST">
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <i class="material-icons">library_books</i>
+                                <button type="submit">Family Session</button>
+                            </form>
+                        </li>
+                        <li class="nav-item ">
+                            <form action="./deworming.php" method="POST">
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <i class="material-icons">library_books</i>
+                                <button type="submit">Deworming</button>
+                            </form>
+                        </li>
+                        <li class="nav-item ">
+                            <form action="./checkup.php" method="POST">
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <i class="material-icons">library_books</i>
+                                <button type="submit">Check-up/Vaccine</button>
+                            </form>
+                        </li>
+                        <li class="nav-item active">
+                            <form action="./healthbenefit.php" method="POST">
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <i class="material-icons">library_books</i>
+                                <button type="submit">Health Benefit</button>
+                            </form>
+                        </li>
+                        <li class="nav-item ">
+                            <form action="./educationbenefit.php" method="POST">
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <i class="material-icons">library_books</i>
+                                <button type="submit">Education Benefit</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <form action="../adminPortal.php" method="POST">
+                        <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                        <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                        <i class="material-icons">content_paste</i>
+                        <button type="submit">Return to Portal</button>
+                    </form>
                 </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+            </div>
+            <div class="main-panel">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                    <div class="container-fluid">
+                        <div class="navbar-wrapper">
+                            <a class="navbar-brand" href="javascript:;">Issue Deworming</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="navbar-toggler-icon icon-bar"></span>
+                            <span class="navbar-toggler-icon icon-bar"></span>
+                            <span class="navbar-toggler-icon icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end">
+                            <form class="navbar-form">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:;">
+                                        <i class="material-icons">dashboard</i>
+                                        <p class="d-lg-none d-md-block">
+                                            Stats
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">notifications</i>
+                                        <span class="notification">5</span>
+                                        <p class="d-lg-none d-md-block">
+                                            Some Actions
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                        <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                        <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                        <a class="dropdown-item" href="#">Another Notification</a>
+                                        <a class="dropdown-item" href="#">Another One</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">person</i>
+                                        <p class="d-lg-none d-md-block">
+                                            Account
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                        <a class="dropdown-item" href="#">Profile</a>
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="../logIn/logIn.php">Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-profile">
+                                    <div class="card-avatar">
+                                        <a href="javascript:;">
+                                            <img class="img" src="../../DESIGN_EXTENSIONS/img/deworming.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Deworming</h4>               
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header card-header-primary">
+                                        <h4 class="card-title">Issue Deworming</h4>
+                                        <p class="card-category">Fill up form</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="../../ADMIN_PROCESSES/dewormingProcess.php">
+                                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                            <div class="card-header">
+                                                <h4 class="card-title">Patient Name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">First Name</label>
+                                                        <input type="text" name="PatientFName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Middle Name</label>
+                                                        <input type="text" name="PatientMName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Last Name</label>
+                                                        <input type="text" name="PatientLName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Suffix (optional)</label>
+                                                        <input type="text" name="PatientSuffix" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header">
+                                                <h4 class="card-title">Doctor Name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">First Name</label>
+                                                        <input type="text" name="DoctorFName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Middle Name</label>
+                                                        <input type="text" name="DoctorMName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Last Name</label>
+                                                        <input type="text" name="DoctorLName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Suffix (optional)</label>
+                                                        <input type="text" name="DoctorSuffix" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Drug Name</label>
+                                                        <input type="text" name="DrugName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <p>Date of Deworming</p>
+                                                        <input type="date" name="DateOfDeworming" value="yyyy-mm-dd" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary pull-right">ISSUE DEWORMING</button>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <footer class="footer">
+
+                </footer>
+            </div>
         </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-		  <div class="col-md-4">
-              <div class="card card-profile">
-                <div class="card-avatar">
-                  <a href="javascript:;">
-                    <img class="img" src="../../DESIGN_EXTENSIONS/img/deworming.jpg" />
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Deworming</h4>               
-                </div>
-              </div>
-            </div>
-			
-            <div class="col-md-8">
-			<div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Deworming Table</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>
-                          Patient Name
-                        </th>
-                        <th>
-                          Doctor Name
-                        </th>
-						<th>
-                          Drug Name
-                        </th>
-						<th>
-                          Date of Deworming
-                        </th>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            Dakota Rice
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            Sage Rodriguez
-                          </td>
-     
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Philip Chaney
-                          </td>
 
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            Doris Greene
-                          </td>
-   
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            Mason Porter
-                          </td>
+        <!--   Core JS Files   -->
+        <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
+        <script src="../../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
+        <script src="../../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Plugin for the momentJs  -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
+        <!--  Plugin for Sweet Alert -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
+        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
+        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
+        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
+        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
+        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
+        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+        <!-- Chartist JS -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <script src="../../DESIGN_EXTENSIONS/demo/demo.js"></script>
+        <script>
+            $(document).ready(function () {
+                $().ready(function () {
+                    $sidebar = $('.sidebar');
 
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Issue Deworming</h4>
-                  <p class="card-category">Fill up form</p>
-                </div>
-                <div class="card-body">
-                  <form>
-				  <div class="card-header">
-                  <h4 class="card-title">Patient Name</h4>
-                </div>
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">First Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Middle Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-					  <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-					  <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Suffix (optional)</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-					<div class="card-header">
-                  <h4 class="card-title">Doctor Name</h4>
-                </div>
-					<div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">First Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Middle Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-					  <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-					  <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Suffix (optional)</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-					<div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Drug Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Date of Deworming</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary pull-right">ISSUE DEWORMING</button>
-                    <div class="clearfix"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <footer class="footer">
-       
-      </footer>
-    </div>
-  </div>
-  
-  <!--   Core JS Files   -->
-  <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!-- Plugin for the momentJs  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
-  <!--  Plugin for Sweet Alert -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
-  <!-- Forms Validations Plugin -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
-  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
-  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
-  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
-  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
-  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
-  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
-  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
-  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-  <!-- Library for adding dinamically elements -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chartist JS -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../../DESIGN_EXTENSIONS/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
+                    $sidebar_img_container = $sidebar.find('.sidebar-background');
 
-        $sidebar_img_container = $sidebar.find('.sidebar-background');
+                    $full_page = $('.full-page');
 
-        $full_page = $('.full-page');
+                    $sidebar_responsive = $('body > .navbar-collapse');
 
-        $sidebar_responsive = $('body > .navbar-collapse');
+                    window_width = $(window).width();
 
-        window_width = $(window).width();
+                    fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+                    if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                        if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                            $('.fixed-plugin .dropdown').addClass('open');
+                        }
 
-        if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
-          if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
-            $('.fixed-plugin .dropdown').addClass('open');
-          }
+                    }
 
-        }
+                    $('.fixed-plugin a').click(function (event) {
+                        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                        if ($(this).hasClass('switch-trigger')) {
+                            if (event.stopPropagation) {
+                                event.stopPropagation();
+                            } else if (window.event) {
+                                window.event.cancelBubble = true;
+                            }
+                        }
+                    });
 
-        $('.fixed-plugin a').click(function(event) {
-          // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
+                    $('.fixed-plugin .active-color span').click(function () {
+                        $full_page_background = $('.full-page-background');
 
-        $('.fixed-plugin .active-color span').click(function() {
-          $full_page_background = $('.full-page-background');
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
 
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
+                        var new_color = $(this).data('color');
 
-          var new_color = $(this).data('color');
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data-color', new_color);
+                        }
 
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data-color', new_color);
-          }
+                        if ($full_page.length != 0) {
+                            $full_page.attr('filter-color', new_color);
+                        }
 
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.attr('data-color', new_color);
+                        }
+                    });
 
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data-color', new_color);
-          }
-        });
+                    $('.fixed-plugin .background-color .badge').click(function () {
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
 
-        $('.fixed-plugin .background-color .badge').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
+                        var new_color = $(this).data('background-color');
 
-          var new_color = $(this).data('background-color');
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data-background-color', new_color);
+                        }
+                    });
 
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data-background-color', new_color);
-          }
-        });
+                    $('.fixed-plugin .img-holder').click(function () {
+                        $full_page_background = $('.full-page-background');
 
-        $('.fixed-plugin .img-holder').click(function() {
-          $full_page_background = $('.full-page-background');
-
-          $(this).parent('li').siblings().removeClass('active');
-          $(this).parent('li').addClass('active');
+                        $(this).parent('li').siblings().removeClass('active');
+                        $(this).parent('li').addClass('active');
 
 
-          var new_image = $(this).find("img").attr('src');
+                        var new_image = $(this).find("img").attr('src');
 
-          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
-              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-              $sidebar_img_container.fadeIn('fast');
+                        if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                            $sidebar_img_container.fadeOut('fast', function () {
+                                $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                                $sidebar_img_container.fadeIn('fast');
+                            });
+                        }
+
+                        if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                            $full_page_background.fadeOut('fast', function () {
+                                $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                                $full_page_background.fadeIn('fast');
+                            });
+                        }
+
+                        if ($('.switch-sidebar-image input:checked').length == 0) {
+                            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        }
+
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                        }
+                    });
+
+                    $('.switch-sidebar-image input').change(function () {
+                        $full_page_background = $('.full-page-background');
+
+                        $input = $(this);
+
+                        if ($input.is(':checked')) {
+                            if ($sidebar_img_container.length != 0) {
+                                $sidebar_img_container.fadeIn('fast');
+                                $sidebar.attr('data-image', '#');
+                            }
+
+                            if ($full_page_background.length != 0) {
+                                $full_page_background.fadeIn('fast');
+                                $full_page.attr('data-image', '#');
+                            }
+
+                            background_image = true;
+                        } else {
+                            if ($sidebar_img_container.length != 0) {
+                                $sidebar.removeAttr('data-image');
+                                $sidebar_img_container.fadeOut('fast');
+                            }
+
+                            if ($full_page_background.length != 0) {
+                                $full_page.removeAttr('data-image', '#');
+                                $full_page_background.fadeOut('fast');
+                            }
+
+                            background_image = false;
+                        }
+                    });
+
+                    $('.switch-sidebar-mini input').change(function () {
+                        $body = $('body');
+
+                        $input = $(this);
+
+                        if (md.misc.sidebar_mini_active == true) {
+                            $('body').removeClass('sidebar-mini');
+                            md.misc.sidebar_mini_active = false;
+
+                            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                        } else {
+
+                            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                            setTimeout(function () {
+                                $('body').addClass('sidebar-mini');
+
+                                md.misc.sidebar_mini_active = true;
+                            }, 300);
+                        }
+
+                        // we simulate the window Resize so the charts will get updated in realtime.
+                        var simulateWindowResize = setInterval(function () {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 180);
+
+                        // we stop the simulation of Window Resize after the animations are completed
+                        setTimeout(function () {
+                            clearInterval(simulateWindowResize);
+                        }, 1000);
+
+                    });
+                });
             });
-          }
+        </script>
+        <script>
+            $(document).ready(function () {
+                // Javascript method's body can be found in assets/js/demos.js
+                md.initDashboardPageCharts();
 
-          if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-            $full_page_background.fadeOut('fast', function() {
-              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-              $full_page_background.fadeIn('fast');
             });
-          }
-
-          if ($('.switch-sidebar-image input:checked').length == 0) {
-            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
-          }
-        });
-
-        $('.switch-sidebar-image input').change(function() {
-          $full_page_background = $('.full-page-background');
-
-          $input = $(this);
-
-          if ($input.is(':checked')) {
-            if ($sidebar_img_container.length != 0) {
-              $sidebar_img_container.fadeIn('fast');
-              $sidebar.attr('data-image', '#');
-            }
-
-            if ($full_page_background.length != 0) {
-              $full_page_background.fadeIn('fast');
-              $full_page.attr('data-image', '#');
-            }
-
-            background_image = true;
-          } else {
-            if ($sidebar_img_container.length != 0) {
-              $sidebar.removeAttr('data-image');
-              $sidebar_img_container.fadeOut('fast');
-            }
-
-            if ($full_page_background.length != 0) {
-              $full_page.removeAttr('data-image', '#');
-              $full_page_background.fadeOut('fast');
-            }
-
-            background_image = false;
-          }
-        });
-
-        $('.switch-sidebar-mini input').change(function() {
-          $body = $('body');
-
-          $input = $(this);
-
-          if (md.misc.sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            md.misc.sidebar_mini_active = false;
-
-            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-
-          } else {
-
-            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
-
-            setTimeout(function() {
-              $('body').addClass('sidebar-mini');
-
-              md.misc.sidebar_mini_active = true;
-            }, 300);
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-
-        });
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-
-    });
-  </script>
-</body>
+        </script>
+    </body>
 
 </html>

@@ -23,10 +23,6 @@
         $password = htmlspecialchars($_REQUEST['loginPassword']);
         $MemberID = htmlspecialchars($_REQUEST['MemberID']);
 
-        echo $username . '<br>';
-        echo $password . '<br>';
-        echo $MemberID . '<br>';
-        
         include '../BACKEND_FILES/CLIENT.php';
         $CLIENT = new CLIENT();
         $Balance = $CLIENT->getEducationBalance($MemberID);

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
     <head>
         <title>4ps | Login</title>
         <!-- Required meta tags -->
@@ -16,12 +15,9 @@
         <!-- CSS -->
         <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
     </head>
-
     <body>
-
         <div class="page-header header-filter page-bg">
         </div>
-
         <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-login">
             <div class="container">
                 <form action="teacherPortal.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
@@ -33,42 +29,45 @@
                         </div>
                     </div>
                     <div class="row">
-                            <div class="col-md-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="loginUsername">Username</label>
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="material-icons">face</i>
-                                                </span>
-                                                <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="loginUsername" id="loginUsername" placeholder="Enter Username">
-                                            </div>
+                        <div class="col-md-12">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="loginUsername">Username</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="loginUsername" id="loginUsername" placeholder="Enter Username">
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="loginPassword">Password</label>
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="material-icons">vpn_key</i>
-                                                </span>
-                                                <input type="password" Required pattern=".{6,15}" class="form-input form-control p-3" name="loginPassword" id="loginPassword" placeholder="Enter Password">
-                                            </div>
+                                </div>
+                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="loginPassword">Password</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">vpn_key</i>
+                                            </span>
+                                            <input type="password" Required pattern=".{6,15}" class="form-input form-control p-3" name="loginPassword" id="loginPassword" placeholder="Enter Password">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
                             <div class="form-group text-center">
                                 <p class="lead">Not a member yet? <a class="lead text-info" href="teachersignup.php">Register Now!</a></p>
                                 <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Login</button>
+                                </form>
+                                <form action="../../index.php">
+                                    <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Go Back to Index Page</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
 

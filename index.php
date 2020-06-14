@@ -100,7 +100,7 @@
                                     <img src="../DESIGN_EXTENSIONS/img/admin.png" class="image-fluid ml-auto mr-auto" width="50%" alt="guy reading">
                                     <div class="card-body text-center">
                                         <h4 class="card-title p-4">Admin</h4>
-                                        <a href="ADMIN_PAGES/adminLogin.php" class="btn btn-primary stretched-link">Enter</a>
+                                        <a href="ADMIN_PAGES/logIn/logIn.php" class="btn btn-primary stretched-link">Enter</a>
                                     </div>
                                 </div>
                             </div>
