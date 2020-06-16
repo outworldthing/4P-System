@@ -112,6 +112,7 @@ class TEACHER {
         } catch (Exception $exc) {
             echo "No Matches Found";
         }
+        echo "No Matches Found";
         return -1;
     }
 

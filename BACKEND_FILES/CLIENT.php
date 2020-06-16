@@ -114,6 +114,7 @@ class CLIENT {
         } catch (Exception $exc) {
             echo "No Matches Found";
         }
+         echo "No Matches Found";
         return -1;
     }
 
@@ -151,7 +152,7 @@ class CLIENT {
 
     function HistoryLogList($MemberID) {
         try {
-            $command = "Select UpdateLogDetails,DateOfPublish from UpdateLog where MemberID='" . $MemberID . "' ORDER BY DateOfPublish ASC";
+            $command = "Select UpdateLogDetails,DateOfPublish from UpdateLog where MemberID='" . $MemberID . "' ORDER BY DateOfPublish DESC";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 return $result;
@@ -172,6 +173,7 @@ class CLIENT {
         } catch (Exception $exc) {
             echo "No Matches Found";
         }
+        echo "No Matches Found";
         return FALSE;
     }
 
@@ -187,6 +189,7 @@ class CLIENT {
         } catch (Exception $exc) {
             echo "Family Acount does not exist";
         }
+        echo "Family Acount does not exist";
         return -1;
     }
 
@@ -200,8 +203,9 @@ class CLIENT {
                 }
             }
         } catch (Exception $exc) {
-            echo "Family Acount does not exist";
+            echo "Education Acount does not exist";
         }
+        echo "Education Acount does not exist";
         return -1;
     }
 
@@ -228,7 +232,7 @@ class CLIENT {
 
     function deductHealthBalance($FamilyID, $cash_in) {
         try {
-            $commands="Update FamilyAccount Set HealthBank=((Select HealthBank from FamilyAccount where FamilyID='".$FamilyID."')-'".$cash_in."') where FamilyID='".$FamilyID."'";
+            $command="Update FamilyAccount Set HealthBank=((Select HealthBank from FamilyAccount where FamilyID='".$FamilyID."')-'".$cash_in."') where FamilyID='".$FamilyID."'";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 return TRUE;
@@ -241,7 +245,7 @@ class CLIENT {
 
     function deductEducationBalance($MemberID, $cash_in) {
         try {
-            $commands="Update EducationAccount Set EducationBank=((Select EducationBank from EducationAccount where MemberID='".$MemberID."')-'".$cash_in."') where MemberID='".$MemberID."'";
+            $command="Update EducationAccount Set EducationBank=((Select EducationBank from EducationAccount where StudentID='".$MemberID."')-'".$cash_in."') where StudentID='".$MemberID."'";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 return TRUE;

@@ -233,6 +233,10 @@ The above copyright notice and this permission notice shall be included in all c
                                                         <p>Date of Check-up</p>
                                                         <input type="date" value="yyyy-mm-dd" name="DateOfCheckup" class="form-control" required>
                                                     </div>
+                                                     <div class="form-group">
+                                                        <p>Hospital</p>
+                                                        <input type="text" name="Hospital" class="form-control" required>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>

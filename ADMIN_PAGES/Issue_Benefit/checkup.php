@@ -254,8 +254,12 @@ The above copyright notice and this permission notice shall be included in all c
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="bmd-label-floating">Vaccine Type</label>
-                                                        <input type="text" name="Vaccine" class="form-control" required>
+                                                        <label class="bmd-label-floating">Vaccine Type (if applicable)</label>
+                                                        <input type="text" name="Vaccine" class="form-control" >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Venue</label>
+                                                        <input type="text" name="Venue" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">

@@ -8,6 +8,8 @@
     $ADMIN = new ADMIN();
     $condition = $ADMIN->ConfirmAdminUsernamePassword($username, $password);
     if ($condition == TRUE) {
+        $ADMIN->DeleteFamilyOver7years();
+        $ADMIN->DeleteStudentsOver18();
         ?>
         <head>
             <title>4ps | Admin Portal</title>

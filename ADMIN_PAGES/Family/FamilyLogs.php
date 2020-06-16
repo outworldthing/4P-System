@@ -9,6 +9,7 @@
     $Suffix = htmlspecialchars($_REQUEST['Suffix']);
     include '../../BACKEND_FILES/ADMIN.php';
     $ADMIN = new ADMIN();
+    $result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
     ?>
     <head>
         <meta charset="utf-8" />
@@ -159,21 +160,23 @@
                                                     <thead class="text-primary">
                                                     <th>Log ID</th>
                                                     <th>Date</th>
-                                                    <th>LOG</th>
+                                                    <th>LOG DETAILS</th>
                                                     </thead>
 
                                                     <tbody>
+                                                        <?php while($rows= mysqli_fetch_assoc($result)){?>
                                                         <tr>
                                                             <td>
-                                                                1
+                                                                <?php $rows['UpdateLogID'];?>
                                                             </td>
                                                             <td>
-                                                                1999-30-11
+                                                                <?php $rows['DateOfPublish'];?>
                                                             </td>
                                                             <td>
-                                                                Birthday
+                                                                <?php $rows['UpdateLogDetails'];?>
                                                             </td>
                                                         </tr>
+                                                        <?php }?>
 
                                                     </tbody>
                                                 </table>

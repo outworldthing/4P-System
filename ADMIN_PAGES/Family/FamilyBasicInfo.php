@@ -9,6 +9,7 @@
     $Suffix = htmlspecialchars($_REQUEST['Suffix']);
     include '../../BACKEND_FILES/ADMIN.php';
     $ADMIN = new ADMIN();
+    $result = $ADMIN->getFamilyCredentials($FirstName, $MiddleName, $LastName, $Suffix);
     ?>
     <head>
         <meta charset="utf-8" />
@@ -146,10 +147,8 @@
                 <div class="content">
                     <div class="container-fluid">
                         <div class="row">
-
-
                             <div class="col-md-12">
-                                <div class="col-md-12">
+                                <div class="col-md-auto">
                                     <div class="card">
                                         <div class="card-header card-header-primary">
                                             <h4 class="card-title ">View Family Basic Information</h4>
@@ -159,7 +158,22 @@
                                                 <table class="table">
                                                     <thead class=" text-primary">
                                                     <th>
-                                                        Family ID
+                                                        First Name
+                                                    </th>
+                                                    <th>
+                                                        Middle Name
+                                                    </th>
+                                                    <th>
+                                                        Last Name
+                                                    </th>
+                                                    <th>
+                                                        Suffix Name
+                                                    </th>
+                                                    <th>
+                                                        Birth Date
+                                                    </th>
+                                                    <th>
+                                                        Gender
                                                     </th>
                                                     <th>
                                                         Date of Registry
@@ -187,14 +201,58 @@
                                                     </th>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                1
-                                                            </td>
-                                                            <td>
-                                                                Dakota Rice
-                                                            </td>
-                                                        </tr>
+                                                        <?php while ($rows = mysqli_fetch_assoc($result)) { ?>
+                                                            <tr>
+                                                                <td>
+                                                                    <?php $rows['FirstName']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['MiddleName']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['LastName']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Suffix']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['BirthDate']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php
+                                                                    if ($rows['Gender'] == "1") {
+                                                                        echo 'MALE';
+                                                                    } else {
+                                                                        echo'FEMALE';
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['DateOfRegistry']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Region']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Municipality']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Province']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Barangay']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Street']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['HouseNo']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php $rows['Subdivision']; ?>
+                                                                </td>
+                                                            </tr>
+                                                        <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>

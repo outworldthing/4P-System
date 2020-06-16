@@ -191,7 +191,7 @@ The above copyright notice and this permission notice shall be included in all c
                                             <p class="card-category">Enter Student Credentials</p>
                                         </div>
                                         <div class="card-body">
-                                            <form action="../../ADMIN_PROCESSES/educaationbenefitProcess.php">
+                                            <form action="../../ADMIN_PROCESSES/educationbenefitProcess.php">
                                                 <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                                                 <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
                                                 <div class="row">

@@ -25,10 +25,10 @@
         <div class="main main-raised mx-0 mb-3 rounded-0" id="client-signup">
             <div class="container">
                 <?php
-                $username= htmlspecialchars($_REQUEST['loginUsername']);
-                $password= htmlspecialchars($_REQUEST['loginPassword']);
+                $username = htmlspecialchars($_REQUEST['loginUsername']);
+                $password = htmlspecialchars($_REQUEST['loginPassword']);
                 ?>
-                <form action="../TEACHER_PROCESSES/teacherAttendanceReport.php" method="POST "class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                <form action="../TEACHER_PROCESSES/teacherAttendanceReportProcess.php" method="POST "class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <div class="row">
                         <div class="col-md-12 ml-auto mr-auto">
                             <div class="title text-center">
@@ -140,11 +140,11 @@
             </div>
             <center>
                 <form action="teacherPortal.php" method="POST">
-                        <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                        <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                        <input class="btn btn-primary stretched-link" type="submit" value="GO BACK TO TEACHER PORTAL" />
-                    </form>
-                </center>
+                    <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                    <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                    <input class="btn btn-primary stretched-link" type="submit" value="GO BACK TO TEACHER PORTAL" />
+                </form>
+            </center>
         </div>
     </div>
 

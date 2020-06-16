@@ -17,23 +17,27 @@ and open the template in the editor.
         $MiddleName = htmlspecialchars($_REQUEST['MiddleName']);
         $LastName = htmlspecialchars($_REQUEST['LastName']);
         $Suffix = htmlspecialchars($_REQUEST['Suffix']);
-        $Venue = htmlspecialchars($_REQUEST['Venue']);
-        $DateOfSession = htmlspecialchars($_REQUEST['DateOfSession']);
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
-        $FamilyID = $ADMIN->getFamilyID($FirstName, $MiddleName, $LastName, $Suffix);
-        if ($FamilyID >= 0) {
-            if ($ADMIN->registerFamilySession($FamilyID, $Venue, $DateOfSession) == TRUE) {
-                echo 'Session Registered!';
-                $Message = "Family '".$LastName."' Session Venue:'".$Venue."' Date:'".$DateOfSession."' ";
-                echo $Message;
-                $ADMIN->UpdateLog($MemberID, $Message);
+
+        $MemberID = $ADMIN->checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix);
+        if ($MemberID >= 0) {
+            $StudentID = $ADMIN->getStudentID($MemberID);
+            if ($StudentID >= 0) {
+                if ($ADMIN->IssueEducationBenefit($StudentID) == TRUE) {
+                    echo 'Issuance of Education Benefit Successful';
+                    $Message = "Education Benefit Issued to:'".$FirstName."' '".$MiddleName."' '".$LastName."' '".$Suffix."' ";
+                    echo $Message;
+                    $ADMIN->UpdateLog($MemberID, $Message);
+                } else {
+                    echo 'Issuance of Education Benefit Failed';
+                }
             } else {
-                echo 'Session Registry Failed';
+                echo 'No Student Record Found';
             }
         }
         ?>
-        <form action="../ADMIN_PAGES/Issue_Benefit/familysession.php" method="POST">
+        <form action="../ADMIN_PAGES/Issue_Benefit/educationbenefit.php" method="POST">
             <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
             <input type="submit" value="RETURN TO CHECKUP FORM" />

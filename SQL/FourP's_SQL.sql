@@ -3,6 +3,7 @@ use FourP;
 
 Create table Family(
 FamilyID int not null auto_increment,
+FamilyName varchar(50) not null,
 DateOfRegistry date  not null,
 Region varchar(50) not null,
 Municipality varchar(50) not null,
@@ -17,6 +18,7 @@ primary key (FamilyID)
 
 Create table FamilyAccount(
 FamilyAccountID int not null auto_increment,
+Subsidy int not null default 750,
 FamilyID int not null,	
 HealthBank int not null ,
 HealthBenefitReceivedDate date,
@@ -32,18 +34,10 @@ MiddleName varchar(50),
 LastName varchar(50) not null,
 Suffix varchar(10),
 BirthDate date not null,
-Gender tinyint(1) not null,
+Gender boolean not null,
 DateOfRegistry date,
 Primary Key (MemberID),
 foreign key (FamilyID) references Family(FamilyID)on delete cascade on update cascade
-);
-
-Create Table EducationAccount(
-EducationID int not null auto_increment ,
-MemberID int not null,
-EducationBank int not null,
-EducatonBenefitReceivedDate date,
-Primary Key (EducationID)
 );
 
 Create Table School(
@@ -58,33 +52,49 @@ HospitalName varchar(50) not null,
 Primary Key (HospitalID)
 );
 
+Create Table Student(
+StudentID int not null auto_increment,
+MemberID int not null,
+Primary Key (StudentID),
+foreign key (MemberID) references Members(MemberID) on delete cascade on update cascade
+);
+
+Create Table EducationAccount(
+EducationID int not null auto_increment ,
+StudentID int not null,
+EducationBank int not null,
+EducatonBenefitReceivedDate date,
+Primary Key (EducationID),
+foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade
+);
+
 Create Table DayCareElem(
 DayCareElemID int not null auto_increment,
 Subsidy int not null default 300,
-MemberID int not null,
+StudentID int not null,
 SchoolID int not null,
 Primary Key (DayCareElemID),
-foreign key (MemberID) references Members(MemberID)on delete cascade on update cascade,
+foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade,
 foreign key (SchoolID) references School(SchoolID)on delete cascade on update cascade
 );
 
 Create Table SHS(
 SHSID int not null auto_increment,
 Subsidy int not null default 700,
-MemberID int not null,
+StudentID int not null,
 SchoolID int not null,
 Primary Key (SHSID),
-foreign key (MemberID) references Members(MemberID)on delete cascade on update cascade,
+foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade,
 foreign key (SchoolID) references School(SchoolID)on delete cascade on update cascade
 );
 
 Create Table JHS(
 JHSID int not null auto_increment,
-Subsidy int not null default 700,
-MemberID int not null,
+Subsidy int not null default 500,
+StudentID int not null,
 SchoolID int not null,
 Primary Key (JHSID),
-foreign key (MemberID) references Members(MemberID)on delete cascade on update cascade,
+foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade,
 foreign key (SchoolID) references School(SchoolID)on delete cascade on update cascade
 );
 
@@ -192,6 +202,7 @@ TeacherFname varchar(50) not null,
 TeacherMname varchar(50) ,
 TeacherLname varchar(50) not null,
 TeacherSuffix varchar(50),
+TeacherGender boolean not null,
 TeacherBirthDate date not null,
 TeacherUsername varchar(50),
 TeacherPassword varchar(50),
@@ -199,20 +210,15 @@ Primary Key (TeacherID),
 Foreign key (SchoolID) references School(SchoolID)
 );
 
-Create Table Student(
-StudentID int not null auto_increment,
-MemberID int not null,
-Primary Key (StudentID),
-foreign key (MemberID) references Members(MemberID) on delete cascade on update cascade
-);
-
 Create Table Sections(
 SectionID int not null auto_increment,
 SectionName varchar(50) not null,
+SchoolID int not null,
 StudentID int not null,
 TeacherID int not null,
 Primary key (SectionID),
 foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade,
+foreign key (SchoolID) references School(SchoolID) on delete cascade on update cascade,
 foreign key (TeacherID) references Teacher(TeacherID) on delete cascade on update cascade
 );
 

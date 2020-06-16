@@ -49,52 +49,37 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-header card-header-primary">
-                                            <h4 class="card-title" style='text-align:center'>Create Account</h4>
+                                            <h4 class="card-title" style='text-align:center'>Create Admin Account</h4>
                                             <p class="card-category" style='text-align:center'>Complete your registration</p>
                                         </div>
                                         <br>
                                         <div class="card-body">
                                             <form action="../../ADMIN_PROCESSES/signUpProcess.php">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="bmd-label-floating">First Name</label>
                                                             <input type="text" name="FirstName" class="form-control" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="bmd-label-floating">Middle Name</label>
                                                             <input type="text" name="MiddleName" class="form-control" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">Last Name</label>
-                                                            <input type="text" name="LastName" class="form-control" required>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="bmd-label-floating">Suffix (optional)</label>
                                                             <input type="text" name="Suffix" class="form-control">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <p>Birth Date</p>
-                                                            <input type="date" name="BirthDate"value="yyyy-mm-dd" class="form-control" placeholder="Birth Date" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">Gender</label><br>
-                                                            <select class="dropdown-header border-#000000" style="background-color:#FAFAFA"  name="Gender" required>
-                                                                <option>MALE</option>
-                                                                <option>FEMALE</option>
-                                                            </select>
+                                                            <label class="bmd-label-floating">Last Name</label>
+                                                            <input type="text" name="LastName" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>

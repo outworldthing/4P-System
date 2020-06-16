@@ -220,14 +220,17 @@ The above copyright notice and this permission notice shall be included in all c
                                                         <input type="date" value="yyyy-mm-dd" name="BirthDate" class="form-control">
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-5">
+                                                <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="bmd-label-floating">Section Handled</label>
-                                                        <input type="text" name="Section" class="form-control" required>
+                                                        <label class="bmd-label-floating">Gender</label><br>
+                                                        <select class="dropdown-header border-#000000" style="background-color:#FAFAFA" name="Gender" required>
+                                                            <option>MALE</option>
+                                                            <option>FEMALE</option>
+                                                        </select>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-md-5">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">School</label>
