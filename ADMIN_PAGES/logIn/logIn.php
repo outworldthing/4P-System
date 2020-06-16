@@ -33,32 +33,39 @@
                                         <h4>Sign in  to your Account</h4>
                                     </div>
                                 </div>
-                                <form>
+                                <form action="../adminPortal.php" method="POST">
                                     <div class="row">       
                                         <div class="col">
                                             <div style='text-align:center'>
                                                 <label class="bmd-label-floating">Username</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="loginUsername" class="form-control" required>
                                             </div>
                                             <br>
-
                                             <div style='text-align:center'>
                                                 <label class="bmd-label-floating">Password</label>
-                                                <input type="text" class="form-control">
+                                                <input type="password" name="loginPassword" class="form-control" required>
                                             </div>
-
                                             <br>
-
                                             <div style='text-align:center'>
                                                 <label class="bmd-label-floating">Confirm Password</label>
-                                                <input type="text" class="form-control">
+                                                <input type="password" class="form-control" required>
                                             </div>
                                             <br>
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Log in</button>
                                 </form>
-                                <button type="submit" class="btn btn-primary pull-right" stlye='width:50%'>Log in</button>
-                                <div class="clearfix"></div>
+                                <br>
+                                <style>
+                                    a{text-align:center;}
+                                </style>
+                                <a href="../signUp/signUp.php" >No Account yet? Create one here!</a>
+                                <br>
+                                <form action="../../index.php">
+                                    <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Go Back to Index Page</button>
+                                </form>
+                                <div class="clearfix">
+                                </div>
                             </div>
                         </div>
                     </div>
