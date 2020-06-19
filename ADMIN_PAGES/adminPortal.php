@@ -7,10 +7,9 @@
     include '../BACKEND_FILES/ADMIN.php';
     $ADMIN = new ADMIN();
     $condition = $ADMIN->ConfirmAdminUsernamePassword($username, $password);
-    if ($condition == TRUE) {
+    if ($condition == true) {
         $ADMIN->DeleteFamilyOver7years();
-        $ADMIN->DeleteStudentsOver18();
-        ?>
+        $ADMIN->DeleteStudentsOver18(); ?>
         <head>
             <title>4ps | Admin Portal</title>
             <!-- Required meta tags -->
@@ -119,13 +118,13 @@
                     </div>
                 </div>
                 <?php
-            } else {
-                echo '<center><b>Log in Failed, Check Username and Password</b>';
-                echo '<form action = "logIn/login.php" method="POST">'
+    } else {
+        echo '<center><b>Log in Failed, Check Username and Password</b>';
+        echo '<form action = "logIn/login.php" method="POST">'
                 . '<br>'
                 . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
                 . '</form></center>';
-            }
+    }
             ?>
         </div>
 

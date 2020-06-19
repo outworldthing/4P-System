@@ -18,12 +18,12 @@
         <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
     </head>
     <body class="">
-        <div class="wrapper ">
-            <div class="main-panel">
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="col-md-8">
-                            <div class="card">
+        <div class="main" style="margin-top: 6rem;">
+            <div class="content ">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5 ">
+                            <div class="card p-3">
                                 <div class="card card-profile">
                                     <div class="card-header card-header-primary">
                                         <div class="card-avatar"> 					
@@ -34,26 +34,21 @@
                                     </div>
                                 </div>
                                 <form action="../adminPortal.php" method="POST">
-                                    <div class="row">       
-                                        <div class="col">
-                                            <div style='text-align:center'>
+                                    <div class="row justify-content-center">       
+                                        <div class="col-8">
+                                            <div style="text-align:center">
                                                 <label class="bmd-label-floating">Username</label>
-                                                <input type="text" name="loginUsername" class="form-control" required>
+                                                <input type="text" name="loginUsername" class="form-input form-control" required>
                                             </div>
                                             <br>
-                                            <div style='text-align:center'>
+                                            <div style="text-align:center">
                                                 <label class="bmd-label-floating">Password</label>
-                                                <input type="password" name="loginPassword" class="form-control" required>
+                                                <input type="password" name="loginPassword" class="form-input form-control" required>
                                             </div>
                                             <br>
-                                            <div style='text-align:center'>
-                                                <label class="bmd-label-floating">Confirm Password</label>
-                                                <input type="password" class="form-control" required>
-                                            </div>
-                                            <br>
-                                        </div>
+                                        </div>                                       
+                                    <button type="submit" class="btn btn-primary pull-right" style='width:75%'>Log in</button>
                                     </div>
-                                    <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Log in</button>
                                 </form>
                                 <br>
                                 <style>
@@ -70,10 +65,10 @@
                         </div>
                     </div>
                 </div>
-                <footer class="footer">
-
-                </footer>
             </div>
+            <footer class="footer">
+
+            </footer>
         </div>
         <!--   Core JS Files   -->
         <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>

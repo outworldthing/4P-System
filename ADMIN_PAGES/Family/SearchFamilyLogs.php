@@ -30,14 +30,14 @@
             <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
                 <!--
                   Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-          
+
                   Tip 2: you can also add an image using data-image tag
                 -->
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    <span class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
                         Welcome Admin
-                    </a></div>
+                    </span></div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav">
@@ -151,12 +151,12 @@
                                         </a>
                                     </div>
                                     <div class="card-body">
-                                        <h4 class="card-title">Search Family Head</h4>     
+                                        <h4 class="card-title">Search Family Head</h4>
                                         <br>
                                         <form action="FamilyLogs.php" method="POST">
                                             <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                                             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                            <div class="row">       
+                                            <div class="row">
                                                 <div class="col">
                                                     <div style='text-align:center'>
                                                         <label class="bmd-label-floating">First Name</label>

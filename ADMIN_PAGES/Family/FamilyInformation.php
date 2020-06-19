@@ -17,8 +17,7 @@
             $male = " selected=\"selected\" ";
         } else {
             $female = " selected=\"selected\" ";
-        }
-        ?>
+        } ?>
         <head>
             <meta charset="utf-8" />
             <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
@@ -42,7 +41,7 @@
                 <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
                     <!--
                       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-              
+
                       Tip 2: you can also add an image using data-image tag
                     -->
                     <div class="logo">
@@ -214,7 +213,8 @@
                                                     <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>
                                                     <div class="clearfix"></div>
                                                 </form>
-                                            <?php } ?>
+                                            <?php
+    } ?>
                                         </div>
                                     </div>
                                 </div>

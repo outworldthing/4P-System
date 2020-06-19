@@ -14,7 +14,7 @@ and open the template in the editor.
         $username = htmlspecialchars($_REQUEST['loginUsername']);
         $password = htmlspecialchars($_REQUEST['loginPassword']);
         $Region = htmlspecialchars($_REQUEST['Region']);
-        $Municipality = htmlspecialchars($_REQUST['Municipality']);
+        $Municipality = htmlspecialchars($_REQUEST['Municipality']);
         $Province = htmlspecialchars($_REQUEST['Province']);
         $Barangay = htmlspecialchars($_REQUEST['Barangay']);
         $Street = htmlspecialchars($_REQUEST['Street']);

@@ -21,10 +21,10 @@
         <?php
         $username = htmlspecialchars($_REQUEST['loginUsername']);
         $password = htmlspecialchars($_REQUEST['loginPassword']);
-        
+
         echo $username.'<br>';
         echo $password.'<br>';
-        
+
         include '../BACKEND_FILES/CLIENT.php';
         $CLIENT = new CLIENT();
         if ($CLIENT->ConfirmUsernamePassword($username, $password) == TRUE) {

@@ -41,14 +41,14 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
                 <!--
                   Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-          
+
                   Tip 2: you can also add an image using data-image tag
                 -->
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    <span class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
                         Welcome Admin
-                    </a></div>
+                    </span></div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav">
@@ -178,11 +178,11 @@ The above copyright notice and this permission notice shall be included in all c
                                         </a>
                                     </div>
                                     <div class="card-body">
-                                        <h4 class="card-title">Health Benefit</h4>               
+                                        <h4 class="card-title">Health Benefit</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-8">  
+                            <div class="col-md-8">
                                 <div class="card">
                                     <div class="card-header card-header-primary">
                                         <h4 class="card-title">Issuance of Health Benefit</h4>

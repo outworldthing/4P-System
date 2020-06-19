@@ -62,7 +62,7 @@
                     </div>
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
-                            <div class="form-group text-center">
+                            <div class="form-group text-center pb-5">
                                 <p class="lead">Not a member yet? <a class="lead text-info" href="clientsignup.php">Register Now!</a></p>
                                 <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Login</button>
                                 </form>
