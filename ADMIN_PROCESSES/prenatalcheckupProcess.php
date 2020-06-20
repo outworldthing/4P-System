@@ -21,7 +21,7 @@ and open the template in the editor.
         $DoctorMiddleName = htmlspecialchars($_REQUEST['DoctorMiddleName']);
         $DoctorLastName = htmlspecialchars($_REQUEST['DoctorLastName']);
         $DoctorSuffix = htmlspecialchars($_REQUEST['DoctorSuffix']);
-        $DateOfCheckup = htmlspecialchars($_REQUEST['DateofCheckup']);
+        $DateOfCheckup = htmlspecialchars($_REQUEST['DateOfCheckup']);
         $Hospital = htmlspecialchars($_REQUEST['Hospital']);
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();

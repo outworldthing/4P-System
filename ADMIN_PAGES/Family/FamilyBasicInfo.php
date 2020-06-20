@@ -204,19 +204,19 @@
                                                         <?php while ($rows = mysqli_fetch_assoc($result)) { ?>
                                                             <tr>
                                                                 <td>
-                                                                    <?php $rows['FirstName']; ?>
+                                                                    <?php echo $rows['FirstName']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['MiddleName']; ?>
+                                                                    <?php echo $rows['MiddleName']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['LastName']; ?>
+                                                                    <?php echo $rows['LastName']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Suffix']; ?>
+                                                                    <?php echo $rows['Suffix']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['BirthDate']; ?>
+                                                                    <?php echo $rows['BirthDate']; ?>
                                                                 </td>
                                                                 <td>
                                                                     <?php
@@ -228,28 +228,28 @@
                                                                     ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['DateOfRegistry']; ?>
+                                                                    <?php echo $rows['DateOfRegistry']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Region']; ?>
+                                                                    <?php echo $rows['Region']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Municipality']; ?>
+                                                                    <?php echo $rows['Municipality']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Province']; ?>
+                                                                    <?php echo $rows['Province']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Barangay']; ?>
+                                                                    <?php echo $rows['Barangay']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Street']; ?>
+                                                                    <?php echo $rows['Street']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['HouseNo']; ?>
+                                                                    <?php echo $rows['HouseNo']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php $rows['Subdivision']; ?>
+                                                                    <?php echo $rows['Subdivision']; ?>
                                                                 </td>
                                                             </tr>
                                                         <?php } ?>

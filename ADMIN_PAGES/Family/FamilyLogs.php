@@ -167,13 +167,13 @@
                                                         <?php while($rows= mysqli_fetch_assoc($result)){?>
                                                         <tr>
                                                             <td>
-                                                                <?php $rows['UpdateLogID'];?>
+                                                                <?php echo $rows['UpdateLogID'];?>
                                                             </td>
                                                             <td>
-                                                                <?php $rows['DateOfPublish'];?>
+                                                                <?php echo $rows['DateOfPublish'];?>
                                                             </td>
                                                             <td>
-                                                                <?php $rows['UpdateLogDetails'];?>
+                                                                <?php echo $rows['UpdateLogDetails'];?>
                                                             </td>
                                                         </tr>
                                                         <?php }?>

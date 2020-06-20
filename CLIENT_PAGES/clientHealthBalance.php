@@ -55,7 +55,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="healthtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>" disabled>
+                                            <input type="text" required  class="form-input form-control p-3" name="healthtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>">
                                         </div>
                                     </div>
                                 </div>

@@ -21,21 +21,32 @@ and open the template in the editor.
         include '../BACKEND_FILES/CLIENT.php';
         $CLIENT = new CLIENT();
 
-        $MemberID = $CLIENT->returnAccountMemberID($username, $password);
+        $MemberID = $CLIENT->returnAccountMemberIDCred($FName, $MName, $LName, $Suffix);
         if ($MemberID > 0) {
-            if ($CLIENT->checkUsernameExist($username) == TRUE) {
-                if ($CLIENT->createClientAccount($MemberID, $username, $password) == TRUE) {
-                    echo '<center>Client Account Succesfully Created! Proceed to Log in';
-                    echo ("You will be redirected in 3 seconds</center>");
+            if ($CLIENT->accountExists($FName, $MName, $LName, $Suffix) == FALSE) {
+                if ($CLIENT->checkUsernameExist($username) == FALSE) {
+                    if ($CLIENT->createClientAccount($MemberID, $username, $password) == TRUE) {
+                        echo '<center>Client Account Succesfully Created! Proceed to Log in';
+                        echo ("You will be redirected in 3 seconds</center>");
+                        ?>
+                        <script>
+                            setTimeout(function () {
+                                window.location.href = "../CLIENT_PAGES/clientLogin.php";
+                            }, 3000);
+                        </script><?php
+                    }
+                } else {
+                    echo '<center>Username is already taken, try another Username</center>';
+                    echo ("<center>You will be redirected in 3 seconds</center>");
                     ?>
                     <script>
                         setTimeout(function () {
-                            window.location.href = "../CLIENT_PAGES/clientLogin.php";
+                            window.location.href = "../CLIENT_PAGES/clientSignup.php";
                         }, 3000);
                     </script><?php
                 }
             } else {
-                echo '<center>Username is already taken, try another Username</center>';
+                echo '<center>Person already has an account</center>';
                 echo ("<center>You will be redirected in 3 seconds</center>");
                 ?>
                 <script>

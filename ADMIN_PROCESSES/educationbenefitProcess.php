@@ -26,7 +26,7 @@ and open the template in the editor.
             if ($StudentID >= 0) {
                 if ($ADMIN->IssueEducationBenefit($StudentID) == TRUE) {
                     echo 'Issuance of Education Benefit Successful';
-                    $Message = "Education Benefit Issued to:'".$FirstName."' '".$MiddleName."' '".$LastName."' '".$Suffix."' ";
+                    $Message = "Education Benefit Issued to:".$FirstName." ".$MiddleName." ".$LastName." ".$Suffix." ";
                     echo $Message;
                     $ADMIN->UpdateLog($MemberID, $Message);
                 } else {

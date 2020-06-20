@@ -14,18 +14,19 @@ and open the template in the editor.
         $username = htmlspecialchars($_REQUEST['loginUsername']);
         $password = htmlspecialchars($_REQUEST['loginPassword']);
         $Region = htmlspecialchars($_REQUEST['Region']);
-        $Municipality = htmlspecialchars($_REQUST['Municipality']);
+        $Municipality = htmlspecialchars($_REQUEST['Municipality']);
         $Province = htmlspecialchars($_REQUEST['Province']);
         $Barangay = htmlspecialchars($_REQUEST['Barangay']);
         $Street = htmlspecialchars($_REQUEST['Street']);
         $HouseNo = htmlspecialchars($_REQUEST['HouseNo']);
         $Subdivision = htmlspecialchars($_REQUEST['Subdivision']);
+        $LastName = htmlspecialchars($_REQUEST['LastName0']);
         $Gender = "";
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         $FamilyID = $ADMIN->enrollFamily($LastName, $Region, $Municipality, $Province, $Barangay, $Street, $HouseNo, $Subdivision);
         $ADMIN->enrollFamilyAccount($FamilyID);
-        for ($index = 0; $index < 5; $index++) {
+        for ($i = 0; $i < 5; $i++) {
             $FirstName = htmlspecialchars($_REQUEST['FirstName' . $i]);
             $MiddleName = htmlspecialchars($_REQUEST['MiddleName' . $i]);
             $LastName = htmlspecialchars($_REQUEST['LastName' . $i]);

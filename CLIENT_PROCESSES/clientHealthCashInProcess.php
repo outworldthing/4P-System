@@ -15,7 +15,7 @@ and open the template in the editor.
         $password = htmlspecialchars($_REQUEST['loginPassword']);
         $MemberID = htmlspecialchars($_REQUEST['MemberID']);
         $FamilyID = htmlspecialchars($_REQUEST['FamilyID']);
-        $cash_in = htmlspecialchars($_REQUEST['healthtcashinbalance']);
+        $cash_in = htmlspecialchars($_REQUEST['healthcashinbalance']);
         $balance = htmlspecialchars($_REQUEST['healthtotalbalance']);
 
         include '../BACKEND_FILES/CLIENT.php';
@@ -26,7 +26,7 @@ and open the template in the editor.
         if ($FamilyID >= 0) {
             if ($CLIENT->deductHealthBalance($FamilyID, $cash_in) == TRUE) {
                 echo 'DEDUCTION SUCCESSFUL';
-                $Message = "Family Deducted '".$cash_in."' Pesos from their Family Account ";
+                $Message = "Family Deducted ".$cash_in." Pesos from their Family Account ";
                 echo $Message;
                 $ADMIN->UpdateFamilyLog($FamilyID, $Message);
             } else {

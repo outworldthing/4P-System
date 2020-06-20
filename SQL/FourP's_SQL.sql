@@ -12,7 +12,6 @@ Barangay varchar(50) not null,
 Street varchar(50) not null,
 HouseNo varchar(50),
 Subdivision varchar(50),
-HealthGrant int default 750,
 primary key (FamilyID)
 );
 
@@ -63,7 +62,7 @@ Create Table EducationAccount(
 EducationID int not null auto_increment ,
 StudentID int not null,
 EducationBank int not null,
-EducatonBenefitReceivedDate date,
+EducationBenefitReceivedDate date,
 Primary Key (EducationID),
 foreign key (StudentID) references Student(StudentID) on delete cascade on update cascade
 );

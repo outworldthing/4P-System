@@ -27,15 +27,19 @@ and open the template in the editor.
         }
 
 
-        include '../../BACKEND_FILES/ADMIN.php';
+        include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
 
         $SchoolID = $ADMIN->getSchoolID($School);
         if ($SchoolID >= 0) {
-            if ($ADMIN->enrollTeacher($SchoolID, $FirstName, $MiddleName, $LastName, $Suffix, $BirthDate, $Gender) == TRUE) {
-                echo 'TEACHER ENROLLED';
-            } else {
-                echo 'ERROR IN ENROLLING TEACHER';
+            if ($ADMIN->checkTeacherExists($FirstName, $MiddleName, $LastName, $Suffix) == FALSE) {
+                if ($ADMIN->enrollTeacher($SchoolID, $FirstName, $MiddleName, $LastName, $Suffix, $BirthDate, $Gender) == TRUE) {
+                    echo 'TEACHER ENROLLED';
+                } else {
+                    echo 'ERROR IN ENROLLING TEACHER';
+                }
+            }else{
+                echo 'Teacher already enrolled';
             }
         } else {
             echo 'NO SCHOOL FOUND';

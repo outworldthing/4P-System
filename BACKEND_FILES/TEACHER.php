@@ -40,17 +40,26 @@ class TEACHER {
         }
         RETURN FALSE;
     }
-    
+
     function checkUsernameExists($username) {
         try {
-            $commands="Select * from Teacher where TeacherUsername='".$username."'";
-            $result= mysqli_query($this->conn, $commands);
-            if(mysqli_num_rows($result)>0){
-                return TRUE;
+            $commands = "Select TeacherUsername from Teacher where TeacherUsername='" . $username . "'";
+            $result = mysqli_query($this->conn, $commands);
+            if (mysqli_num_rows($result) > 0) {
+                while ($rows = mysqli_fetch_assoc($result)) {
+                    if ($rows['TeacherUsername'] == $username) {
+                        echo $rows['TeacherUsername'];
+                        return TRUE;
+                    } else if ($rows['TeacherUsername'] == null) {
+                        echo "No Matches";
+                        return FALSE;
+                    }
+                }
             }
         } catch (Exception $exc) {
             echo "No Usernames Found";
         }
+        echo "No Usernames Found, clear for sign-up <br>";
         return FALSE;
     }
 
@@ -67,10 +76,10 @@ class TEACHER {
         return FALSE;
     }
 
-    function SignUpTeacherAccount($TeacherID,$username, $password) {
+    function SignUpTeacherAccount($TeacherID, $username, $password) {
         try {
-            $command = "Insert into Teacher(TeacherUsername,TeacherPassword) "
-                    . "Values('" . $username . "','" . $password . "') where TeacherID='".$TeacherID."'";
+            $command ="Update Teacher SET TeacherUsername='".$username."' , TeacherPassword='".$password."' "
+                    . "where TeacherID='" . $TeacherID . "' ";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 return TRUE;
@@ -78,6 +87,7 @@ class TEACHER {
         } catch (Exception $exc) {
             echo "Failed in inserting values to database";
         }
+        echo "Failed in inserting values to database";
         return FALSE;
     }
 
@@ -146,11 +156,11 @@ class TEACHER {
         }
         RETURN -1;
     }
-    
-    function getTeacherIDUserPass($username,$password){
+
+    function getTeacherIDUserPass($username, $password) {
         try {
-            $commands = "Select TeacherID from Teacher where TeacherUsername= '".$username."' "
-                    . "AND TeacherPassword='".$password."'";
+            $commands = "Select TeacherID from Teacher where TeacherUsername= '" . $username . "' "
+                    . "AND TeacherPassword='" . $password . "'";
             $result = mysqli_query($this->conn, $commands);
             if (mysqli_num_rows($result) > 0) {
                 while ($rows = mysqli_fetch_assoc($result)) {

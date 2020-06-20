@@ -123,18 +123,22 @@ class ADMIN {
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 echo 'FAMILY BANK ACCOUNT CREATED';
+                return TRUE;
             }
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
         echo 'FAMILY BANK ACCOUNT NOT ENROLLED! ERROR ';
+        return FALSE;
     }
 
     function checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix) {
         try {
-            $command = "Select * from Members where FirstName='" . $FirstName . "' "
-                    . "AND MiddleName='" . $MiddleName . "' AND LastName='" . $LastName . "' "
-                    . "AND Suffix='" . $Suffix . "'";
+            $command = "Select MemberID from Members where "
+                    . "FirstName='" . $FirstName . "' "
+                    . "AND MiddleName='" . $MiddleName . "' "
+                    . "AND LastName='" . $LastName . "' "
+                    . "AND Suffix='" . $Suffix . "' ";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 while ($rows = mysqli_fetch_assoc($result)) {
@@ -210,14 +214,12 @@ class ADMIN {
 
     function getTeacherID($TeacherFirstName, $TeacherMiddleName, $TeacherLastName, $TeacherSuffix) {
         try {
-            $command = "Select TeacherID from Teacher where "
-                    . "TeacherFirstName='" . $TeacherFirstName . "' "
-                    . "AND TeacherMiddleName='" . $TeacherMiddleName . "' "
-                    . "AND TeacherLastName='" . $TeacherLastName . "' "
-                    . "AND TeacherSuffix='" . $TeacherSuffix . "' ";
-            $result = mysqli_query($this->comm, $command);
+            $command = $command="Select TeacherID from Teacher where TeacherFname='".$TeacherFirstName."' AND TeacherMname='".$TeacherMiddleName."' AND TeacherLname='".$TeacherLastName."' AND TeacherSuffix='".$TeacherSuffix."' ";
+            $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
+                echo 'TEACHER FOUND';
                 while ($rows = mysqli_fetch_assoc($result)) {
+                    echo $rows['TeacherID'];
                     return $rows['TeacherID'];
                 }
             }
@@ -229,7 +231,7 @@ class ADMIN {
 
     function enrollSection($SchoolID, $TeacherID, $StudentID, $SectionName) {
         try {
-            $command = "Insert Section(SectionName,SchoolID,TeacherID,StudentID) "
+            $command = "Insert Sections(SectionName,SchoolID,TeacherID,StudentID) "
                     . "VALUES('" . $SectionName . "','" . $SchoolID . "','" . $TeacherID . "','" . $StudentID . "')";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
@@ -321,7 +323,7 @@ class ADMIN {
     function enrollTeacher($SchoolID, $FirstName, $MiddleName, $LastName, $Suffix, $BirthDate, $Gender) {
         try {
             $command = "Insert into Teacher(SchoolID,TeacherFName,TeacherMName,TeacherLName,TeacherSuffix,TeacherGender,TeacherBirthDate) "
-                    . "VALUES('" . $SchoolID . "', '" . $FirstName . "', '" . $MiddleName . "', '" . $LastName . "', '" . $Suffix . "', '" . $BirthDate . "', '" . $Gender . "')";
+                    . "VALUES('" . $SchoolID . "', '" . $FirstName . "', '" . $MiddleName . "', '" . $LastName . "', '" . $Suffix . "', '" . $Gender . "', '" . $BirthDate . "')";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 return TRUE;
@@ -353,8 +355,8 @@ class ADMIN {
             $commands = "Update Members SET FirstName='" . $FirstName . "'"
                     . ", MiddleName='" . $MiddleName . "'"
                     . ", LastName='" . $LastName . "'"
-                    . ", Suffix='" . $Suffix . "'"
-                    . "where FamilyID='" . $FamilyID . "' AND MemberID='" . $MemberID . "'";
+                    . ", Suffix='" . $Suffix . "' "
+                    . "where MemberID='" . $MemberID . "'";
             $result = mysqli_query($this->conn, $commands);
             if ($result == TRUE) {
                 return TRUE;
@@ -367,18 +369,17 @@ class ADMIN {
 
     function getFamilyCredentials($FirstName, $MiddleName, $LastName, $Suffix) {
         try {
-            $command = "Select Members.FirstName,Members.MiddleName,Members.LastName,Members.Suffix,"
-                    . "Members.Gender,Members.BirthDate,Members.DateOfRegistry,Family.Region,"
-                    . "Family.Municipality,Family.Province,Family.Barangay,Family.Street,"
-                    . "Family.HouseNo,Family.Subdivision "
+            $command = "Select Members.FirstName,Members.MiddleName,Members.LastName,Members.Suffix,Members.Gender,Members.BirthDate,Members.DateOfRegistry,Family.Region,Family.Municipality,Family.Province,Family.Barangay,Family.Street,Family.HouseNo,Family.Subdivision "
                     . "from (Family inner join Members on Family.FamilyID=Members.FamilyID) "
-                    . "where Family.FamilyID="
+                    . "where Family.FamilyID = "
                     . "(Select Family.FamilyID from "
                     . "(Family inner join Members on Family.FamilyID=Members.FamilyID) "
-                    . "where Members.FirstName='" . $FirstName . "' AND Members.MiddleName='" . $MiddleName . "' "
-                    . "AND Members.LastName='" . $LastName . "' AND Members.Suffix='" . $Suffix . "') ";
+                    . "where Members.FirstName= '" . $FirstName . "' "
+                    . "AND Members.MiddleName='" . $MiddleName . "' "
+                    . "AND Members.LastName='" . $LastName . "' "
+                    . "AND Members.Suffix='" . $Suffix . "') ";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($result) >= 0) {
                 return $result;
             }
         } catch (Exception $exc) {
@@ -539,7 +540,6 @@ class ADMIN {
                     . "'" . $Vaccine . "','" . $Diagnosis . "','" . $DateOfCheckup . "') ";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
-                echo 'CHECK-UP/VACCINE ISSUED';
                 return TRUE;
             }
         } catch (Exception $exc) {
@@ -567,7 +567,7 @@ class ADMIN {
 
     function getFamilyID($FirstName, $MiddleName, $LastName, $Suffix) {
         try {
-            $command = "Select FamilyID from Members where "
+            $command = "Select distinct FamilyID from Members where "
                     . "FirstName='" . $FirstName . "' AND MiddleName='" . $MiddleName . "' "
                     . "AND LastName='" . $LastName . "' AND Suffix='" . $Suffix . "' ";
             $result = mysqli_query($this->conn, $command);
@@ -599,8 +599,7 @@ class ADMIN {
 
     function checkDayCareElem($StudentID) {
         try {
-            $command = "Select Student.StudentID from (Student inner join DayCareElem on "
-                    . "Student.StudentID=DayCareElem.StudentID) where Student.StudentID='" . $StudentID . "' ";
+            $command = "Select StudentID from DayCareElem where StudentID='" . $StudentID . "' ";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 return TRUE;
@@ -613,10 +612,10 @@ class ADMIN {
 
     function checkJHS($StudentID) {
         try {
-            $command = "Select Student.StudentID from (JHS inner join Student on JHS.StudentID=Student.StudentID) "
-                    . "where Student.StudentID='" . $StudentID . "' ";
+            $command = "Select StudentID from JHS where StudentID='" . $StudentID . "' ";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
+                echo 'hello';
                 return TRUE;
             }
         } catch (Exception $exc) {
@@ -627,10 +626,10 @@ class ADMIN {
 
     function checkSHS($StudentID) {
         try {
-            $command = "Select Student.StudentID from (SHS inner join Student on SHS.StudentID=Student.StudentID) "
-                    . "where Student.StudentID='" . $StudentID . "' ";
+            $command = "Select StudentID from SHS where StudentID='" . $StudentID . "' ";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
+                echo 'hello';
                 return TRUE;
             }
         } catch (Exception $exc) {
@@ -644,8 +643,9 @@ class ADMIN {
             if ($this->checkDayCareElem($StudentID) == TRUE) {
                 $command = "Update EducationAccount SET "
                         . "EducationBank="
-                        . "((Select EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
-                        . "(Select Subsidy from DayCareElem)), EducationBenefitReceivedDate=curdate() "
+                        . "( (Select distinct EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
+                        . "(Select Subsidy from DayCareElem) ), "
+                        . "EducationBenefitReceivedDate=curdate() "
                         . "where StudentID='" . $StudentID . "' ";
                 $result = mysqli_query($this->conn, $command);
                 if ($result == TRUE) {
@@ -654,7 +654,7 @@ class ADMIN {
             } else if ($this->checkJHS($StudentID) == TRUE) {
                 $command = "Update EducationAccount SET "
                         . "EducationBank="
-                        . "((Select EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
+                        . "((Select distinct EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
                         . "(Select Subsidy from JHS)), EducationBenefitReceivedDate=curdate() "
                         . "where StudentID='" . $StudentID . "' ";
                 $result = mysqli_query($this->conn, $command);
@@ -664,7 +664,7 @@ class ADMIN {
             } else if ($this->checkSHS($StudentID) == TRUE) {
                 $command = "Update EducationAccount SET "
                         . "EducationBank="
-                        . "((Select EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
+                        . "((Select distinct EducationBank from EducationAccount where StudentID='" . $StudentID . "')+"
                         . "(Select Subsidy from SHS)), EducationBenefitReceivedDate=curdate() "
                         . "where StudentID='" . $StudentID . "' ";
                 $result = mysqli_query($this->conn, $command);
@@ -681,9 +681,9 @@ class ADMIN {
     function IssueHealthBenefit($FamilyID) {
         try {
             $command = "Update FamilyAccount SET "
-                    . "HealthBank=((Select HealthBank from FamilyAccount where FamilyID='" . $FamilyID . "')+"
-                    . "(Select Subsidy from FamilyAccount)), HealthBenefitReceivedDate=curdate() "
-                    . "where FamilyID='" . $FamilyID . "' ";
+                    . "HealthBank = ( (Select HealthBank from FamilyAccount where FamilyID = " . $FamilyID . " ) + (Select distinct Subsidy from FamilyAccount) ), HealthBenefitReceivedDate = curdate() "
+                    . "where FamilyID=" . $FamilyID . " ";
+            echo $command.'<br>';
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 return TRUE;
@@ -697,7 +697,7 @@ class ADMIN {
     function UpdateLog($MemberID, $Message) {
         try {
             $command = "Insert Into UpdateLog(MemberID,DateOfPublish,UpdateLogDetails) "
-                    . "VALUES('" . $MemberID . "',curdate(),'" . $Message . "')";
+                    . "VALUES('" . $MemberID . "', curdate() ,'" . $Message . "')";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 echo 'Log Updated';
@@ -712,14 +712,14 @@ class ADMIN {
 
     function UpdateFamilyLog($FamilyID, $Message) {
         try {
-            $command = "Select MemberID from Members where FamilyID='" . $FamilyID . "'";
+            $command = "Select MemberID from Members where FamilyID='" . $FamilyID . "' ";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 while ($rows = mysqli_fetch_assoc($result)) {
                     $command = "Insert Into UpdateLog(MemberID,DateOfPublish,UpdateLogDetails) "
                             . "VALUES('" . $rows['MemberID'] . "',curdate(),'" . $Message . "')";
-                    $result = mysqli_query($this->conn, $command);
-                    if ($result == TRUE) {
+                    $result1 = mysqli_query($this->conn, $command);
+                    if ($result1 == TRUE) {
                         echo 'Log Updated';
                     }
                 }
@@ -734,8 +734,8 @@ class ADMIN {
 
     function DeleteStudentsOver18() {
         try {
-            $command = "Delete From (Student inner join Members on Student.MemberID=Members.MemberID)"
-                    . " Where FLOOR(DATEDIFF(Members.BirthDate,curdate())/365)>18";
+            $command = "Delete Student From (Student inner join Members on Student.MemberID=Members.MemberID)"
+                    . " where FLOOR(DATEDIFF(Members.BirthDate,curdate())/365)>18";
             $result = mysqli_query($this->conn, $command);
             if ($result == TRUE) {
                 echo 'Delete Students Over 18 Success';
@@ -760,6 +760,32 @@ class ADMIN {
             echo $exc->getTraceAsString();
         }
         echo 'Delete Unqualified Families Failed';
+        return FALSE;
+    }
+
+    function checkTeacherExists($FirstName, $MiddleName, $LastName, $Suffix) {
+        try {
+            $command="Select * from Teacher where TeacherFname='".$FirstName."' AND TeacherMname='".$MiddleName."' AND TeacherLname='".$LastName."' AND TeacherSuffix='".$Suffix."' ";
+            $result= mysqli_query($this->conn, $command);
+            if(mysqli_num_rows($result) > 0){
+                return TRUE;
+            }
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+        return FALSE;
+    }
+    
+    function checkPregnantExists($MemberID){
+        try {
+            $command="Select PregnantID from Pregnant where MemberID='".$MemberID."' ";
+            $result= mysqli_query($this->conn, $command);
+            if(mysqli_num_rows($result) > 0){
+                return TRUE;
+            }
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
         return FALSE;
     }
 

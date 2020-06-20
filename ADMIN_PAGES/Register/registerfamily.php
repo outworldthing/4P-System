@@ -203,7 +203,7 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName0" class="form-control" required>
+                                                        <input type="text" name="LastName0" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -254,7 +254,7 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName1" class="form-control" required>
+                                                        <input type="text" name="LastName1" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -304,7 +304,7 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName2" class="form-control">
+                                                        <input type="text" name="LastName2" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -354,7 +354,7 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName3" class="form-control">
+                                                        <input type="text" name="LastName3" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -404,7 +404,7 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName4" class="form-control">
+                                                        <input type="text" name="LastName4" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
