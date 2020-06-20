@@ -40,7 +40,7 @@ and open the template in the editor.
             <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
             <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
-            <input type="text" name="GO BACK TO HEALTH BANK CASH IN" value="" />
+            <input type="submit" name="GO BACK TO HEALTH BANK CASH IN" value="" />
         </form>
     </body>
 </html>
