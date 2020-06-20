@@ -1,8 +1,18 @@
+<?php
+$username = htmlspecialchars($_REQUEST['loginUsername']);
+$password = htmlspecialchars($_REQUEST['loginPassword']);
+$TeacherID = htmlspecialchars($_REQUEST['TeacherID']);
+$SectionName = htmlspecialchars($_REQUEST['SectionName']);
+include '../BACKEND_FILES/TEACHER.php';
+$TEACHER = new TEACHER();
+
+$result = $TEACHER->getStudentsPerSection($TeacherID, $SectionName)
+?>
 <!doctype html>
 <html>
 
     <head>
-        <title>4ps | Family Session Venues</title>
+        <title>4ps | Handled Sections</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -20,14 +30,7 @@
     </head>
 
     <body>
-        <?php
-        $username = htmlspecialchars($_REQUEST['loginUsername']);
-        $password = htmlspecialchars($_REQUEST['loginPassword']);
-        $MemberID = htmlspecialchars($_REQUEST['MemberID']);
 
-        include '../BACKEND_FILES/CLIENT.php';
-        $CLIENT = new CLIENT();
-        ?>
         <nav class="navbar navbar-expand-lg bg-dark rounded-0">
             <div class="container-fluid">
                 <a class="navbar-brand" href="javascript:;">4PS</a>
@@ -40,27 +43,12 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="javascript:;">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">Cash In<div class="ripple-container"></div></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">Information<div class="ripple-container"></div></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Updates
-                                <div class="ripple-container"></div></a>
-                            <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item dropdown" href="javascript:;">Family Session Venue</a>
-                                <a class="dropdown-item dropdown" href="javascript:;">History Log</a>
-                            </div>
+                            <span class="navbar-text" href="javascript:;">Welcome Teacher<span class="sr-only">(current)</span></span>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a href="clientlogin.php" class="nav-link nav-item btn">Signout<div class="ripple-container"></div></a>
+                            <a href="teacherLogin.php" class="nav-link nav-item btn">Signout<div class="ripple-container"></div></a>
                         </li>
                     </ul>
                 </div>
@@ -70,49 +58,57 @@
         <div class="page-header header-filter page-bg">
         </div>
 
-        <div class="main main-raised mx-0 mb-3 pb-4 rounded-0" id="client-dataview">
+        <div class="main main-raised mx-0 mb-3 pb-4 rounded-0" style="margin-top: -10%;">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title text-center">
-                            <h1 class="title"><img src="..\DESIGN_EXTENSIONS\img\family.jpg">Family Session Venues</h1>
+                <form action="index.html" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title text-center">
+                                <h1 class="title">Handled Sections</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 table-responsive">
-                        <table class="table table-hover table-bordered dataviewTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col" style="text-align:center">Date of Session</th>
-                                    <th scope="col" style="text-align:center">Venue Place</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $result = $CLIENT->FamilySessionList($MemberID);
-                                if (mysqli_num_rows($result) > 0) {
-                                    while ($rows = mysqli_fetch_assoc($result)) {
-                                        ?>
-                                        <tr>
-                                            <th scope = "col" style = "text-align:center"><?php echo $rows['DateOfSession']; ?></th>
-                                            <th scope = "col" style = "text-align:center"><?php echo $rows['Venue']; ?></th>
-
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                        </div>
                     </div>
-                </div>
+                    <div class="row justify-content-center pb-5 mt-3">
+                        <div class="col-md-6 table-responsive">
+                            <table class="table table-hover table-bordered dataviewTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Middle Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Suffix</th>
+                                        <th scope="col">Total Absences</th>
+                                        <th scope="col">Total School Days</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($rows = mysqli_fetch_assoc($result)) {
+                                        echo'<tr>
+                                        <td>'.$rows['FirstName'].'</td>
+                                        <td>'.$rows['MiddleName'].'</td>
+                                        <td>'.$rows['LastName'].'</td>
+                                        <td>'.$rows['Suffix'].'</td>
+                                        <td>'.$rows['TotalNumberOfAbsents'].'</td>
+                                        <td>'.$rows['TotalNumberOfSchoolDays'].'</td>
+                                    </tr>';
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
                 <center>
-                    <form action="clientPortal.php" method="POST">
+                    <form action="teacherSelectSection.php.php" method="POST">
                         <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                         <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                        <input class="btn btn-primary stretched-link" type="submit" value="GO BACK TO CLIENT PORTAL" />
+                        <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
+                        <input class="btn btn-primary stretched-link" type="submit" value="GO BACK TO TEACHER PORTAL" />
                     </form>
                 </center>
             </div>

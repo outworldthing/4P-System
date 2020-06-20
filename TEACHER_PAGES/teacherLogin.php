@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
     <head>
         <title>4ps | Login</title>
         <!-- Required meta tags -->
@@ -16,19 +15,16 @@
         <!-- CSS -->
         <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
     </head>
-
     <body>
-
         <div class="page-header header-filter page-bg">
         </div>
-
         <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-login">
             <div class="container">
-                <form method="POST" action="clientPortal.php" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                <form action="teacherPortal.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <div class="row">
                         <div class="col-md-12 ml-auto mr-auto">
                             <div class="title text-center">
-                                <h1 class="title">Client Login</h1>
+                                <h1 class="title">Teacher Login</h1>
                             </div>
                         </div>
                     </div>
@@ -63,10 +59,10 @@
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
                             <div class="form-group text-center">
-                                <p class="lead">Not a member yet? <a class="lead text-info" href="clientsignup.php">Register Now!</a></p>
+                                <p class="lead">Not a member yet? <a class="lead text-info" href="teachersignup.php">Register Now!</a></p>
                                 <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Login</button>
                                 </form>
-                                <form action="../index.php">
+                                <form action="../../index.php">
                                     <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Go Back to Index Page</button>
                                 </form>
                             </div>

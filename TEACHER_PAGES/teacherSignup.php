@@ -16,26 +16,24 @@
         <!-- CSS -->
         <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
     </head>
-
     <body>
-
         <div class="page-header header-filter page-bg">
         </div>
 
-        <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-signup">
+        <div class="main main-raised mx-0 mb-3 rounded-0" id="client-signup">
             <div class="container">
-                <form action="../CLIENT_PROCESSES/clientSignupProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                <form action="../TEACHER_PROCESSES/teacherSignupProcess.php"class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <div class="row">
                         <div class="col-md-12 ml-auto mr-auto">
                             <div class="title text-center">
-                                <h1 class="title">Client Register</h1>
+                                <h1 class="title">Teacher Register</h1>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row justify-content-center">
-                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupFirstName">First Name</label>
                                         <div class="input-group-prepend">
@@ -46,7 +44,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupMiddleName">Middle Name</label>
                                         <div class="input-group-prepend">
@@ -63,9 +61,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row justify-content-center">
-                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label for="signupLastName">Last Name</label>
+                                        <label for="signupMiddleName">Last Name</label>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
                                                 <i class="material-icons">face</i>
@@ -74,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupSuffix">Suffix (if any)</label>
                                         <div class="input-group-prepend">
@@ -89,9 +87,41 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 col-md-12">
+                        <div class="col-md-12">
                             <div class="row justify-content-center">
-                                <div class="col-lg-10 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="signupLastName">Gender</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            <select name="signupGender" id="inputState" class="form-control">
+                                                <option value="" disabled selected hidden>Select...</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="signupContactNumber">Contact Number</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            <input type="text" class="form-input form-control p-3" name="signupContactNumber" id="signupContactNumber" placeholder="Enter Contact Number" pattern="^[0-9]+$" title="Please Use The Numbers 0-9">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="row justify-content-left">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupUsername">Username</label>
                                         <div class="input-group-prepend">
@@ -108,8 +138,8 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10 col-md-12 col-sm-12">
+                            <div class="row justify-content-left">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupPassword">Password</label>
                                         <div class="input-group-prepend">
@@ -126,8 +156,8 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10 col-md-12 col-sm-12">
+                            <div class="row justify-content-left">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for="signupConfirmPassword">Confirm Password</label>
                                         <div class="input-group-prepend">
@@ -145,7 +175,7 @@
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8">
                             <div class="form-group text-center">
-                                <p class="lead">Already a member? <a class="lead text-info" href="clientLogin.php">Login Here!</a></p>
+                                <p class="lead">Already a member? <a class="lead text-info" href="teacherLogin.php">Login Here!</a></p>
                                 <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Register</button>
                             </div>
                         </div>
@@ -153,7 +183,6 @@
                 </form>
             </div>
         </div>
-
         <!--   Core JS Files   -->
         <script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
         <script src="../DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>
@@ -172,5 +201,4 @@
         <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
         <script src="../DESIGN_EXTENSIONS/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
     </body>
-
 </html>
