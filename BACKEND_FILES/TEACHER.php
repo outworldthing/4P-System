@@ -175,7 +175,7 @@ class TEACHER {
 
     function getSections($TeacherID) {
         try {
-            $command = "Select SectionName from Sections where TeacherID='" . $TeacherID . "'";
+            $command = "Select distinct SectionName from Sections where TeacherID='" . $TeacherID . "'";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0) {
                 return $result;
@@ -189,7 +189,7 @@ class TEACHER {
     function getStudentsPerSection($TeacherID, $SectionName) {
         try {
             $command = "Select Members.FirstName,Members.Middlename,Members.LastName.Members.Suffix,"
-                    . "Attendance.TotalNumberOfSchoolDays,Attendace.TotalNumberOfAbsents"
+                    . "Attendance.TotalNumberOfSchoolDays,Attendance.TotalNumberOfAbsents"
                     . " from(Members inner join Student on Members.MemberID=Student.MemberID inner join Attendance"
                     . " on Attendance.StudentID=Student.StudentID "
                     . "inner join Sections on Student.StudentID=Sections.StudentID) where "
