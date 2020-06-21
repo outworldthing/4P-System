@@ -62,7 +62,7 @@
                                 <p class="lead">Not a member yet? <a class="lead text-info" href="teachersignup.php">Register Now!</a></p>
                                 <button type="submit" class="btn btn-info btn-block mt-4" id="signupSubmit">Login</button>
                                 </form>
-                                <form action="../../index.php">
+                                <form action="../index.php">
                                     <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Go Back to Index Page</button>
                                 </form>
                             </div>
