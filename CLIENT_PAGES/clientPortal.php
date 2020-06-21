@@ -21,15 +21,77 @@
         <?php
         $username = htmlspecialchars($_REQUEST['loginUsername']);
         $password = htmlspecialchars($_REQUEST['loginPassword']);
-        
+
         echo $username.'<br>';
         echo $password.'<br>';
-        
+
         include '../BACKEND_FILES/CLIENT.php';
         $CLIENT = new CLIENT();
-        if ($CLIENT->ConfirmUsernamePassword($username, $password) == TRUE) {
-            $MemberID = $CLIENT->returnAccountMemberID($username, $password);
-            ?>
+        if ($CLIENT->ConfirmUsernamePassword($username, $password) == true) {
+            $MemberID = $CLIENT->returnAccountMemberID($username, $password); ?>
+            <nav class="navbar navbar-expand-lg bg-dark rounded-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="javascript:;">4PS</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                              <form action="clientPortal.php" method="POST">
+                                <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <input class="btn bg-transparent card-plain nav-link" type="submit" value="Home" />
+                              </form>
+                            </li>
+                            <li class="nav-item">
+                                <form action="clientCashInBalance.php" method="POST">
+                                  <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                  <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                  <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                  <input class="btn bg-transparent card-plain nav-link" type="submit" value="Cash In" />
+                                </form>
+                            </li>
+                            <li class="nav-item">
+                              <form action="clientDataview.php" method="POST">
+                                <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <input class="btn bg-transparent card-plain nav-link" type="submit" value="Information" />
+                              </form>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Updates
+                                    <div class="ripple-container"></div></a>
+                                <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                  <form action="clientFamilySessionVenues.php" method="POST">
+                                    <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                    <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                    <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                    <input class="btn bg-transparent card-plain nav-link" type="submit" value="Family Session Venue" />
+                                  </form>
+                                  <form action="clientHistoryLogs.php" method="POST">
+                                    <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                    <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                    <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                    <input class="btn bg-transparent card-plain nav-link" type="submit" value="History Log" />
+                                  </form>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a href="clientlogin.php" class="nav-link nav-item btn">Signout<div class="ripple-container"></div></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="page-header header-filter page-bg">
             </div>
             <div class="main main-raised mx-0 mb-4 rounded-0" style="margin-top: -10%;">
