@@ -19,18 +19,18 @@ and open the template in the editor.
         $Suffix = htmlspecialchars($_REQUEST['Suffix']);
         $FamilyID = htmlspecialchars($_REQUEST['FamilyID']);
         $MemberID = htmlspecialchars($_REQUEST['MemberID']);
-        include '../../BACKEND_FILES/ADMIN.php';
+        include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         if ($ADMIN->UpdateInformation($FirstName, $MiddleName, $LastName, $Suffix, $FamilyID, $MemberID) == TRUE) {
             echo 'Update Successful <br>';
-            $Message="Credentials Updated to '".$FirstName."' '".$MiddleName."' '".$LastName."' '".$Suffix."' ";
+            $Message="Credentials Updated to ".$FirstName." ".$MiddleName." ".$LastName." ".$Suffix." ";
             echo $Message;
             $ADMIN->UpdateLog($MemberID, $Message);
         } else {
             echo 'Update Error';
         }
         ?>
-        <form action="../ADMIN_PAGES/Family/FamilyInformation.php" method="POST">
+        <form action="../ADMIN_PAGES/Family/SearchForEdit.php" method="POST">
             <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
             <input type="hidden" name="FirstName" value="<?php echo $FirstName; ?>" />

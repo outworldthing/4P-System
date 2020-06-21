@@ -32,11 +32,6 @@
     <body class="">
         <div class="wrapper ">
             <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
-                <!--
-                  Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-                  Tip 2: you can also add an image using data-image tag
-                -->
                 <div class="logo">
                     <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
@@ -163,17 +158,27 @@
                                                     <th>LOG DETAILS</th>
                                                     </thead>
 
-                                                    <tbody>
+                                                    <tbody> 
                                                         <?php while ($rows= mysqli_fetch_assoc($result)) {?>
                                                         <tr>
                                                             <td>
-                                                                <?php $rows['UpdateLogID'];?>
+                                                                <?php echo $rows['UpdateLogID'];?>
                                                             </td>
                                                             <td>
-                                                                <?php $rows['DateOfPublish'];?>
+                                                                <?php echo $rows['DateOfPublish'];?>
                                                             </td>
                                                             <td>
-                                                                <?php $rows['UpdateLogDetails'];?>
+                                                                <?php echo $rows['UpdateLogDetails'];?> 
+                                                        <?php while($rows= mysqli_fetch_assoc($result)){?>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo $rows['UpdateLogID'];?>
+                                                            </td>
+                                                            <td>
+                                                                <?php echo $rows['DateOfPublish'];?>
+                                                            </td>
+                                                            <td>
+                                                                <?php echo $rows['UpdateLogDetails'];?> 
                                                             </td>
                                                         </tr>
                                                         <?php }?>

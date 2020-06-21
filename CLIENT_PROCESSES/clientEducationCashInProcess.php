@@ -27,7 +27,7 @@ and open the template in the editor.
             $StudentID = $ADMIN->getStudentID($MemberID);
             if ($CLIENT->deductEducationBalance($StudentID, $cash_in) == TRUE) {
                 echo 'DEDUCTION SUCESSFUL';
-                $Message = "Student deducted '".$cash_in."' Pesos from his/her Student Account ";
+                $Message = "Student deducted ".$cash_in." Pesos from his/her Student Account ";
                 echo $Message;
                 $ADMIN->UpdateLog($MemberID, $Message);
             } else {
@@ -39,7 +39,7 @@ and open the template in the editor.
             <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
             <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
             <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
-            <input type="text" name="GO BACK TO EDUCATION BANK CASH IN" value="" />
+            <input type="submit" name="GO BACK TO EDUCATION BANK CASH IN" value="" />
         </form>
     </body>
 </html>

@@ -42,10 +42,10 @@ The above copyright notice and this permission notice shall be included in all c
                   Tip 2: you can also add an image using data-image tag
                 -->
                 <div class="logo">
-                    <span href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
                         Welcome Admin
-                    </span></div>
+                    </a></div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav-item active ">

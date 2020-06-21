@@ -29,6 +29,8 @@
                 $password = htmlspecialchars($_REQUEST['loginPassword']);
                 ?>
                 <form action="../TEACHER_PROCESSES/teacherAttendanceReportProcess.php" method="POST "class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                    <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                    <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
                     <div class="row">
                         <div class="col-md-12 ml-auto mr-auto">
                             <div class="title text-center">

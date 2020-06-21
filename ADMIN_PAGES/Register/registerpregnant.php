@@ -42,10 +42,10 @@ The above copyright notice and this permission notice shall be included in all c
                   Tip 2: you can also add an image using data-image tag
                 -->
                 <div class="logo">
-                    <span href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
                         Welcome Admin
-                    </span></div>
+                    </a></div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav-item">
@@ -203,15 +203,14 @@ The above copyright notice and this permission notice shall be included in all c
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="email" name="LastName" class="form-control" required>
+                                                        <input type="text" name="LastName" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-5">
                                                     <div class="form-group">
-                                                        <label class="bmd-label-floating">Suffix (optional)</label>
-                                                        <input type="text" name="Suffix" class="form-control" required>
+                                                        <input type="text" name="Suffix" class="form-control" >
                                                     </div>
                                                 </div>
                                             </div>

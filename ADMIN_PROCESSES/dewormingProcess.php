@@ -23,7 +23,7 @@ and open the template in the editor.
         $DoctorSuffix = htmlspecialchars($_REQUEST['DoctorSuffix']);
         $DrugName= htmlspecialchars($_REQUEST['DrugName']);
         $Venue= htmlspecialchars($_REQUEST['Venue']);
-        $DateOfCheckup = htmlspecialchars($_REQUEST['DateofDeworming']);
+        $DateOfCheckup = htmlspecialchars($_REQUEST['DateOfDeworming']);
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         
@@ -31,7 +31,7 @@ and open the template in the editor.
         if ($MemberID >= 0) {
             if ($ADMIN->registerDeworming($MemberID,$DoctorFirstName, $DoctorMiddleName, $DoctorLastName, $DoctorSuffix, $Venue, $DrugName,$DateOfCheckup) == TRUE) {
                 echo 'DEWORMING ISSUED <br>';
-                $Message="Deworming Issued: Venue:'".$Venue."' DrugName:'".$DrugName."' Date:'".$DateOfCheckup."' Doctor Name:'".$DoctorFirstName."' '".$DoctorMiddleName."' '".$DoctorLastName."' '".$DoctorSuffix."' ";
+                $Message="Deworming Issued: Venue:".$Venue." DrugName:".$DrugName." Date:".$DateOfCheckup." Doctor Name:".$DoctorFirstName." ".$DoctorMiddleName." ".$DoctorLastName." ".$DoctorSuffix." ";
                 echo $Message;
                 $ADMIN->UpdateLog($MemberID, $Message);
             } else {

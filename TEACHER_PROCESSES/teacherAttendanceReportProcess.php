@@ -28,9 +28,9 @@ and open the template in the editor.
         $StudentID = $TEACHER->getStudentID($FirstName, $MiddleName, $LastName, $Suffix);
         if ($StudentID >= 0) {
             $MemberID = $ADMIN->checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix);
-            if ($TEACHER->EnterNumberOfAbsences($StudentID, $Absences, $TotalNumberOfDays) == TRUE) {
+            if ($TEACHER->EnterNumberOfAbsences($StudentID, $Absences, $TotalSchoolDays) == TRUE) {
                 echo 'Report Success';
-                $Message = "Student has a total of '".$Absences."' from the total School Days of '".$TotalSchoolDays."' ";
+                $Message = "Student has a total of ".$Absences." from the total School Days of ".$TotalSchoolDays." ";
                 echo $Message;
                 $ADMIN->UpdateLog($MemberID, $Message);
             } else {

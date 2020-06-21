@@ -32,7 +32,7 @@
 
         <div class="main main-raised mx-0 mb-3 rounded-0"  id="client-login">
             <div class="container">
-                <form action="" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                <form action="../CLIENT_PROCESSES/clientEducationCashInProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
                     <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                     <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
@@ -53,7 +53,7 @@
                                             <span class="input-group-text">
                                                 <i class="material-icons">money</i>
                                             </span>
-                                            <input type="text" required pattern=".{6,15}" class="form-input form-control p-3" name="educationtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>" disabled>
+                                            <input type="text" required  class="form-input form-control p-3" name="educationtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>">
                                         </div>
                                     </div>
                                 </div>

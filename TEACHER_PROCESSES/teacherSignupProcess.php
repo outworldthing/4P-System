@@ -34,12 +34,52 @@ and open the template in the editor.
                     <script>
                         setTimeout(function () {
                             window.location.href = "../TEACHER_PAGES/teacherLogin.php";
+    <body>
+        <p> 
+            <?php
+            $username = htmlspecialchars($_REQUEST['signupUsername']);
+            $password = htmlspecialchars($_REQUEST['signupPassword']);
+            $FirstName = htmlspecialchars($_REQUEST['signupFirstName']);
+            $MiddleName = htmlspecialchars($_REQUEST['signupMiddleName']);
+            $LastName = htmlspecialchars($_REQUEST['signupLastName']);
+            $Suffix = htmlspecialchars($_REQUEST['signupSuffix']);
+            $contactNo = htmlspecialchars($_REQUEST['signupContactNumber']);
+            $Gender = htmlspecialchars($_REQUEST['signupGender']);
+
+
+            include '../BACKEND_FILES/TEACHER.php';
+            $TEACHER = new TEACHER();
+            ?>
+
+            <?php
+            $condition = $TEACHER->checkTeacherExists($FirstName, $MiddleName, $LastName, $Suffix);
+            $TeacherID = $TEACHER->getTeacherIDCredentials($FirstName, $MiddleName, $LastName, $Suffix);
+            if ($condition == TRUE) {
+                if ($TEACHER->checkUsernameExists($username) == FALSE) {
+                    if ($TEACHER->SignUpTeacherAccount($TeacherID, $username, $password) == TRUE) {
+                        echo "<center>Teacher Account Succesfully Created! Proceed to Log in <br>";
+                        echo "You will be redirected in 3 seconds</center>";
+                        ?>
+                        <script>
+                            setTimeout(function () {
+                                window.location.href = "../TEACHER_PAGES/teacherLogin.php";
+                            }, 3000);
+                        </script>
+                        <?php
+                    }
+                } else {
+                    echo "<center>Username is already taken, try another Username<br>";
+                    echo "You will be redirected in 3 seconds</center>";
+                    ?>
+                    <script>
+                        setTimeout(function () {
+                            window.location.href = "../TEACHER_PAGES/teacherSignup.php";
                         }, 3000);
                     </script><?php
                 }
             } else {
-                echo '<center>Username is already taken, try another Username</center>';
-                echo ("<center>You will be redirected in 3 seconds</center>");
+                echo "<center>Person is not yet enrolled in the system, enroll at Admin Page<br>";
+                echo "You will be redirected in 3 seconds</center>";
                 ?>
                 <script>
                     setTimeout(function () {
@@ -58,5 +98,7 @@ and open the template in the editor.
             </script><?php
         }
         ?>
+            ?>
+        </p>
     </body>
 </html>

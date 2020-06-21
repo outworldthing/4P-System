@@ -25,9 +25,9 @@ and open the template in the editor.
         if ($FamilyID >= 0) {
             if ($ADMIN->registerFamilySession($FamilyID, $Venue, $DateOfSession) == TRUE) {
                 echo 'Session Registered!';
-                $Message = "Family '".$LastName."' Session Venue:'".$Venue."' Date:'".$DateOfSession."' ";
+                $Message = "Family ".$LastName." Session Venue:".$Venue." Date:".$DateOfSession." ";
                 echo $Message;
-                $ADMIN->UpdateLog($MemberID, $Message);
+                $ADMIN->UpdateFamilyLog($FamilyID, $Message);
             } else {
                 echo 'Session Registry Failed';
             }

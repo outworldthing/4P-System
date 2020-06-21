@@ -10,6 +10,10 @@
     if ($condition == true) {
         $ADMIN->DeleteFamilyOver7years();
         $ADMIN->DeleteStudentsOver18(); ?>
+    if ($condition == TRUE) {
+        $ADMIN->DeleteFamilyOver7years();
+        $ADMIN->DeleteStudentsOver18();
+        ?>
         <head>
             <title>4ps | Admin Portal</title>
             <!-- Required meta tags -->
@@ -125,6 +129,13 @@
                 . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
                 . '</form></center>';
     }
+            } else {
+                echo '<center><b>Log in Failed, Check Username and Password</b>';
+                echo '<form action = "logIn/login.php" method="POST">'
+                . '<br>'
+                . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
+                . '</form></center>';
+            }
             ?>
         </div>
 
@@ -145,7 +156,5 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
         <script src="../DESIGN_EXTENSIONS/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
-
     </body>
-
 </html>

@@ -63,7 +63,7 @@ $TEACHER = new TEACHER();
                     </div>
                 </div>
                 <?php
-                if ($TEACHER->confirmTeacherAccount($username, $password) == FALSE) {
+                if ($TEACHER->confirmTeacherAccount($username, $password) == TRUE) {
                     $TeacherID = $TEACHER->getTeacherIDUserPass($username, $password);
                     
                 ?>

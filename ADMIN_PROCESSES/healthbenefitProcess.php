@@ -26,7 +26,7 @@ and open the template in the editor.
             if ($FamilyID >= 0) {
                 if ($ADMIN->IssueHealthBenefit($FamilyID) == TRUE) {
                     echo 'Issuance of Family Health Benefit Successful';
-                    $Message = "Family Benefit Issued to '".$LastName."' Family worth 750 Pesos";
+                    $Message = "Family Benefit Issued to ".$LastName." Family worth 750 Pesos";
                     echo $Message;
                     $ADMIN->UpdateFamilyLog($FamilyID, $Message);
                 } else {

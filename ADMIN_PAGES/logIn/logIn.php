@@ -34,21 +34,27 @@
                                     </div>
                                 </div>
                                 <form action="../adminPortal.php" method="POST">
-                                    <div class="row justify-content-center">       
-                                        <div class="col-8">
-                                            <div style="text-align:center">
+                                    <div class="row">       
+                                        <div class="col">
+                                            <div style='text-align:center'>
                                                 <label class="bmd-label-floating">Username</label>
-                                                <input type="text" name="loginUsername" class="form-input form-control" required>
+                                                <input type="text" name="loginUsername" class="form-control" required>
                                             </div>
                                             <br>
-                                            <div style="text-align:center">
+                                            <div style='text-align:center'>
                                                 <label class="bmd-label-floating">Password</label>
-                                                <input type="password" name="loginPassword" class="form-input form-control" required>
+                                                <input type="password" name="loginPassword" class="form-control" required>
+                                            </div>
+                                            <br>
+                                            <div style='text-align:center'>
+                                                <label class="bmd-label-floating">Confirm Password</label>
+                                                <input type="password" class="form-control" required>
                                             </div>
                                             <br>
                                         </div>                                       
                                     <button type="submit" class="btn btn-primary pull-right" style='width:75%'>Log in</button>
                                     </div>
+                                    <button type="submit" class="btn btn-primary pull-right" style='width:100%'>Log in</button>
                                 </form>
                                 <br>
                                 <style>

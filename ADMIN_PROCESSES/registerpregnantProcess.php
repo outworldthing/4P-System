@@ -18,23 +18,24 @@ and open the template in the editor.
         $LastName = htmlspecialchars($_REQUEST['LastName']);
         $Suffix = htmlspecialchars($_REQUEST['Suffix']);
         $BirthDate = htmlspecialchars($_REQUEST['BirthDate']);
-        include '../../BACKEND_FILES/ADMIN.php';
+        include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         $MemberID = $ADMIN->checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix);
-
-        if ($ADMIN->enrollPregnant($MemberID) == TRUE) {
-            echo 'Pregnant Status Enrolled';
-            $Message = "Pregnant Status Enrolled";
-            echo $Message;
-            $ADMIN->UpdateLog($MemberID, $Message);
-            ?>
-            <form action="../ADMIN_PAGES/Register/registerpregnant.php" method="POST">
-                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                <input type="submit" value="RETURN TO REGISTER PREGNANT FORM" />
-            </form>
-            <?php
+        if ($ADMIN->checkPregnantExists($MemberID) == FALSE) {
+            if ($ADMIN->enrollPregnant($MemberID) == TRUE) {
+                echo 'Pregnant Status Enrolled';
+                $Message = "Pregnant Status Enrolled";
+                echo $Message;
+                $ADMIN->UpdateLog($MemberID, $Message);
+            }
+        } else {
+            echo 'Pregnant Status already established';
         }
         ?>
+        <form action="../ADMIN_PAGES/Register/registerpregnant.php" method="POST">
+            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+            <input type="submit" value="RETURN TO REGISTER PREGNANT FORM" />
+        </form>
     </body>
 </html>
