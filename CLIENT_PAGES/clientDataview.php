@@ -136,7 +136,6 @@
                                         ?>
                                         <tr>
                                             <th scope = "col" style = "text-align:center"><?php echo $rows['MemberID']; ?></th>
-                                            <td><?php echo $rows['MemberID']; ?></td>
                                             <td><?php echo $rows['FamilyID']; ?></td>
                                             <td><?php echo $rows['FirstName']; ?></td>
                                             <td><?php echo $rows['MiddleName']; ?></td>
