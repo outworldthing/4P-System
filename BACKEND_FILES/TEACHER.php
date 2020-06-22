@@ -274,7 +274,7 @@ class TEACHER {
 
     function getStudentsPerSection($TeacherID, $SectionName) {
         try {
-            $command = "Select Members.FirstName,Members.Middlename,Members.LastName.Members.Suffix,"
+            $command = "Select Members.FirstName,Members.MiddleName,Members.LastName, Members.Suffix,"
                     . "Attendance.TotalNumberOfSchoolDays,Attendance.TotalNumberOfAbsents"
                     . " from(Members inner join Student on Members.MemberID=Student.MemberID inner join Attendance"
                     . " on Attendance.StudentID=Student.StudentID "
