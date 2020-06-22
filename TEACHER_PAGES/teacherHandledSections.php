@@ -104,7 +104,7 @@ $result = $TEACHER->getStudentsPerSection($TeacherID, $SectionName)
                     </div>
                 </form>
                 <center>
-                    <form action="teacherSelectSection.php.php" method="POST">
+                    <form action="teacherSelectSection.php" method="POST">
                         <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                         <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
                         <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
