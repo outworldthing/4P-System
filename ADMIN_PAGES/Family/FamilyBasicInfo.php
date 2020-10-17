@@ -32,6 +32,11 @@
     <body class="">
         <div class="wrapper ">
             <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
+                <!--
+                  Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+          
+                  Tip 2: you can also add an image using data-image tag
+                -->
                 <div class="logo">
                     <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                         <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
@@ -211,18 +216,6 @@
                                                                     <?php echo $rows['Suffix']; ?>
                                                                 </td>
                                                                 <td>
-                                                                    <?php echo $rows['FirstName']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['MiddleName']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['LastName']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Suffix']; ?>
-                                                                </td>
-                                                                <td>
                                                                     <?php echo $rows['BirthDate']; ?>
                                                                 </td>
                                                                 <td>
@@ -233,27 +226,6 @@
                                                                         echo'FEMALE';
                                                                     }
                                                                     ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['DateOfRegistry']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Region']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Municipality']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Province']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Barangay']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['Street']; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php echo $rows['HouseNo']; ?>
                                                                 </td>
                                                                 <td>
                                                                     <?php echo $rows['DateOfRegistry']; ?>

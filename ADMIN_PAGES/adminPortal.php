@@ -7,9 +7,6 @@
     include '../BACKEND_FILES/ADMIN.php';
     $ADMIN = new ADMIN();
     $condition = $ADMIN->ConfirmAdminUsernamePassword($username, $password);
-    if ($condition == true) {
-        $ADMIN->DeleteFamilyOver7years();
-        $ADMIN->DeleteStudentsOver18(); ?>
     if ($condition == TRUE) {
         $ADMIN->DeleteFamilyOver7years();
         $ADMIN->DeleteStudentsOver18();
@@ -28,107 +25,144 @@
             <link href="../DESIGN_EXTENSIONS/css/material-kit.css?v=2.0.4" rel="stylesheet" />
             <!-- CSS -->
             <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
+            <style>
+              .bg-admin {
+                background-image: url("../DESIGN_EXTENSIONS/img/admin-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+              }
+
+              .btns {
+                width: 80%;
+                background-color: #2f5296;
+                font-size: 1.3vw;
+                border-radius: 10px;
+              }
+            </style>
         </head>
 
-        <body>
+        <body class="bg-admin" style="overflow-x: hidden;">
 
-            <nav class="navbar navbar-expand-lg navbar-primary rounded-0" style="color: black;">
-                <div class="container-fluid">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <span class="navbar-text" href="javascript:;">Admin Home<span class="sr-only">(current)</span></span>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a href="login/logIn.php" class="nav-link nav-item btn btn-primary">Signout<div class="ripple-container"></div></a>
-                        </li>
-                    </ul>
+          <div class="row">
+            <div class="col-md ml-auto mr-auto">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <span class="navbar-text lg-mt-5" href="javascript:;" style="font-size: 2vw; margin-left: 6vw; color: white; font-weight:400;">ADMIN HOME<span class="sr-only">(current)</span></span>
+                </li>
+              </ul>
+              </div>
+              <div class="col-md ml-auto mr-auto text-right">
+              <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                  <a href="login/logIn.php" class="nav-link nav-item mt-2 mr-5" style="font-size: 1.2vw; color: #fc9d51; font-weight:600;">Logout<div class="ripple-container"></div></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="content">
+
+              <div class="row">
+                <div class="col-md ml-auto mr-auto mt-md-1">
+                  <div class="title text-center">
+                    <h1 class="title mb-0" style="font-size: 3vw; color: #bf3e3f;">What do you want to do?</h1>
+                    <h4 class="subtitle">select a section to manage</h4>
+                  </div>
                 </div>
-            </nav>
-            <div class="content ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 ml-auto mr-auto">
-                            <div class="title text-center">
-                                <h2 class="title mb-0">What do you want to do?</h2>
-                                <h5 class="subtitle">select a section to manage</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 ">
+                      <div class="card ml-auto mr-auto pt-5" style="width: 80%; height: 90%; background-color: #fdecdc;">
+                        <img src="../DESIGN_EXTENSIONS/img/guy-reading.png" class="image-fluid ml-auto mr-auto mt-2" width="65%" alt="guy reading">
+                        <form action="Register/registerfamily.php" action="POST">
+                          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                          <div class="card-body text-center">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                                    <div class="card ml-auto mr-auto pt-5" style="width: 18rem; height: 25rem;">
-                                        <img src="../DESIGN_EXTENSIONS/img/guy-reading.png" class="image-fluid ml-auto mr-auto" width="50%" alt="guy reading">
-                                        <form action="Register/registerfamily.php" action="POST">
-                                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                            <div class="card-body text-center">
-                                                <h4 class="card-title p-4">Register Clients</h4>
-                                                <button type="submit" class="btn btn-primary stretched-link">Enter</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="card ml-auto mr-auto pt-5" style="width: 18rem; height: 25rem;">
-                                        <img src="../DESIGN_EXTENSIONS/img/family.jpg" class="image-fluid ml-auto mr-auto" width="50%" alt="calendar">
-                                        <form action="Family/SearchFamily.php" action="POST">
-                                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                            <div class="card-body text-center">
-                                                <h4 class="card-title mt-3">Manage Families/Household</h4>
-                                                <button type="submit" class="btn btn-primary stretched-link">Enter</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                              <div class="col">
+                                <h3 class="card-title" style="font-size: 1.5vw;">Register Clients</h3>
+                              </div>
                             </div>
-                        </div>
+                            <div class="row mt-4">
+                              <div class="col">
+                                <button type="submit" class="btn btns stretched-link">Enter</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card ml-auto mr-auto pt-5" style="width: 80%; height: 90%; background-color: #fdecdc;">
+                        <img src="../DESIGN_EXTENSIONS/img/family.png" class="image-fluid ml-auto mr-auto" width="60%" alt="calendar">
+                        <form action="Family/SearchFamily.php" action="POST">
+                          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                          <div class="card-body text-center">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                                    <div class="card ml-auto mr-auto pt-5" style="width: 18rem; height: 25rem;">
-                                        <img src="../DESIGN_EXTENSIONS/img/admin-checkup.png" class="image-fluid ml-auto mr-auto" width="50%" alt="guy reading">
-                                        <div class="card-body text-center">
-                                            <form action="Report_Checkup/prenatalcheckup.php" method="POST">
-                                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                                <h4 class="card-title p-4">Report Checkup</h4>
-                                                <button type="submit" class="btn btn-primary stretched-link">Enter</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="card ml-auto mr-auto pt-5" style="width: 18rem; height: 25rem;">
-                                        <img src="../DESIGN_EXTENSIONS/img/educationbenefit.jpg" class="image-fluid ml-auto mr-auto" width="50%" alt="calendar">
-                                        <form action="Issue_Benefit/checkup.php" action="POST">
-                                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                            <div class="card-body text-center">
-                                                <h4 class="card-title pt-1">Issue Benefit</h4>
-                                                <button type="submit" class="btn btn-primary stretched-link">Enter</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                              <div class="col">
+                                <h3 class="card-title" style="font-size: 1.3vw;">Manage Families/Household</h3>
+                              </div>
                             </div>
-                        </div>
+                            <div class="row">
+                              <div class="col">
+                                <button type="submit" class="btn btns stretched-link">Enter</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 ">
+                      <div class="card ml-auto mr-auto pt-5" style="width: 80%; height: 90%; background-color: #fdecdc;">
+                        <img src="../DESIGN_EXTENSIONS/img/admin-checkup.png" class="image-fluid ml-auto mr-auto mt-3 " width="65%" alt="guy reading">
+                        <form action="Report_Checkup/prenatalcheckup.php" method="POST">
+                          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                        <div class="card-body text-center">
+                            <div class="row mt-0">
+                              <div class="col">
+                                <h3 class="card-title" style="font-size: 1.5vw;">Report Checkup</h3>
+                              </div>
+                            </div>
+                            <div class="row mt-lg-3">
+                              <div class="col">
+                                <button type="submit" class="btn btns stretched-link">Enter</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card ml-auto mr-auto pt-5" style="width: 80%; height: 90%; background-color: #fdecdc;">
+                        <img src="../DESIGN_EXTENSIONS/img/educationbenefit.png" class="image-fluid ml-auto mr-auto mt-1" width="65%" alt="calendar">
+                        <form action="Issue_Benefit/checkup.php" action="POST">
+                          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                          <div class="card-body text-center">
+                            <div class="row mt-0">
+                              <div class="col">
+                                <h3 class="card-title" style="font-size: 1.5vw;">Issue Benefit</h4>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <button type="submit" class="btn btns stretched-link">Enter</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+          </div>
                 <?php
-    } else {
-        echo '<center><b>Log in Failed, Check Username and Password</b>';
-        echo '<form action = "logIn/login.php" method="POST">'
-                . '<br>'
-                . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
-                . '</form></center>';
-    }
             } else {
                 echo '<center><b>Log in Failed, Check Username and Password</b>';
                 echo '<form action = "logIn/login.php" method="POST">'
@@ -156,5 +190,7 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
         <script src="../DESIGN_EXTENSIONS/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
     </body>
+
 </html>

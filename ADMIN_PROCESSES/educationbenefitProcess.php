@@ -25,15 +25,15 @@ and open the template in the editor.
             $StudentID = $ADMIN->getStudentID($MemberID);
             if ($StudentID >= 0) {
                 if ($ADMIN->IssueEducationBenefit($StudentID) == TRUE) {
-                    echo 'Issuance of Education Benefit Successful';
+                    echo 'Issuance of Education Benefit Successful <br>';
                     $Message = "Education Benefit Issued to:".$FirstName." ".$MiddleName." ".$LastName." ".$Suffix." ";
                     echo $Message;
                     $ADMIN->UpdateLog($MemberID, $Message);
                 } else {
-                    echo 'Issuance of Education Benefit Failed';
+                    echo 'Issuance of Education Benefit Failed <br>';
                 }
             } else {
-                echo 'No Student Record Found';
+                echo 'No Student Record Found <br>';
             }
         }
         ?>

@@ -17,7 +17,6 @@ and open the template in the editor.
         $MiddleName = htmlspecialchars($_REQUEST['MiddleName']);
         $LastName = htmlspecialchars($_REQUEST['LastName']);
         $Suffix = htmlspecialchars($_REQUEST['Suffix']);
-        $BirthDate = htmlspecialchars($_REQUEST['BirthDate']);
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         $MemberID = $ADMIN->checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix);

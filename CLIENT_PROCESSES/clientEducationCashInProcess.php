@@ -26,8 +26,8 @@ and open the template in the editor.
         if ($CLIENT->checkStudentStatus($MemberID) == TRUE) {
             $StudentID = $ADMIN->getStudentID($MemberID);
             if ($CLIENT->deductEducationBalance($StudentID, $cash_in) == TRUE) {
-                echo 'DEDUCTION SUCESSFUL';
-                $Message = "Student deducted ".$cash_in." Pesos from his/her Student Account ";
+                echo 'DEDUCTION SUCESSFUL <br>';
+                $Message = "Student deducted ".$cash_in." Pesos from his/her Student Account <br>";
                 echo $Message;
                 $ADMIN->UpdateLog($MemberID, $Message);
             } else {

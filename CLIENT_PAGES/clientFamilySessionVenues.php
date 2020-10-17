@@ -39,22 +39,47 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="javascript:;">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item ">
+                          <form action="clientPortal.php" method="POST">
+                            <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                            <input class="btn bg-transparent card-plain nav-link" type="submit" value="Home" />
+                          </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">Cash In<div class="ripple-container"></div></a>
+                            <form action="clientCashInBalance.php" method="POST">
+                              <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                              <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                              <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                              <input class="btn bg-transparent card-plain nav-link" type="submit" value="Cash In" />
+                            </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">Information<div class="ripple-container"></div></a>
+                          <form action="clientDataview.php" method="POST">
+                            <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                            <input class="btn bg-transparent card-plain nav-link" type="submit" value="Information" />
+                          </form>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Updates
                                 <div class="ripple-container"></div></a>
                             <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item dropdown" href="javascript:;">Family Session Venue</a>
-                                <a class="dropdown-item dropdown" href="javascript:;">History Log</a>
+                              <form action="clientFamilySessionVenues.php" method="POST">
+                                <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <input class="btn bg-transparent card-plain nav-link" type="submit" value="Family Session Venue" />
+                              </form>
+                              <form action="clientHistoryLogs.php" method="POST">
+                                <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                                <input class="btn bg-transparent card-plain nav-link" type="submit" value="History Log" />
+                              </form>
                             </div>
                         </li>
                     </ul>

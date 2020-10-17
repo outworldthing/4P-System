@@ -25,6 +25,8 @@ and open the template in the editor.
         } else {
             $Gender = 0;
         }
+
+
         include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
 

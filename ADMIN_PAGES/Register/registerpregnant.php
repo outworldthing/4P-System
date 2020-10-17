@@ -210,6 +210,7 @@ The above copyright notice and this permission notice shall be included in all c
                                             <div class="row">
                                                 <div class="col-md-5">
                                                     <div class="form-group">
+                                                        <label class="bmd-label-floating">Suffix (optional)</label>
                                                         <input type="text" name="Suffix" class="form-control" >
                                                     </div>
                                                 </div>

@@ -25,6 +25,13 @@ and open the template in the editor.
         $TeacherMiddleName = htmlspecialchars($_REQUEST['TeacherMiddleName']);
         $TeacherLastName = htmlspecialchars($_REQUEST['TeacherLastName']);
         $TeacherSuffix = htmlspecialchars($_REQUEST['TeacherSuffix']);
+        
+        echo $TeacherFirstName;
+        echo $TeacherMiddleName;
+        echo $TeacherLastName;
+        echo $TeacherSuffix;
+        
+        include '../BACKEND_FILES/ADMIN.php';
         $ADMIN = new ADMIN();
         $MemberID = $ADMIN->checkPersonExists($FirstName, $MiddleName, $LastName, $Suffix);
         $StudentID = "";
@@ -72,13 +79,6 @@ and open the template in the editor.
             }
         } else {
             echo 'NO PERSON FOUND, ENROLL FIRST<br>';
-        }
-        if ($GradeType == "Daycare" || $GradeType == "Elementary") {
-            $ADMIN->enrollDayCareElem($SchoolID, $StudentID);
-        } else if ($GradeType == "JHS") {
-            $ADMIN->enrollSHS($SchoolID, $StudentID);
-        } else if ($GradeType == "SHS") {
-            $ADMIN->enrollJHS($SchoolID, $StudentID);
         }
         ?>
         <form action="../ADMIN_PAGES/Register/registerstudent.php" method="POST">
