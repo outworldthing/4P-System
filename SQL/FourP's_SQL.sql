@@ -18,7 +18,7 @@ primary key (FamilyID)
 Create table FamilyAccount(
 FamilyAccountID int not null auto_increment,
 Subsidy int not null default 750,
-FamilyID int not null,	
+FamilyID int not null,
 HealthBank int not null ,
 HealthBenefitReceivedDate date,
 Primary key (FamilyAccountID),
@@ -104,7 +104,7 @@ HospitalID int not null,
 MemberID int not null,
 DoctorFName varchar(50) not null,
 DoctorMName varchar(50) ,
-DoctorLName varchar(50) not null,	
+DoctorLName varchar(50) not null,
 DoctorSuffix varchar(50),
 primary key (PrenatalID),
 foreign key (HospitalID) references Hospital(HospitalID)on delete cascade on update cascade,
@@ -221,13 +221,28 @@ foreign key (SchoolID) references School(SchoolID) on delete cascade on update c
 foreign key (TeacherID) references Teacher(TeacherID) on delete cascade on update cascade
 );
 
-Create Table Attendance(
+Create table Month (
+MonthID, int not null auto_increment,
+YearID int,
+Month_name month() not null,
+Primary key (MonthID),
+Foreign key (YearID) reference Year(YearID)
+);
+
+Create Table Attendance (
 AttendanceID int not null auto_increment,
+Present_Days int not null,
+MonthID int not null,
 StudentID int not null,
-TotalNumberOfSchoolDays int not null,
-TotalNumberOfAbsents int not null,
-Primary key (AttendanceID),
-foreign key (StudentID) references Student(StudentID)on delete cascade on update cascade
+Primary ID (AttendanceID),
+Foreign Key (MonthID) references Month(MonthID),
+Foreign Key (StudentID) references Student(StudentID)
+);
+
+Create table Year (
+YearID int not null auto_increment,
+Year_Name year() not null,
+Primary Key (YearID)
 );
 
 Create table UpdateLog(
