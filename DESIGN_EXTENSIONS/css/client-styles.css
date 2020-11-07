@@ -1,4 +1,19 @@
 /* general css */
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+.responsive-img {
+	width: 100%;
+	max-width: 100%;
+ 	height: auto;
+}
 
 #client-login.main, #client-signup.main{
 	margin-top: -6%;
@@ -33,3 +48,511 @@
 .form-input{
 	font-size: 1rem;
 }
+
+/*INDEX*/
+.index-bg{
+	background-image:url(../img/client-bg.jpg);
+	background-size: cover;
+	background-position: top center;
+}
+
+
+.index {
+	background-color: #FFFFFA;
+}
+
+.index-left {
+	margin: 40px;
+	/*border: 4px solid indigo;*/
+}
+
+.index-left-headline h2 {
+	font-size: 2.5vw;
+	font-weight: 400;
+	line-height: 3vw;
+	background-color: #f5c392;
+	padding: 20px 0;
+	color: #2b458a;
+	border-radius: 5px;
+}
+
+.index-left-body {
+	margin: 50px 0;
+}
+
+
+.index-left-body p {
+	padding: 10px 55px;
+	font-size: 1vw;
+	font-weight: 600;
+	line-height: 1.5vw;
+	color: #29475f;
+}
+
+.index-right {
+	margin: 40px;
+	/*border: .4vw solid indigo;*/
+}
+
+.index-right-headline h2 {
+	font-size: 2.1vw;
+	font-weight: 400;
+	color: #304788;
+}
+
+.index-right-images {
+	margin: 20px 0;
+}
+
+.index-right-buttons {
+	padding: 0;
+}
+
+.index-button {
+	background: #f7cca2 none repeat scroll 0 0;
+	border: 3px solid #9a9087;
+	color: #695b4b;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.index-button:hover {
+	background: #eb9b4d none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.index-card {
+	background-color: #fcecdc;
+	border-radius: 5px;
+	padding: 2vw;
+	margin: 2vw 2vw;
+}
+
+/***********
+CLIENT LOGIN
+************/
+
+.client-login {
+	background-color: #fcecdc;
+}
+
+.client-login-head{
+}
+
+.client-login-head-left{
+	background-color: #fda871;
+	padding: 20px;
+	margin-top: 2vw;
+	border-radius: 5px;
+}
+
+.client-login-head-left h2{
+	font-size: 4vw;
+	line-height: 3.6vw;
+	font-weight: 400;
+	color: #0b2d48;
+}
+
+.client-login-body-left{
+	margin: 7vw 0 0;
+	padding: 1.8vw;
+	border-top: .6vw dashed #404040;
+	border-bottom: .6vw dashed #404040;
+}
+
+.client-login-body-left a{
+	font-size: 1.7vw;
+	text-decoration: none;
+	color: #80a1f0;
+}
+
+.client-login-body-left a:hover{
+	color: #465a7e;
+}
+
+
+.client-login-body-left h2{
+	color: #0b2d48;
+	margin: 0 0 20px;
+	font-weight: 400;
+}
+
+.client-login-head-right{
+	margin-top: 5vw;
+}
+
+.client-login-head-right h2{
+	font-size: 3vw;
+	font-weight: 500;
+	color: #0b2d48;
+	line-height: 2.8vw;
+	padding-right: 20px;
+	border-right: .4vw solid #0b2d48;
+}
+
+.client-login-input {
+	margin: 4vw 0 0;
+	padding: 20px;
+}
+
+.client-login-text {
+	padding: 2vw;
+}
+
+.client-login-text span{
+	font-size: 2vw;
+}
+
+.client-login-text input {
+	border: 0;
+	border-bottom: .25vw solid #fda871;
+	background-color: #fcecdc;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.client-login-button {
+	margin: 2vw 0 0;
+	background: #ee9949;
+	border: 3px solid #9a9087;
+	color: #695b4b;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.client-login-button:hover {
+	background: #eb9b4d none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+/***********
+CLIENT SIGNUP
+************/
+
+.client-signup {
+	background-color: #fcecdc;
+}
+
+.client-signup-head{
+}
+
+.client-signup-head-left{
+	background-color: #fda871;
+	padding: 20px;
+	margin-top: 2vw;
+	border-radius: 5px;
+}
+
+.client-signup-head-left h2{
+	font-size: 2.8vw;
+	line-height: 2.8vw;
+	font-weight: 400;
+	color: #0b2d48;
+}
+
+.client-signup-body-right{
+	margin: 0 0 0;
+	padding: .7vw;
+	border-top: .4vw dashed #404040;
+	border-bottom: .4vw dashed #404040;
+}
+
+.client-signup-body-right a{
+	font-size: 1.7vw;
+	text-decoration: none;
+	color: #80a1f0;
+}
+
+.client-signup-body-right a:hover{
+	color: #465a7e;
+}
+
+
+.client-signup-body-right h2{
+	color: #0b2d48;
+	margin: 0 0 20px;
+	font-weight: 400;
+}
+
+.client-signup-head-right{
+	margin: .5vw 0 0;
+}
+
+.client-signup-head-right h2{
+	font-size: 3vw;
+	font-weight: 500;
+	color: #0b2d48;
+	line-height: 2.8vw;
+	padding-right: 20px;
+	border-right: .4vw solid #0b2d48;
+}
+
+.client-signup-input {
+	margin: 4vw 0 0;
+	padding: 20px;
+}
+
+.client-signup-text {
+	padding: 2vw;
+}
+
+.client-signup-text span{
+	color: #1d3b53;
+	font-size: 1.6vw;
+	padding: 1.2vw 0 .5vw;
+}
+
+.client-signup-text input[type="text"] {
+	border: 0;
+	border-bottom: .25vw solid #fda871;
+	background-color: #fcecdc;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.client-signup-text input[type="text"]:focus {
+	border-bottom: .25vw solid #1d3b53;
+	transition: all .35s ease-in;
+}
+
+.client-signup-text input[type="password"] {
+	border: 0;
+	border-bottom: .25vw solid #fda871;
+	background-color: #fcecdc;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.client-signup-text input[type="password"]:focus {
+	border-bottom: .25vw solid #1d3b53;
+	transition: all .35s ease-in;
+}
+
+.client-signup-button {
+	margin: 2vw 0 0 22vw;
+	background: #ee9949;
+	border: 3px solid #9a9087;
+	color: #1d3b53;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.client-signup-button:hover {
+	background: #eb9b4d none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.client-signup-body-main {
+	margin-top: 1vw;
+}
+
+/***********
+CLIENT PORTAL
+************/
+
+.client-portal-head{
+	padding: 10px 0 10px;
+}
+
+.client-portal-head img{
+	width: 84%;
+}
+
+.client-portal-head-headline{
+
+}
+
+.client-portal-head h2{
+	font-size: 3.2em;
+	font-weight: 400;
+	background-color: #db9d92;
+	margin: 0 0 0;
+	padding: 12px 25px 12px;
+	color: #0b2d48;
+}
+
+.client-portal-head h3{
+	font-size: 1.6em;
+	font-weight: 400;
+	margin: 0 0 0;
+	padding: 12px;
+	color: #0b2d48;
+}
+
+.client-portal-cards {
+	margin: 20px 0 0;
+}
+
+.client-portal-cards h2{
+	margin: 0 0 0;
+	font-size: 1.4vw;
+	font-weight: 400;
+	color: #0b2d48;
+}
+
+.client-portal-cards-img {
+	padding: 20px 0;
+}
+
+.client-portal-index {
+	background-color: #db9d92;
+	border-radius: 5px;
+	padding: 0 0 20px;
+}
+
+.client-portal-button {
+	background: #f7cca2 none repeat scroll 0 0;
+	border: 3px solid #9a9087;
+	color: #695b4b;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.client-portal-button:hover {
+	background: #eb9b4d none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+/**********************
+CLIENT CASH IN BALANCE
+***********************/
+
+
+.client-cashin {
+	background-color: #fcecdc;
+}
+
+.client-cashin-head{
+}
+
+.client-cashin-head-left{
+	background-color: #fda871;
+	padding: 20px;
+	margin-top: 2vw;
+	border-radius: 5px;
+}
+
+.client-cashin-head-left h2{
+	font-size: 4vw;
+	line-height: 3.6vw;
+	font-weight: 400;
+	color: #0b2d48;
+}
+
+.client-cashin-body-left{
+	margin: 7vw 0 0;
+	padding: 1.8vw;
+	border-top: .6vw dashed #404040;
+	border-bottom: .6vw dashed #404040;
+}
+
+.client-cashin-body-left a{
+	font-size: 1.7vw;
+	text-decoration: none;
+	color: #80a1f0;
+}
+
+.client-cashin-body-left a:hover{
+	color: #465a7e;
+}
+
+
+.client-cashin-body-left h2{
+	color: #0b2d48;
+	margin: 0 0 20px;
+	font-weight: 400;
+}
+
+.client-cashin-head-right{
+	margin-top: 5vw;
+}
+
+.client-cashin-head-right h2{
+	font-size: 3vw;
+	font-weight: 500;
+	color: #0b2d48;
+	line-height: 2.8vw;
+	padding-right: 20px;
+	border-right: .4vw solid #0b2d48;
+}
+
+.client-cashin-input {
+	margin: 4vw 0 0;
+	padding: 20px;
+}
+
+.client-cashin-text {
+	padding: 2vw;
+}
+
+.client-cashin-text span{
+	font-size: 2vw;
+}
+
+.client-cashin-text input {
+	border: 0;
+	border-bottom: .25vw solid #fda871;
+	background-color: #fcecdc;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.client-cashin-button {
+	margin: 2vw 0 0;
+	background: #ee9949;
+	border: 3px solid #9a9087;
+	color: #695b4b;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.client-cashin-button:hover {
+	background: #eb9b4d none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+asdasd
