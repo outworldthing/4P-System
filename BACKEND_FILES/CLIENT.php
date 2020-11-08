@@ -214,7 +214,7 @@ class CLIENT {
         } catch (Exception $exc) {
             echo "No Matches Found";
         }
-        echo "No Matches Found";
+        //echo "No Matches Found";
         return FALSE;
     }
 

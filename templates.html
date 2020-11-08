@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>4ps | Templates</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0," name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--  Fonts and icons  -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="icon" href="DESIGN_EXTENSIONS/img/4pslogo.png" type="image/png">
+  <!-- Material Kit CSS -->
+  <link href="DESIGN_EXTENSIONS/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+  <!-- CSS -->
+  <link href="DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fcecdc;
+      ;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="client-cashin index-bg" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/cash in.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 3vw;">CASH IN BALANCE</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="client-cashin-body text-center">
+            <h2>SELECT WHAT BALANCE YOU WOULD LIKE TO CASH IN</h2>
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <div class="client-cashin-box">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                      <img src="DESIGN_EXTENSIONS/img/EDUCATION BALANCE.png" alt="">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                      <form action="clientEducationBalance.php" method="POST">
+                        <input type="submit" name="" value="EDUCATION" id="signupSubmit" class="client-cashin-button" <?php if($StudentStatus==FALSE){ echo 'disabled'; } ?>>
+                        <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                        <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                        <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 text-center">
+                <div class="client-cashin-box">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                      <img src="DESIGN_EXTENSIONS/img/HEALTH BALANCE.png" alt="">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                      <form action="clientHealthBalance.php" method="POST" disabled="<?php echo $StudentStatus?>">
+                        <input type="submit" name="" value="HEALTH" id="signupSubmit" class="client-cashin-button" <?php if($StudentStatus==TRUE){ echo 'disabled'; } ?>>
+                        <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                        <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                        <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <form action="clientPortal.php" method="POST">
+            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+            <input type="submit" name="" value="BACK" id="signupSubmit" class="client-cashin-button">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="client-login index-bg" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/member.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 3.8vw;">CLIENT LOG-IN</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="client-login-body-left text-center ">
+            <h2>NOT A MEMBER YET?</h2>
+            <a href="clientsignup.php">REGISTER NOW</a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="client-login-head client-login-head-right">
+            <div class="client-login-input">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="client-login-text">
+                    <div class="row">
+                      <div class="col-lg-3 d-flex align-items-center p-0">
+                        <span>USERNAME:</span>
+                      </div>
+                      <div class="col-lg-9">
+                        <input type="text" required pattern=".{6,15}" name="loginUsername" id="loginUsername">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="client-login-text">
+                    <div class="row">
+                      <div class="col-lg-3 d-flex align-items-center p-0">
+                        <span>PASSWORD:</span>
+                      </div>
+                      <div class="col-lg-9 ">
+                        <input type="password" Required pattern=".{6,15}" name="loginPassword" id="loginPassword">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="client-login-buttons">
+                    <div class="row">
+                      <div class="col-lg-6 text-right">
+                        <input type="submit" name="" value="LOGIN" id="signupSubmit" class="client-login-button">
+                      </div>
+                      <div class="col-lg-6">
+                        <form action="index.php">
+                          <input type="submit" name="" value="BACK" class="client-login-button">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="client-portal index-bg" style="height: 100vh;">
+    <div class="container">
+      <div class="row justify-content-center client-portal-head">
+        <div class="col-lg-3 text-right">
+          <img src="DESIGN_EXTENSIONS/img/member.PNG" alt="" class="responsive-img">
+        </div>
+        <div class="col-lg-6 justify-content-center d-flex align-items-center">
+          <div class="client-portal-head-headline text-center">
+            <h2>WELCOME CLIENT</h2>
+            <h3>SELECT A SECTION TO MANAGE</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="client-portal-cards">
+        <div class="row">
+          <div class="col-lg-3 text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 client-portal-index">
+                <div class="row justify-content-center">
+                  <div class="col-lg-7 client-portal-cards-img">
+                    <img src="DESIGN_EXTENSIONS/img/CASH IN.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>CASH IN</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <form action="clientCashInBalance.php" method="POST">
+                      <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                      <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                      <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      <input class="client-portal-button" type="submit" value="ENTER" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 client-portal-index">
+                <div class="row justify-content-center">
+                  <div class="col-lg-7 client-portal-cards-img">
+                    <img src="DESIGN_EXTENSIONS/img/FAMILY BASIC INFORMATION.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>FAMILY BASIC INFORMATION</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <form action="clientDataview.php" method="POST">
+                      <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                      <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                      <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      <input class="client-portal-button" type="submit" value="ENTER" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 client-portal-index">
+                <div class="row justify-content-center">
+                  <div class="col-lg-7 client-portal-cards-img">
+                    <img src="DESIGN_EXTENSIONS/img/HISTORY LOGS.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>HISTORY LOGS</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <form action="clientHistoryLogs.php" method="POST">
+                      <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                      <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                      <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      <input class="client-portal-button" type="submit" value="ENTER" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 client-portal-index">
+                <div class="row justify-content-center">
+                  <div class="col-lg-7 client-portal-cards-img">
+                    <img src="DESIGN_EXTENSIONS/img/FAMILY SESSION VENUES.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>FAMILY SESSION VENUES</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <form action="clientFamilySessionVenues.php" method="POST">
+                      <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+                      <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                      <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                      <input class="client-portal-button" type="submit" value="ENTER" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="index index-bg" style="height:100vh;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <div class="row justify-content-center">
+            <div class="index-left">
+              <div class="index-left-headline text-center">
+                <h2>4P'S PROFILE<br>MANAGEMENT<br>SYSTEM</h2>
+              </div>
+              <div class="index-left-body">
+                <p>
+                  The program is a conditional cash grant of the DSWD that gives financial support to the poorest of the poor in the Philippines.
+                </p>
+                <p>
+                  The aim of this program is to help reduce the poverty rate of the Philippines. The 4P’s hopes to break the intergenerational poverty cycle by investing in the health and education of poor families
+                </p>
+                <p>
+                  The 4P’s operates in all the regions in the Philippines. There are two types of cash grants that are given to households in a monthly basis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="row justify-content-center">
+            <div class="index-right">
+              <div class="index-right-headline">
+                <div class="row text-center">
+                  <div class="col-lg-9 text-right">
+                    <h2>PANTAWID PAMILYANG <br>PILIPINO PROGRAM</h2>
+                  </div>
+                  <div class="col-lg-3">
+                    <img src="DESIGN_EXTENSIONS/img/4pslogo.png" width="70%" alt="">
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-lg-12">
+                    <h2>What Kind of User Are You?</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="index-right-body">
+                <div class="row text-center justify-content-center">
+                  <div class="col-lg-3 index-card">
+                    <div class=" index-right-images">
+                      <img src="DESIGN_EXTENSIONS/img/MEMBER.png" width="200vw" height="200px" alt="">
+                    </div>
+                    <div class="">
+                      <a href="CLIENT_PAGES/clientLogin.php" class="index-button">CLIENT</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 index-card">
+                    <div class=" index-right-images">
+                      <img src="DESIGN_EXTENSIONS/img/TEACHER.png" width="240px" height="200px" alt="">
+                    </div>
+                    <div class="">
+                      <a href="TEACHER_PAGES/teacherLogin.php" class="index-button">TEACHER</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 index-card">
+                    <div class=" index-right-images">
+                      <img src="DESIGN_EXTENSIONS/img/ADMIN.png" width="200px" height="200px" alt="">
+                    </div>
+                    <div class="">
+                      <a href="ADMIN_PAGES/logIn/logIn.php" class="index-button">ADMIN</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--   Core JS Files   -->
+  <script src="DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      $(".dropdown-toggle").dropdown();
+    });
+
+    $(document).ready(function() {
+      $('.dataviewTable').DataTable();
+    });
+  </script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="DESIGN_EXTENSIONS/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--  Google Maps Plugin  -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+</body>
+
+</html>

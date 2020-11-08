@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>4ps | Login</title>
+  <title>4ps | Client Login</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0," name="viewport" />
@@ -17,48 +17,56 @@
   <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
 </head>
 
-<body>
+<body style="background-color: #fcecdc;">
 
   <div class="client-login" style="height: 100vh;">
     <div class="container-fluid">
-      <form method="POST" action="clientPortal.php" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="client-login-head client-login-head-left">
-              <div class="row text-center">
-                <div class="col-lg-5">
-                  <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="">
-                </div>
-                <div class="col-lg-7 d-flex align-items-center">
-                  <h2>CLIENT <br> LOG-IN</h2>
-                </div>
+
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="">
               </div>
-            </div>
-            <div class="client-login-body-left">
-              <div class="row">
-                <div class="col-lg-12 text-center">
-                  <h2>NOT A MEMBER YET?</h2>
-                  <a href="clientsignup.php">REGISTER NOW</a>
-                </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 3.8vw;">CLIENT LOG-IN</h2>
               </div>
             </div>
           </div>
-          <div class="col-lg-8">
-            <div class="client-login-head client-login-head-right">
-              <div class="row">
-                <div class="col-lg-9 d-flex align-items-center text-right">
-                  <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
-                </div>
-                <div class="col-lg-3 text-center">
-                  <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
-                </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
               </div>
-              <div class="client-login-input">
-                <div class="row">
-                  <div class="col-lg-12">
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5">
+          <div class="client-login-body-left text-center ">
+            <h2>NOT A MEMBER YET?</h2>
+            <a href="clientsignup.php">REGISTER NOW</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="client-login-head client-login-head-right">
+            <div class="client-login-input">
+              <div class="row">
+                <div class="col-lg-12">
+                  <form method="POST" action="clientPortal.php" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
                     <div class="client-login-text">
                       <div class="row">
-                        <div class="col-lg-3 d-flex align-items-center">
+                        <div class="col-lg-3 d-flex align-items-center p-0">
                           <span>USERNAME:</span>
                         </div>
                         <div class="col-lg-9">
@@ -68,7 +76,7 @@
                     </div>
                     <div class="client-login-text">
                       <div class="row">
-                        <div class="col-lg-3 d-flex align-items-center">
+                        <div class="col-lg-3 d-flex align-items-center p-0">
                           <span>PASSWORD:</span>
                         </div>
                         <div class="col-lg-9 ">
@@ -81,35 +89,24 @@
                         <div class="col-lg-6 text-right">
                           <input type="submit" name="" value="LOGIN" id="signupSubmit" class="client-login-button">
                         </div>
-      </form>
-      <div class="col-lg-6">
-        <form action="../index.php">
-          <input type="submit" name="" value="BACK" class="client-login-button">
-        </form>
+                  </form>
+                  <div class="col-lg-6">
+                    <form action="../index.php">
+                      <input type="submit" name="" value="BACK" class="client-login-button">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-
-  </div>
-  </div>
-  </div>
-  </div>
-
 
 
   </div>
   </div>
-
-
-
-
-
-
-
-
-
+  </div>
 
   <!--   Core JS Files   -->
   <script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
