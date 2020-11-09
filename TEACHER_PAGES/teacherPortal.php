@@ -67,7 +67,7 @@
         <div class="row">
           <div class="col-lg-6 text-center">
             <div class="row justify-content-center">
-              <div class="col-lg-6 teacher-portal-index">
+              <div class="col-lg-6 teacher-portal-index" style="margin: 0 0 0 7vw;">
                 <div class="row justify-content-center">
                   <div class="col-lg-7 teacher-portal-cards-img">
                     <img src="../DESIGN_EXTENSIONS/img/STUDENT ATTENDANCE.png" alt="">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <form action="teacherAttendanceReport.php" method="POST">
+                    <form action="teacherAttendanceReport.php" class="m-0" method="POST">
                       <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
                       <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                       <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
@@ -93,7 +93,7 @@
           </div>
           <div class="col-lg-6 text-center">
             <div class="row justify-content-center">
-              <div class="col-lg-6 teacher-portal-index">
+              <div class="col-lg-6 teacher-portal-index" style="margin: 0 7vw 0 0;">
                 <div class="row justify-content-center">
                   <div class="col-lg-7 teacher-portal-cards-img">
                     <img src="../DESIGN_EXTENSIONS/img/VIEW HANDLED SECTIONS.png" alt="">
@@ -106,7 +106,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <form action="teacherHandledSections.php" method="POST">
+                    <form action="teacherHandledSections.php" class="m-0" method="POST">
                       <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
                       <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                       <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
@@ -119,8 +119,8 @@
           </div>
         </div>
         <div class="row text-center">
-          <div class="col-lg-12 text-center pt-4">
-            <form action="teacherLogin.php">
+          <div class="col-lg-12 text-center">
+            <form action="teacherLogin.php" class="m-0">
               <input type="submit" value="LOGOUT" class="teacher-portal-button">
             </form>
           </div>
