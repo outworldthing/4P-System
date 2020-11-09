@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>4ps | Login</title>
+  <title>4ps | Client Portal</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0," name="viewport" />
@@ -23,38 +23,54 @@
   </style>
 </head>
 
-<body>
+<body style="overflow:hidden;">
+
 
   <?php
-  $username = htmlspecialchars($_REQUEST['loginUsername']);
-  $password = htmlspecialchars($_REQUEST['loginPassword']);
+    $username = htmlspecialchars($_REQUEST['loginUsername']);
+    $password = htmlspecialchars($_REQUEST['loginPassword']);
 
+    include '../BACKEND_FILES/CLIENT.php';
+    $CLIENT = new CLIENT();
 
-  include '../BACKEND_FILES/CLIENT.php';
-  $CLIENT = new CLIENT();
-  if ($CLIENT->ConfirmUsernamePassword($username, $password) == TRUE) {
+    if ($CLIENT->ConfirmUsernamePassword($username, $password) == TRUE) {
       $MemberID = $CLIENT->returnAccountMemberID($username, $password);
-      ?>
+  ?>
+
 
   <div class="client-portal">
-    <div class="container">
-      <div class="row justify-content-center client-portal-head">
-        <div class="col-lg-3 text-right">
-          <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="" class="responsive-img">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left" style="background-color: #db9d92;">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/MEMBER.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 2.6vw; font-weight: 500;">WELCOME CLIENT</h2>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 justify-content-center d-flex align-items-center">
-          <div class="client-portal-head-headline text-center">
-            <h2>WELCOME CLIENT</h2>
-            <h3>SELECT A SECTION TO MANAGE</h3>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="client-portal-cards">
+    <div class="container-fluid pt-3">
+      <div class="client-portal-cards ">
         <div class="row">
-
           <div class="col-lg-3 text-center">
             <div class="row justify-content-center">
               <div class="col-lg-10 client-portal-index">
@@ -81,7 +97,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 text-center">
             <div class="row justify-content-center">
               <div class="col-lg-10 client-portal-index">
@@ -108,7 +123,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 text-center">
             <div class="row justify-content-center">
               <div class="col-lg-10 client-portal-index">
@@ -135,7 +149,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 text-center">
             <div class="row justify-content-center">
               <div class="col-lg-10 client-portal-index">
@@ -163,19 +176,29 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12 text-center pt-4">
+            <form action="clientLogin.php">
+              <input type="submit" value="LOGOUT" class="client-portal-button">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <?php
-  } else {
-  echo '<center><b>Log in Failed, Check Username and Password</b>';
-  echo '<form action = "clientLogin.php" method="POST">'
-  . '<br>'
-  . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
-  . '</form></center>';
-  }
-  ?>
+
+    <?php
+      } else{
+        echo '<center><b>Log in Failed, Check Username and Password</b>';
+        echo '<form action = "clientLogin.php" method="POST">'
+        . '<br>'
+        . '<input type="submit" value="GO BACK TO LOG IN PAGE"/>'
+        . '</form></center>';
+      }
+    ?>
+
+
   <!--   Core JS Files   -->
   <script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>

@@ -17,47 +17,48 @@
   <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
 </head>
 
-<body>
+<body style="background-color: #fcecdc;">
 
-  <div class="client-signup" style="height: 100vh;">
+  <div class="client-signup">
     <div class="container-fluid">
-      <form action="../CLIENT_PROCESSES/clientSignupProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
-        <div class="row">
-          <div class="col-lg-5 d-flex align-items-center">
-            <div class="client-signup-head client-signup-head-left">
-              <div class="row text-center d-flex align-items-center">
-                <div class="col-lg-4">
-                  <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="">
-                </div>
-                <div class="col-lg-8 d-flex align-items-center">
-                  <h2>CLIENT <br> REGISTRATION</h2>
-                </div>
+
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-signup-head client-signup-head-left">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="">
               </div>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="client-signup-head client-signup-head-right">
-              <div class="row">
-                <div class="col-lg-9 d-flex align-items-center text-right">
-                  <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
-                </div>
-                <div class="col-lg-3 text-center">
-                  <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="client-signup-body-right">
-              <div class="row">
-                <div class="col-lg-12 text-center">
-                  <h2>ALREADY A MEMBER?</h2>
-                  <a href="clientLogin.php">LOGIN HERE!</a>
-                </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2>CLIENT <br> REGISTRATION</h2>
               </div>
             </div>
           </div>
         </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-signup-head client-signup-head-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="client-signup-body-right">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h2>ALREADY A MEMBER?</h2>
+                <a href="clientLogin.php">LOGIN HERE!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="client-signup-body-main">
+      <div class="client-signup-body-main">
+        <form action="../CLIENT_PROCESSES/clientSignupProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
           <div class="row">
             <div class="col-lg-3  client-signup-text">
               <div class="row justify-content-center text-center">
@@ -129,8 +130,9 @@
               <input type="submit" name="" value="REGISTER" class="client-signup-button">
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
+
     </div>
   </div>
 

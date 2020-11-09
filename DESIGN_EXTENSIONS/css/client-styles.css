@@ -134,12 +134,9 @@ img {
 }
 
 
-/***********
-CLIENT HEADER
-************/
-.client-cashin-header{
-}
-
+/********************
+CLIENT HEADER WIDE
+*********************/
 .client-header-left{
 	background-color: #fda871;
 	padding: 20px;
@@ -165,6 +162,11 @@ CLIENT HEADER
 	padding-right: 20px;
 	border-right: .4vw solid #0b2d48;
 }
+
+/********************
+CLIENT HEADER NARROW
+*********************/
+
 
 /***********
 CLIENT LOGIN
@@ -241,14 +243,85 @@ CLIENT LOGIN
 }
 
 /***********
+TEACHER LOGIN
+************/
+
+.teacher-login-body-left{
+	margin: 8vw auto;
+	padding: 1.8vw;
+	width: 85%;
+	border-top: .6vw dashed #404040;
+	border-bottom: .6vw dashed #404040;
+}
+
+.teacher-login-body-left h2{
+	color: #0b2d48;
+	margin: 0 0 20px;
+	font-size: 2.4vw;
+	font-weight: 400;
+}
+
+.teacher-login-body-left a{
+	font-size: 1.7vw;
+	text-decoration: none;
+	color: #80a1f0;
+}
+
+.teacher-login-body-left a:hover{
+	color: #465a7e;
+}
+
+.teacher-login-head-right{
+	margin: 6vw 0 0 0;
+}
+
+.teacher-login-input {
+	margin: 4vw 0 0;
+	padding: 20px;
+}
+
+.teacher-login-text {
+	padding: 2vw;
+}
+
+.teacher-login-text span{
+	font-size: 2vw;
+}
+
+.teacher-login-text input {
+	border: 0;
+	border-bottom: .25vw solid #ce9c9b;
+	background-color: #e3eef2;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 90%;
+}
+
+.teacher-login-button {
+	margin: 2vw 0 0;
+	background: #ce9c9b;
+	border: 3px solid #9f708d;
+	color: #695b4b;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.teacher-login-button:hover {
+	background: #5393c1 none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+/***********
 CLIENT SIGNUP
 ************/
 
 .client-signup {
-	background-color: #fcecdc;
-}
 
-.client-signup-head{
 }
 
 .client-signup-head-left{
@@ -259,15 +332,28 @@ CLIENT SIGNUP
 }
 
 .client-signup-head-left h2{
-	font-size: 2.8vw;
-	line-height: 2.8vw;
+	font-size: 3.5vw;
+	line-height: 3.5vw;
 	font-weight: 400;
 	color: #0b2d48;
 }
 
+.client-signup-head-right{
+	margin-top: 2vw;
+}
+
+.client-signup-head-right h2{
+	font-size: 3vw;
+	font-weight: 500;
+	color: #0b2d48;
+	line-height: 2.8vw;
+	padding-right: 20px;
+	border-right: .4vw solid #0b2d48;
+}
+
 .client-signup-body-right{
 	margin: 0 0 0;
-	padding: .7vw;
+	padding: .5vw;
 	border-top: .4vw dashed #404040;
 	border-bottom: .4vw dashed #404040;
 }
@@ -285,21 +371,8 @@ CLIENT SIGNUP
 
 .client-signup-body-right h2{
 	color: #0b2d48;
-	margin: 0 0 20px;
+	margin: 0;
 	font-weight: 400;
-}
-
-.client-signup-head-right{
-	margin: .5vw 0 0;
-}
-
-.client-signup-head-right h2{
-	font-size: 3vw;
-	font-weight: 500;
-	color: #0b2d48;
-	line-height: 2.8vw;
-	padding-right: 20px;
-	border-right: .4vw solid #0b2d48;
 }
 
 .client-signup-input {
@@ -366,6 +439,127 @@ CLIENT SIGNUP
 
 .client-signup-body-main {
 	margin-top: 1vw;
+}
+
+/***********
+TEACHER SIGNUP
+************/
+
+.teacher-signup {
+
+}
+
+.teacher-signup-head-left{
+	background-color: #adcdd8;
+	padding: 20px;
+	margin-top: 2vw;
+	border-radius: 5px;
+}
+
+.teacher-signup-head-left h2{
+	font-size: 3.5vw;
+	line-height: 3.5vw;
+	font-weight: 400;
+	color: #0b2d48;
+}
+
+.teacher-signup-head-right{
+	margin-top: 2vw;
+}
+
+.teacher-signup-head-right h2{
+	font-size: 3vw;
+	font-weight: 500;
+	color: #0b2d48;
+	line-height: 2.8vw;
+	padding-right: 20px;
+	border-right: .4vw solid #0b2d48;
+}
+
+.teacher-signup-body-right{
+	margin: 0 0 0;
+	padding: .5vw;
+	border-top: .4vw dashed #404040;
+	border-bottom: .4vw dashed #404040;
+}
+
+.teacher-signup-body-right a{
+	font-size: 1.7vw;
+	text-decoration: none;
+	color: #80a1f0;
+}
+
+.teacher-signup-body-right a:hover{
+	color: #465a7e;
+}
+
+
+.teacher-signup-body-right h2{
+	color: #0b2d48;
+	margin: 0 0 1.5vw;
+	font-weight: 400;
+}
+
+.teacher-signup-input {
+	margin: 4vw 0 0;
+	padding: 20px;
+}
+
+.teacher-signup-text {
+	padding: 2vw;
+}
+
+.teacher-signup-text span{
+	color: #1d3b53;
+	font-size: 1.6vw;
+	padding: 1.2vw 0 .5vw;
+}
+
+.teacher-signup-text input[type="text"], select {
+	border: 0;
+	border-bottom: .25vw solid #ce9c9b;
+	background-color: #e3eef2;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.teacher-signup-text input[type="text"]:focus,select:focus {
+	border-bottom: .25vw solid #1d3b53;
+	transition: all .35s ease-in;
+}
+
+.teacher-signup-text input[type="password"] {
+	border: 0;
+	border-bottom: .25vw solid #ce9c9b;
+	background-color: #e3eef2;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 80%;
+}
+
+.teacher-signup-text input[type="password"]:focus {
+	border-bottom: .25vw solid #1d3b53;
+	transition: all .35s ease-in;
+}
+
+.teacher-signup-button {
+	margin: 2vw 0 0 22vw;
+	background: #ce9c9b;
+	border: 3px solid #9f708d;
+	color: #695b4b;
+	display: inline-block;
+	padding: 20px 30px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.teacher-signup-button:hover {
+	background: #5393c1 none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
 }
 
 /***********

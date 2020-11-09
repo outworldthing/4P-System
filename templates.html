@@ -114,17 +114,104 @@
     </div>
   </div>
 
-  <div class="client-login index-bg" style="height: 100vh;">
+  <div class="client-login" style="height: 100vh;">
     <div class="container-fluid">
+
       <div class="row d-flex align-items-center">
         <div class="col-lg-5">
           <div class="client-header client-header-left">
             <div class="row text-center d-flex align-items-center">
               <div class="col-lg-3">
-                <img src="DESIGN_EXTENSIONS/img/member.PNG" alt="">
+                <img src="../DESIGN_EXTENSIONS/img/member.PNG" alt="">
               </div>
               <div class="col-lg-9 d-flex align-items-center">
                 <h2 style="font-size: 3.8vw;">CLIENT LOG-IN</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="../DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5">
+          <div class="client-login-body-left text-center ">
+            <h2>NOT A MEMBER YET?</h2>
+            <a href="clientsignup.php">REGISTER NOW</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="client-login-head client-login-head-right">
+            <div class="client-login-input">
+              <div class="row">
+                <div class="col-lg-12">
+                  <form method="POST" action="clientPortal.php" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+                    <div class="client-login-text">
+                      <div class="row">
+                        <div class="col-lg-3 d-flex align-items-center p-0">
+                          <span>USERNAME:</span>
+                        </div>
+                        <div class="col-lg-9">
+                          <input type="text" required pattern=".{6,15}" name="loginUsername" id="loginUsername">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="client-login-text">
+                      <div class="row">
+                        <div class="col-lg-3 d-flex align-items-center p-0">
+                          <span>PASSWORD:</span>
+                        </div>
+                        <div class="col-lg-9 ">
+                          <input type="password" Required pattern=".{6,15}" name="loginPassword" id="loginPassword">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="client-login-buttons">
+                      <div class="row">
+                        <div class="col-lg-6 text-right">
+                          <input type="submit" name="" value="LOGIN" id="signupSubmit" class="client-login-button">
+                        </div>
+                  </form>
+                  <div class="col-lg-6">
+                    <form action="../index.php">
+                      <input type="submit" name="" value="BACK" class="client-login-button">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="client-portal" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left" style="background-color: #db9d92;">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/MEMBER.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 2.6vw; font-weight: 500;">WELCOME CLIENT</h2>
               </div>
             </div>
           </div>
@@ -142,75 +229,10 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="client-login-body-left text-center ">
-            <h2>NOT A MEMBER YET?</h2>
-            <a href="clientsignup.php">REGISTER NOW</a>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="client-login-head client-login-head-right">
-            <div class="client-login-input">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="client-login-text">
-                    <div class="row">
-                      <div class="col-lg-3 d-flex align-items-center p-0">
-                        <span>USERNAME:</span>
-                      </div>
-                      <div class="col-lg-9">
-                        <input type="text" required pattern=".{6,15}" name="loginUsername" id="loginUsername">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="client-login-text">
-                    <div class="row">
-                      <div class="col-lg-3 d-flex align-items-center p-0">
-                        <span>PASSWORD:</span>
-                      </div>
-                      <div class="col-lg-9 ">
-                        <input type="password" Required pattern=".{6,15}" name="loginPassword" id="loginPassword">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="client-login-buttons">
-                    <div class="row">
-                      <div class="col-lg-6 text-right">
-                        <input type="submit" name="" value="LOGIN" id="signupSubmit" class="client-login-button">
-                      </div>
-                      <div class="col-lg-6">
-                        <form action="index.php">
-                          <input type="submit" name="" value="BACK" class="client-login-button">
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div class="client-portal index-bg" style="height: 100vh;">
-    <div class="container">
-      <div class="row justify-content-center client-portal-head">
-        <div class="col-lg-3 text-right">
-          <img src="DESIGN_EXTENSIONS/img/member.PNG" alt="" class="responsive-img">
-        </div>
-        <div class="col-lg-6 justify-content-center d-flex align-items-center">
-          <div class="client-portal-head-headline text-center">
-            <h2>WELCOME CLIENT</h2>
-            <h3>SELECT A SECTION TO MANAGE</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="client-portal-cards">
+    <div class="container-fluid pt-3">
+      <div class="client-portal-cards ">
         <div class="row">
           <div class="col-lg-3 text-center">
             <div class="row justify-content-center">
@@ -317,6 +339,13 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12 text-center pt-4">
+            <form action="clientLogin.php">
+              <input type="submit" value="LOGOUT" class="client-portal-button">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -395,6 +424,163 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="client-education-cashin" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left" style="background-color: #bacccc;">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/EDUCATION BALANCE.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 2.6vw; font-weight: 500;">EDUCATION BALANCE</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-5">
+      <div class="row pt-4">
+        <div class="col-lg-12">
+          <form action="CLIENT_PROCESSES/clientEducationCashInProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+            <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+            <input type="hidden" name="FamilyID" value="<?php echo $FamilyID; ?>" />
+            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+            <div class="client-education-cashin-text">
+              <div class="row">
+                <div class="col-lg-5 d-flex align-items-center p-0">
+                  <span>TOTAL BALANCE:</span>
+                </div>
+                <div class="col-lg-7 p-0">
+                  <input type="text" required name="educationtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>">
+                </div>
+              </div>
+            </div>
+            <div class="client-education-cashin-text">
+              <div class="row">
+                <div class="col-lg-5 d-flex align-items-center p-0">
+                  <span>CASH IN BALANCE:</span>
+                </div>
+                <div class="col-lg-7 p-0">
+                  <input type="text" required name="educationcashinbalance" id="loginPassword" placeholder="<?php if($Balance<=0){echo 'Account Inactive';}else{ echo 'CASH IN';}?>" <?php if($Balance<=0){echo 'disabled';}?>>
+                </div>
+              </div>
+            </div>
+            <div class="client-education-cashin-buttons pt-5">
+              <div class="row">
+                <div class="col-lg-6 text-right">
+                  <input type="submit" name="" value="CASH IN" id="signupSubmit" class="client-education-cashin-button">
+                </div>
+          </form>
+          <div class="col-lg-6">
+            <form action="clientCashInBalance.php">
+              <input type="hidden" name="loginUsername" value="<?php echo $username; ?>">
+              <input type="hidden" name="loginPassword" value="<?php echo $password; ?>">
+              <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>">
+              <input type="submit" value="BACK" class="client-education-cashin-button">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="client-health-cashin index-bg" style="height: 100vh;">
+    <div class="container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-5">
+          <div class="client-header client-header-left" style="background-color: #bacccc;">
+            <div class="row text-center d-flex align-items-center">
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/HEALTH BALANCE.PNG" alt="">
+              </div>
+              <div class="col-lg-9 d-flex align-items-center">
+                <h2 style="font-size: 2.6vw; font-weight: 500;">HEALTH BALANCE</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ml-auto">
+          <div class="client-header client-header-right">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-9 text-right">
+                <h2 class="ml-auto">PANTAWID PAMILYANG <br> PILIPINO PROGRAM</h2>
+              </div>
+              <div class="col-lg-3">
+                <img src="DESIGN_EXTENSIONS/img/4pslogo.PNG" width="200px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-5">
+      <div class="row pt-4">
+        <div class="col-lg-12">
+          <form action="CLIENT_PROCESSES/clientHealthCashInProcess.php" method="POST" class="form" name="signupForm" id="signupForm" onsubmit="return validateForm();">
+            <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>" />
+            <input type="hidden" name="FamilyID" value="<?php echo $FamilyID; ?>" />
+            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+            <div class="client-education-cashin-text">
+              <div class="row">
+                <div class="col-lg-5 d-flex align-items-center p-0">
+                  <span>TOTAL BALANCE:</span>
+                </div>
+                <div class="col-lg-7 p-0">
+                  <input type="text" required name="healthtotalbalance" id="loginUsername" placeholder="<?php echo $Balance;?>" value="<?php echo $Balance;?>">
+                </div>
+              </div>
+            </div>
+            <div class="client-education-cashin-text">
+              <div class="row">
+                <div class="col-lg-5 d-flex align-items-center p-0">
+                  <span>CASH IN BALANCE:</span>
+                </div>
+                <div class="col-lg-7 p-0">
+                  <input type="text" required name="healthcashinbalance" id="loginPassword" placeholder="<?php if($Balance<=0){echo 'Account Inactive';}else{ echo 'CASH IN';}?>" <?php if($Balance<=0){echo 'disabled';}?>>
+                </div>
+              </div>
+            </div>
+            <div class="client-education-cashin-buttons pt-5">
+              <div class="row">
+                <div class="col-lg-6 text-right">
+                  <input type="submit" name="" value="CASH IN" id="signupSubmit" class="client-education-cashin-button">
+                </div>
+          </form>
+          <div class="col-lg-6">
+            <form action="clientCashInBalance.php">
+              <input type="hidden" name="loginUsername" value="<?php echo $username; ?>">
+              <input type="hidden" name="loginPassword" value="<?php echo $password; ?>">
+              <input type="hidden" name="MemberID" value="<?php echo $MemberID; ?>">
+              <input type="submit" value="BACK" class="client-education-cashin-button">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <!--   Core JS Files   -->
