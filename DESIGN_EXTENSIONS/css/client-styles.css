@@ -677,7 +677,7 @@ TEACHER PORTAL
 	border: 3px solid #9f708d;
 	color: #695b4b;
 	display: inline-block;
-	padding: 20px 30px;
+	padding: 15px 25px;
 	font-size: 1.1vw;
 	font-weight: 600;
 	border-radius: 5px;
@@ -689,6 +689,93 @@ TEACHER PORTAL
   color: #fff;
   transition: 0.4s;
 }
+
+/***********
+TEACHER ATTENDANCE REPORT
+************/
+
+.teacher-attendance-left-body {
+
+}
+
+.teacher-attendance-text {
+	padding: 1.4vw 0 0;
+}
+
+.teacher-attendance-body span {
+	color: #1d3b53;
+	font-size: 1.6vw;
+}
+
+.teacher-attendance-body input[type="text"], select {
+	border: 0;
+	border-bottom: .25vw solid #ce9c9b;
+	background-color: #e3eef2;
+	font-size: 1.2vw;
+	padding: .6vw;
+	width: 90%;
+}
+
+.teacher-attendance-button {
+	background: #ce9c9b;
+	border: 3px solid #9f708d;
+	color: #695b4b;
+	display: inline-block;
+	padding: 15px 35px;
+	margin-top: 5vw;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.teacher-attendance-button:hover {
+	background: #5393c1 none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
+/***********
+TEACHER HANDLED SECTIONS
+************/
+.teacher-sections-body {
+	padding: 3vw 0;
+}
+
+
+.teacher-sections-body span {
+	color: #1d3b53;
+	font-size: 1.6vw;
+}
+
+.teacher-sections-body input[type="text"], select {
+	border: 0;
+	border-bottom: .25vw solid #ce9c9b;
+	background-color: #e3eef2;
+	font-size: 1.2vw;
+	margin: 1.5vw 0;
+	padding: .6vw;
+	width: 90%;
+}
+
+.teacher-sections-button {
+	background: #ce9c9b;
+	border: 3px solid #9f708d;
+	color: #695b4b;
+	display: inline-block;
+	padding: 15px 35px;
+	font-size: 1.1vw;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.teacher-sections-button:hover {
+	background: #5393c1 none repeat scroll 0 0;
+  border: 3px solid #9a9087;
+  color: #fff;
+  transition: 0.4s;
+}
+
 
 /**********************
 CLIENT CASH IN BALANCE
