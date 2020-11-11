@@ -221,12 +221,18 @@ foreign key (SchoolID) references School(SchoolID) on delete cascade on update c
 foreign key (TeacherID) references Teacher(TeacherID) on delete cascade on update cascade
 );
 
+Create table Year (
+YearID int not null auto_increment,
+Year_Name year(4) not null,
+Primary Key (YearID)
+);
+
 Create table Month (
-MonthID, int not null auto_increment,
+MonthID int not null auto_increment,
 YearID int,
-Month_name month() not null,
+Month_name varchar(50) not null,
 Primary key (MonthID),
-Foreign key (YearID) reference Year(YearID)
+Foreign key (YearID) references Year(YearID)
 );
 
 Create Table Attendance (
@@ -234,15 +240,9 @@ AttendanceID int not null auto_increment,
 Present_Days int not null,
 MonthID int not null,
 StudentID int not null,
-Primary ID (AttendanceID),
+Primary key AttendanceID (AttendanceID),
 Foreign Key (MonthID) references Month(MonthID),
 Foreign Key (StudentID) references Student(StudentID)
-);
-
-Create table Year (
-YearID int not null auto_increment,
-Year_Name year() not null,
-Primary Key (YearID)
 );
 
 Create table UpdateLog(

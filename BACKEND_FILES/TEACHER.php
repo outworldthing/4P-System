@@ -139,6 +139,19 @@ class TEACHER {
         }
         return FALSE;
     }
+    
+    function EnterNumberOfPresentDays ($Present_Days, $MonthID, $StudentID){
+        try{
+            $command = "Insert into Attendance(Present_Days, MonthID, StudentID) " 
+                    . "Values('" . $Present_Days. "', '" . $MonthID . "','" . $StudentID ."')";
+            $result = mysqli_query($this->conn, $command);
+            if ($result == true){
+                return true;
+            }
+        } catch (Exception $ex) {
+            echo "Failed adding Attendance Report. Please try again.";
+        }
+    }
 
     function getTeacherIDCredentials($FirstName, $MiddleName, $LastName, $Suffix) {
         try {
@@ -185,6 +198,19 @@ class TEACHER {
         }
         return $result;
     }
+    
+    function getYear(){
+        try{
+            $command = "select distinct Year_Name from year";
+            $result = mysqlu_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0){
+                return $result;
+            }
+        } catch (Exception $exc) {
+            echo "Please try again. Return to Attendance Form Page";
+        } 
+    }
+ 
 
     function getStudentsPerSection($TeacherID, $SectionName) {
         try {
