@@ -80,7 +80,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <form action="teacherAttendanceReport.php" class="m-0" method="POST">
+                    <form action="teacherSelectSectionAttendance.php" class="m-0" method="POST">
                       <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
                       <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                       <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
@@ -106,7 +106,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <form action="teacherSelectSection.php" class="m-0" method="POST">
+                    <form action="teacherSelectSectionHandled.php" class="m-0" method="POST">
                       <input type="hidden" name="TeacherID" value="<?php echo $TeacherID; ?>" />
                       <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
                       <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
