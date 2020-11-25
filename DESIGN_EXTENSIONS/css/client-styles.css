@@ -855,6 +855,165 @@ CLIENT EDUCATION AND HEALTH CASH IN
 }
 
 
+/**********************
+SIDEBAR
+***********************/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1500;
+  width: 280px;
+  background: #f99744;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .logo {
+  padding: 25px 10px;
+}
+
+.sidebar .logo:after {
+  content: "";
+	border-bottom: 3px solid #d47424;
+
+}
+
+.sidebar .logo span {
+		font-size: .9vw;
+		font-weight: 600;
+}
+
+.sidebar .logo-img img {
+  width: 100%;
+}
+
+.sidebar-button{
+	padding: 18px;
+	width: 90%;
+	border: 1px solid orange;
+	border-radius: 30px;
+	font-size: .8vw;
+	font-weight: 600;
+	background-color: #2f5296;
+}
+
+.sidebar-button-active {
+	background-color: white;
+}
+
+.sidebar-button:hover{
+	background-color: #fff;
+}
+
+.register-nav-item {
+	padding: 20px;
+	color: #f7984c;
+}
+
+.register-nav-link{
+	font-size: 1vw;
+	color: #f7984c;
+}
+
+.register-nav-link:hover{
+	font-size: 1vw;
+	color: black;
+}
+
+
+.navbar {
+	background-color: white;
+	z-index: 1;
+	padding-top: 10px;
+}
+
+.register-content h2{
+	font-size: 1.7vw;
+	font-weight: 600;
+	padding: 10px;
+}
+
+.register-content-img {
+	padding: 20px;
+}
+
+.register-input-area {
+	padding: 50px;
+	background-color: #f99744;
+	border: 2px solid black;
+}
+
+.register-input {
+	padding: 20px;
+}
+
+.register-input label{
+	color: black;
+	font-size: 1vw;
+}
+
+.register-input input[type='text'], input[type='date']{
+	color: black;
+	padding: 10px;
+	border: 0;
+  font-size: 1vw;
+  margin: 0;
+  width: 90%;
+	background-color: #f99744;
+}
+
+.register-input select{
+	color: black;
+	padding: 5px;
+	border: 0;
+	border-bottom: 2px solid #d2d2d2;
+  font-size: .9vw;
+	font-weight: 600;
+  margin: 0;
+  width: 90%;
+	background-color: #f99744;
+}
+
+.register-submit {
+	margin: 20px 0;
+	padding: 20px;
+	font-size: 1vw;
+	font-weight: 600;
+	border-radius: 10px;
+	background-color: #2f5296;
+	border: 3px solid black;
+}
+
+.register-submit:hover {
+	background-color: #f99744;
+	border: 3px solid black;
+}
+
+.register-input-area h2{
+	font-size: 1.6vw;
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

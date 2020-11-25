@@ -9,519 +9,488 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
-    <?php
+<?php
     $username = htmlspecialchars($_REQUEST['loginUsername']);
     $password = htmlspecialchars($_REQUEST['loginPassword']);
 
     include '../../BACKEND_FILES/ADMIN.php';
     $ADMIN = new ADMIN();
     ?>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="../../DESIGN_EXTENSIONS/img/4pslogo.png">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>
-            Pantawid Pamilyang Pilipino Program
-        </title>
-        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-        <!--     Fonts and icons     -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-        <!-- CSS Files -->
-        <link href="../../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-        <!-- CSS Just for demo purpose, don't include it in your project -->
-        <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
-    </head>
 
-    <body class="">
-        <div class="wrapper ">
-            <div class="sidebar" data-color="purple" data-background-color="white" data-image="../../DESIGN_EXTENSIONS/img/sidebar-1.jpg">
-                <!--
-                  Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-                  Tip 2: you can also add an image using data-image tag
-                -->
-                <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                        <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogomini.png" />
-                        Welcome Admin
-                    </a></div>
-                <div class="sidebar-wrapper">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <form action="registerfamily.php" method="POST">
-                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                <i class="material-icons">person</i>
-                                <button type="submit">Register Family</button>
-                            </form>
-                        </li>
-                        <li class="nav-item active">
-                            <form action="registerstudent.php" method="POST">
-                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                <i class="material-icons">person</i>
-                                <button type="submit">Register Student</button>
-                            </form>
-                        </li>
-                        <li class="nav-item ">
-                            <form action="registerpregnant.php" method="POST">
-                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                <i class="material-icons">person</i>
-                                <button type="submit">Register Pregnant</button>
-                            </form>
-                        </li>
-                        <li class="nav-item ">
-                            <form action="registerteacher.php" method="POST">
-                                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                <i class="material-icons">person</i>
-                                <button type="submit">Register Teacher</button>
-                            </form>
-                        </li>
-                    </ul>
-                    <form action="../adminPortal.php" method="POST">
-                        <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                        <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                        <i class="material-icons">content_paste</i>
-                        <button type="submit">Return to Portal</button>
-                    </form>
-                </div>
-            </div>
-            <div class="main-panel">
-                <!-- Navbar -->
-                <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                    <div class="container-fluid">
-                        <div class="navbar-wrapper">
-                            <a class="navbar-brand" href="javascript:;">Student Registration Form</a>
-                        </div>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="navbar-toggler-icon icon-bar"></span>
-                            <span class="navbar-toggler-icon icon-bar"></span>
-                            <span class="navbar-toggler-icon icon-bar"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end">
-                            <form class="navbar-form">
-                                <div class="input-group no-border">
-                                    <input type="text" value="" class="form-control" placeholder="Search...">
-                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                        <i class="material-icons">search</i>
-                                        <div class="ripple-container"></div>
-                                    </button>
-                                </div>
-                            </form>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="javascript:;">
-                                        <i class="material-icons">dashboard</i>
-                                        <p class="d-lg-none d-md-block">
-                                            Stats
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">notifications</i>
-                                        <span class="notification">5</span>
-                                        <p class="d-lg-none d-md-block">
-                                            Some Actions
-                                        </p>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                        <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                        <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                        <a class="dropdown-item" href="#">Another Notification</a>
-                                        <a class="dropdown-item" href="#">Another One</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">person</i>
-                                        <p class="d-lg-none d-md-block">
-                                            Account
-                                        </p>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                        <a class="dropdown-item" href="#">Profile</a>
-                                        <a class="dropdown-item" href="#">Settings</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="../logIn/logIn.php">Log out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <!-- End Navbar -->
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card card-profile">
-                                    <div class="card-avatar">
-                                        <a href="javascript:;">
-                                            <img class="img" src="../../DESIGN_EXTENSIONS/img/student.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Student</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card">
-                                    <div class="card-header card-header-primary">
-                                        <h4 class="card-title">Member Credentials</h4>
-                                        <p class="card-category">Complete your registration</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="../../ADMIN_PROCESSES/registerstudentProcess.php" method="POST">
-                                            <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                                            <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                                            <div class="row">
-                                                <div class="card-header">
-                                                    <h4 class="card-title">Student</h4>
-                                                    <p class="card-category">Enter complete information</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">First Name</label>
-                                                        <input type="text" name="FirstName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Middle Name</label>
-                                                        <input type="text" name="MiddleName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="text" name="LastName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Suffix (optional)</label>
-                                                        <input type="text" name="Suffix" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">School</label>
-                                                        <input type="text" name="School" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Section</label>
-                                                        <input type="text" name="Section" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <label class="bmd-label">Grade Type:</label>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input type="radio" name="gradeType" value="Daycare"  required>Daycare</label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label><input type="radio" name="gradeType" value="Elementary">Elementary</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input type="radio" name="gradeType" value="JHS">Junior High School</label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label><input type="radio" name="gradeType" value="SHS">Senior High School</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="card-header">
-                                                    <h4 class="card-title">Who's your adviser?</h4>
-                                                    <p class="card-category">Enter complete information</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">First Name</label>
-                                                        <input type="text" name="TeacherFirstName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Middle Name</label>
-                                                        <input type="text" name="TeacherMiddleName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Last Name</label>
-                                                        <input type="text" name="TeacherLastName" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating">Suffix (optional)</label>
-                                                        <input type="text" name="TeacherSuffix" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary pull-right">SUBMIT</button>
-                                            <div class="clearfix"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../DESIGN_EXTENSIONS/img/4pslogo.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Student Registration Form
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 
-                        </div>
-                    </div>
-                </div>
-                <footer class="footer">
+  <link href="../../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
+</head>
 
-                </footer>
-            </div>
+<body class="">
+
+  <div class="sidebar">
+
+    <div class="logo">
+      <div class="row">
+        <div class="col-lg-4 logo-img">
+          <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogo.png" />
         </div>
+        <div class="col-lg-8 p-0">
+          <span>Pantawid Pamilyang Pilipino Program</span>
+        </div>
+      </div>
+    </div>
 
-        <!--   Core JS Files   -->
-        <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
-        <script src="../../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
-        <script src="../../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-        <!-- Plugin for the momentJs  -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
-        <!--  Plugin for Sweet Alert -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
-        <!-- Forms Validations Plugin -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
-        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
-        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
-        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
-        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
-        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
-        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
-        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
-        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
-        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
-        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-        <!-- Library for adding dinamically elements -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
-        <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-        <!-- Chartist JS -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
-        <!--  Notifications Plugin    -->
-        <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
-        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-        <script src="../../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-        <script src="../../DESIGN_EXTENSIONS/demo/demo.js"></script>
-        <script>
-            $(document).ready(function () {
-                $().ready(function () {
-                    $sidebar = $('.sidebar');
+    <ul class="nav text-center">
+      <li>
+        <form action="registerfamily.php" method="POST">
+          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+          <button type="submit" class="sidebar-button">Register Family</button>
+        </form>
+      </li>
+      <li class="nav-item ">
+        <form action="registerstudent.php" method="POST">
+          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+          <button type="submit" class="sidebar-button  sidebar-button-active">Register Student</button>
+        </form>
+      </li>
+      <li class="nav-item ">
+        <form action="registerpregnant.php" method="POST">
+          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+          <button type="submit" class="sidebar-button">Register Pregnant</button>
+        </form>
+      </li>
+      <li class="nav-item ">
+        <form action="registerteacher.php" method="POST">
+          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+          <button type="submit" class="sidebar-button">Register Teacher</button>
+        </form>
+      </li>
+      <li>
+        <form action="../adminPortal.php" method="POST">
+          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+          <button type="submit" class="sidebar-button">Return to Portal</button>
+        </form>
+      </li>
+    </ul>
 
-                    $sidebar_img_container = $sidebar.find('.sidebar-background');
+  </div>
 
-                    $full_page = $('.full-page');
+  <div class="main-panel">
 
-                    $sidebar_responsive = $('body > .navbar-collapse');
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  navbar-absolute">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+        </div>
+        <div class="justify-content-end">
+          <ul class="navbar-nav">
+            <li class="register-nav-item">
+              <a class="register-nav-link " href="#">Dashboard</a>
+            </li>
+            <li class="register-nav-item">
+              <a class="register-nav-link " href="#">Notification</a>
+            </li>
+            <li class="register-nav-item">
+              <a class="register-nav-link" href="../logIn/logIn.php">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
 
-                    window_width = $(window).width();
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
 
-                    fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').php();
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <form action="../../ADMIN_PROCESSES/registerstudentProcess.php" method="POST">
 
-                    if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
-                        if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
-                            $('.fixed-plugin .dropdown').addClass('open');
-                        }
-
-                    }
-
-                    $('.fixed-plugin a').click(function (event) {
-                        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
-                        if ($(this).hasClass('switch-trigger')) {
-                            if (event.stopPropagation) {
-                                event.stopPropagation();
-                            } else if (window.event) {
-                                window.event.cancelBubble = true;
-                            }
-                        }
-                    });
-
-                    $('.fixed-plugin .active-color span').click(function () {
-                        $full_page_background = $('.full-page-background');
-
-                        $(this).siblings().removeClass('active');
-                        $(this).addClass('active');
-
-                        var new_color = $(this).data('color');
-
-                        if ($sidebar.length != 0) {
-                            $sidebar.attr('data-color', new_color);
-                        }
-
-                        if ($full_page.length != 0) {
-                            $full_page.attr('filter-color', new_color);
-                        }
-
-                        if ($sidebar_responsive.length != 0) {
-                            $sidebar_responsive.attr('data-color', new_color);
-                        }
-                    });
-
-                    $('.fixed-plugin .background-color .badge').click(function () {
-                        $(this).siblings().removeClass('active');
-                        $(this).addClass('active');
-
-                        var new_color = $(this).data('background-color');
-
-                        if ($sidebar.length != 0) {
-                            $sidebar.attr('data-background-color', new_color);
-                        }
-                    });
-
-                    $('.fixed-plugin .img-holder').click(function () {
-                        $full_page_background = $('.full-page-background');
-
-                        $(this).parent('li').siblings().removeClass('active');
-                        $(this).parent('li').addClass('active');
+                  <div class="row justify-content-center register-content-img">
+                    <div class="col-lg-3 text-center register-content">
+                      <img class="img" src="../../DESIGN_EXTENSIONS/img/student.jpg" width="80%" style="border-radius: 120px;">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center register-content">
+                      <h2 class="">Student Registration Form</h2>
+                    </div>
+                  </div>
 
 
-                        var new_image = $(this).find("img").attr('src');
 
-                        if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                            $sidebar_img_container.fadeOut('fast', function () {
-                                $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                                $sidebar_img_container.fadeIn('fast');
-                            });
-                        }
+                  <div class="row register-input-area">
 
-                        if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-12 text-left">
+                          <h2>Student</h2>
+                        </div>
+                      </div>
 
-                            $full_page_background.fadeOut('fast', function () {
-                                $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                                $full_page_background.fadeIn('fast');
-                            });
-                        }
+                      <div class="row text-left register-input">
+                        <div class="col-lg-4">
+                          <label>First Name</label>
+                          <input type="text" name="FirstName" class="form-control" required>
 
-                        if ($('.switch-sidebar-image input:checked').length == 0) {
-                            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+                        </div>
+                        <div class="col-lg-4">
+                          <label>Middle Name</label>
+                          <input type="text" name="MiddleName" class="form-control" required>
 
-                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                        }
+                        </div>
+                        <div class="col-lg-4">
+                          <label>Last Name</label>
+                          <input type="text" name="LastName" class="form-control" required>
+                        </div>
+                      </div>
 
-                        if ($sidebar_responsive.length != 0) {
-                            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
-                        }
-                    });
+                      <div class="row text-left register-input">
+                        <div class="col-lg-4">
+                          <label>Suffix (optional)</label>
+                          <input type="text" name="Suffix" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                          <label>School</label>
+                          <input type="text" name="School" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                          <label>Section</label>
+                          <input type="text" name="Section" class="form-control">
+                        </div>
+                      </div>
 
-                    $('.switch-sidebar-image input').change(function () {
-                        $full_page_background = $('.full-page-background');
+                      <div class="row justify-content-center text-left  register-input">
+                        <div class="col-md-4">
+                          <label>Grade Type:</label>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="checkbox">
+                            <label><input type="radio" name="gradeType" value="Daycare" required>Daycare</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="radio" name="gradeType" value="Elementary">Elementary</label>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="checkbox">
+                            <label><input type="radio" name="gradeType" value="JHS">Junior High School</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="radio" name="gradeType" value="SHS">Senior High School</label>
+                          </div>
+                        </div>
+                      </div>
 
-                        $input = $(this);
+                    </div>
 
-                        if ($input.is(':checked')) {
-                            if ($sidebar_img_container.length != 0) {
-                                $sidebar_img_container.fadeIn('fast');
-                                $sidebar.attr('data-image', '#');
-                            }
+                  </div>
 
-                            if ($full_page_background.length != 0) {
-                                $full_page_background.fadeIn('fast');
-                                $full_page.attr('data-image', '#');
-                            }
+                  <div class="row register-input-area">
 
-                            background_image = true;
-                        } else {
-                            if ($sidebar_img_container.length != 0) {
-                                $sidebar.removeAttr('data-image');
-                                $sidebar_img_container.fadeOut('fast');
-                            }
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-12 text-left">
+                          <h2>Who's Your Adviser?</h2>
+                        </div>
+                      </div>
 
-                            if ($full_page_background.length != 0) {
-                                $full_page.removeAttr('data-image', '#');
-                                $full_page_background.fadeOut('fast');
-                            }
+                      <div class="row text-left register-input">
+                        <div class="col-lg-6">
+                          <label>First Name</label>
+                          <input type="text" name="TeacherFirstName" class="form-control" required>
 
-                            background_image = false;
-                        }
-                    });
+                        </div>
+                        <div class="col-lg-6">
+                          <label>Middle Name</label>
+                          <input type="text" name="TeacherMiddleName" class="form-control" required>
 
-                    $('.switch-sidebar-mini input').change(function () {
-                        $body = $('body');
+                        </div>
 
-                        $input = $(this);
+                      </div>
 
-                        if (md.misc.sidebar_mini_active == true) {
-                            $('body').removeClass('sidebar-mini');
-                            md.misc.sidebar_mini_active = false;
+                      <div class="row text-left register-input">
 
-                            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+                        <div class="col-lg-6">
+                          <label>Last Name</label>
+                          <input type="text" name="TeacherLastName" class="form-control" required>
+                        </div>
 
-                        } else {
 
-                            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+                        <div class="col-lg-6">
+                          <label>Suffix (optional)</label>
+                          <input type="text" name="TeacherSuffix" class="form-control">
+                        </div>
 
-                            setTimeout(function () {
-                                $('body').addClass('sidebar-mini');
 
-                                md.misc.sidebar_mini_active = true;
-                            }, 300);
-                        }
+                      </div>
+                    </div>
 
-                        // we simulate the window Resize so the charts will get updated in realtime.
-                        var simulateWindowResize = setInterval(function () {
-                            window.dispatchEvent(new Event('resize'));
-                        }, 180);
+                  </div>
 
-                        // we stop the simulation of Window Resize after the animations are completed
-                        setTimeout(function () {
-                            clearInterval(simulateWindowResize);
-                        }, 1000);
 
-                    });
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                // Javascript method's body can be found in assets/js/demos.js
-                md.initDashboardPageCharts();
+                  <button type="submit" class="register-submit pull-right">SUBMIT</button>
 
-            });
-        </script>
-    </body>
+                </form>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!--   Core JS Files   -->
+    <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
+    <script src="../../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
+    <script src="../../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Plugin for the momentJs  -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Chartist JS -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../../DESIGN_EXTENSIONS/demo/demo.js"></script>
+    <script>
+      $(document).ready(function() {
+        $().ready(function() {
+          $sidebar = $('.sidebar');
+
+          $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+          $full_page = $('.full-page');
+
+          $sidebar_responsive = $('body > .navbar-collapse');
+
+          window_width = $(window).width();
+
+          fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+          if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+            if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+              $('.fixed-plugin .dropdown').addClass('open');
+            }
+
+          }
+
+          $('.fixed-plugin a').click(function(event) {
+            // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+            if ($(this).hasClass('switch-trigger')) {
+              if (event.stopPropagation) {
+                event.stopPropagation();
+              } else if (window.event) {
+                window.event.cancelBubble = true;
+              }
+            }
+          });
+
+          $('.fixed-plugin .active-color span').click(function() {
+            $full_page_background = $('.full-page-background');
+
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+
+            var new_color = $(this).data('color');
+
+            if ($sidebar.length != 0) {
+              $sidebar.attr('data-color', new_color);
+            }
+
+            if ($full_page.length != 0) {
+              $full_page.attr('filter-color', new_color);
+            }
+
+            if ($sidebar_responsive.length != 0) {
+              $sidebar_responsive.attr('data-color', new_color);
+            }
+          });
+
+          $('.fixed-plugin .background-color .badge').click(function() {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+
+            var new_color = $(this).data('background-color');
+
+            if ($sidebar.length != 0) {
+              $sidebar.attr('data-background-color', new_color);
+            }
+          });
+
+          $('.fixed-plugin .img-holder').click(function() {
+            $full_page_background = $('.full-page-background');
+
+            $(this).parent('li').siblings().removeClass('active');
+            $(this).parent('li').addClass('active');
+
+
+            var new_image = $(this).find("img").attr('src');
+
+            if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+              $sidebar_img_container.fadeOut('fast', function() {
+                $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                $sidebar_img_container.fadeIn('fast');
+              });
+            }
+
+            if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+              var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+              $full_page_background.fadeOut('fast', function() {
+                $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                $full_page_background.fadeIn('fast');
+              });
+            }
+
+            if ($('.switch-sidebar-image input:checked').length == 0) {
+              var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+              var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+            }
+
+            if ($sidebar_responsive.length != 0) {
+              $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+            }
+          });
+
+          $('.switch-sidebar-image input').change(function() {
+            $full_page_background = $('.full-page-background');
+
+            $input = $(this);
+
+            if ($input.is(':checked')) {
+              if ($sidebar_img_container.length != 0) {
+                $sidebar_img_container.fadeIn('fast');
+                $sidebar.attr('data-image', '#');
+              }
+
+              if ($full_page_background.length != 0) {
+                $full_page_background.fadeIn('fast');
+                $full_page.attr('data-image', '#');
+              }
+
+              background_image = true;
+            } else {
+              if ($sidebar_img_container.length != 0) {
+                $sidebar.removeAttr('data-image');
+                $sidebar_img_container.fadeOut('fast');
+              }
+
+              if ($full_page_background.length != 0) {
+                $full_page.removeAttr('data-image', '#');
+                $full_page_background.fadeOut('fast');
+              }
+
+              background_image = false;
+            }
+          });
+
+          $('.switch-sidebar-mini input').change(function() {
+            $body = $('body');
+
+            $input = $(this);
+
+            if (md.misc.sidebar_mini_active == true) {
+              $('body').removeClass('sidebar-mini');
+              md.misc.sidebar_mini_active = false;
+
+              $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+            } else {
+
+              $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+              setTimeout(function() {
+                $('body').addClass('sidebar-mini');
+
+                md.misc.sidebar_mini_active = true;
+              }, 300);
+            }
+
+            // we simulate the window Resize so the charts will get updated in realtime.
+            var simulateWindowResize = setInterval(function() {
+              window.dispatchEvent(new Event('resize'));
+            }, 180);
+
+            // we stop the simulation of Window Resize after the animations are completed
+            setTimeout(function() {
+              clearInterval(simulateWindowResize);
+            }, 1000);
+
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        // Javascript method's body can be found in DESIGN_EXTENSIONS/js/demos.js
+        md.initDashboardPageCharts();
+
+      });
+    </script>
+</body>
 
 </html>
