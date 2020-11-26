@@ -101,7 +101,7 @@
               <div class="col-lg-6 teacher-attendance-body">
                 <div class="row d-flex align-items-end teacher-attendance-text">
                   <div class="col-lg-5 d-flex justify-content-end">
-                    <span>TOTAL ABSENCES:</span>
+                    <span>Present Days:</span>
                   </div>
                   <div class="col-lg-7">
                     <input type="text" name="attendanceAbsences" id="attendanceAbsences" pattern="^[0-9]+$">
@@ -109,10 +109,18 @@
                 </div>
                 <div class="row d-flex align-items-end teacher-attendance-text">
                   <div class="col-lg-5 d-flex justify-content-end">
-                    <span>TOTAL SCHOOL DAYS:</span>
+                    <span>Month:</span>
                   </div>
                   <div class="col-lg-7">
                     <input type="text" name="attendanceSchoolDays" id="attendanceSchoolDays" pattern="^[0-9]+$">
+                  </div>
+                </div>
+                <div class="row d-flex align-items-end teacher-attendance-text">
+                  <div class="col-lg-5 d-flex justify-content-end">
+                    <span>Year:</span>
+                  </div>
+                  <div class="col-lg-7">
+                    <select id="year" name="" class="m-0"></select>
                   </div>
                 </div>
                 <div class="row">
@@ -138,6 +146,15 @@
   </div>
 
   <!--   Core JS Files   -->
+  <script type="text/javascript">
+    var start = 1990;
+    var end = new Date().getFullYear();
+    var options = "";
+    for(var year = start ; year <=end; year++){
+    options += "<option>"+ year +"</option>";
+    }
+    document.getElementById("year").innerHTML = options;
+  </script>
   <script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../DESIGN_EXTENSIONS/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
