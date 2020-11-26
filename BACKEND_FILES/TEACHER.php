@@ -126,23 +126,23 @@ class TEACHER {
         return -1;
     }
 
-    function EnterNumberOfAbsences($StudentID, $Absences, $TotalNumberOfDays) {
-        try {
-            $command = "Insert into Attendance(StudentID,TotalNumberOfSchoolDays,TotalNumberOfAbsents) "
-                    . "Values('" . $StudentID . "','" . $TotalNumberOfDays . "','" . $Absences . "')";
-            $result = mysqli_query($this->conn, $command);
-            if ($result == TRUE) {
-                return TRUE;
-            }
-        } catch (Exception $exc) {
-            echo "Failed to insert to Database, refer to Admin";
-        }
-        return FALSE;
-    }
-    
+//    function EnterNumberOfAbsences($StudentID, $Absences, $TotalNumberOfDays) {
+//        try {
+//            $command = "Insert into Attendance(StudentID,TotalNumberOfSchoolDays,TotalNumberOfAbsents) "
+//                    . "Values('" . $StudentID . "','" . $TotalNumberOfDays . "','" . $Absences . "')";
+//            $result = mysqli_query($this->conn, $command);
+//            if ($result == TRUE) {
+//                return TRUE;
+//            }
+//        } catch (Exception $exc) {
+//            echo "Failed to insert to Database, refer to Admin";
+//        }
+//        return FALSE;
+//    }
+
     function EnterNumberOfPresentDays ($Present_Days, $MonthID, $StudentID){
         try{
-            $command = "Insert into Attendance(Present_Days, MonthID, StudentID) " 
+            $command = "Insert into Attendance(Present_Days, MonthID, StudentID) "
                     . "Values('" . $Present_Days. "', '" . $MonthID . "','" . $StudentID ."')";
             $result = mysqli_query($this->conn, $command);
             if ($result == true){
@@ -198,19 +198,18 @@ class TEACHER {
         }
         return $result;
     }
-    
+
     function getYear(){
         try{
             $command = "select distinct Year_Name from year";
-            $result = mysqlu_query($this->conn, $command);
+            $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0){
                 return $result;
             }
         } catch (Exception $exc) {
-            echo "Please try again. Return to Attendance Form Page";
-        } 
+            echo "No entries found";
+        }
     }
- 
 
     function getStudentsPerSection($TeacherID, $SectionName) {
         try {
