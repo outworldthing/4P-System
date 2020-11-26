@@ -999,10 +999,45 @@ SIDEBAR
 }
 
 
+/**********************
+DASHBOARD
+***********************/
 
+.dashboard-content {
+}
 
+.dashboard-button {
+	font-size: 1vw;
+	color: #f7984c;
+	background-color: white;
+	border: none;
+}
 
+.dashboard-button:hover {
+	font-size: 1vw;
+	color: black;
+}
 
+.dashboard-left {
+	padding: 30px;
+}
+
+.dashboard-right {
+	padding: 50px;
+}
+
+.dashboard-tile {
+	margin: 20px 10px;
+	border-radius: 20px;
+	padding: 50px;
+	background-color: white;
+}
+
+.dashboard-long-tile {
+	border-radius: 20px;
+	padding: 550px 50px;
+	background-color: white;
+}
 
 
 

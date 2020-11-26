@@ -10,35 +10,38 @@ The above copyright notice and this permission notice shall be included in all c
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$username = htmlspecialchars($_REQUEST['loginUsername']);
-$password = htmlspecialchars($_REQUEST['loginPassword']);
-$FirstName = htmlspecialchars($_REQUEST['FirstName']);
-$MiddleName = htmlspecialchars($_REQUEST['MiddleName']);
-$LastName = htmlspecialchars($_REQUEST['LastName']);
-$Suffix = htmlspecialchars($_REQUEST['Suffix']);
-include '../../BACKEND_FILES/ADMIN.php';
-$ADMIN = new ADMIN();
-$result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
-?>
+    $username = htmlspecialchars($_REQUEST['loginUsername']);
+    $password = htmlspecialchars($_REQUEST['loginPassword']);
+
+    include '../BACKEND_FILES/ADMIN.php';
+    $ADMIN = new ADMIN();
+    ?>
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../../DESIGN_EXTENSIONS/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../../DESIGN_EXTENSIONS/img/4pslogo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../DESIGN_EXTENSIONS/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../DESIGN_EXTENSIONS/img/4pslogo.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Family Logs
+    Admin Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link href="../../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <link href="../DESIGN_EXTENSIONS/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 
-  <link href="../../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
+  <link href="../DESIGN_EXTENSIONS/css/client-styles.css" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
+  <link href="../DESIGN_EXTENSIONS/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" src="../DESIGN_EXTENSIONS/package/dist/Chart.css">
+  <link rel="stylesheet" src="../DESIGN_EXTENSIONS/package/dist/Chart.min.css">
+  <script src="../DESIGN_EXTENSIONS/package/dist/Chart.bundle.js"></script>
+  <script src="../DESIGN_EXTENSIONS/package/dist/Chart.bundle.min.js"></script>
+  <script type="text/javascript">
+
+  </script>
 </head>
 
 <body class="">
@@ -48,7 +51,7 @@ $result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
     <div class="logo">
       <div class="row">
         <div class="col-lg-4 logo-img">
-          <img class="img" src="../../DESIGN_EXTENSIONS/img/4pslogo.png" />
+          <img class="img" src="../DESIGN_EXTENSIONS/img/4pslogo.png" />
         </div>
         <div class="col-lg-8 p-0">
           <span>Pantawid Pamilyang Pilipino Program</span>
@@ -58,24 +61,10 @@ $result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
 
     <ul class="nav text-center">
       <li>
-        <form action="SearchFamily.php" method="POST">
+        <form action="dashboard.php" method="POST">
           <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
           <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-          <button type="submit" class="sidebar-button">Family Basic Information</button>
-        </form>
-      </li>
-      <li class="nav-item ">
-        <form action="SearchForEdit.php" method="POST">
-          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-          <button type="submit" class="sidebar-button">Edit Family Information</button>
-        </form>
-      </li>
-      <li class="nav-item ">
-        <form action="SearchFamilyLogs.php" method="POST">
-          <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-          <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-          <button type="submit" class="sidebar-button  sidebar-button-active">Family Logs</button>
+          <button type="submit" class="sidebar-button sidebar-button-active">Dashboard</button>
         </form>
       </li>
       <li>
@@ -99,11 +88,7 @@ $result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
         <div class="justify-content-end">
           <ul class="navbar-nav">
             <li class="register-nav-item">
-              <form action="../dashboard.php" method="POST">
-                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
-                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
-                <button type="submit" class="dashboard-button">Dashboard</button>
-              </form>
+              <a class="register-nav-link " href="#">Dashboard</a>
             </li>
             <li class="register-nav-item">
               <a class="register-nav-link " href="#">Notification</a>
@@ -117,100 +102,259 @@ $result=$ADMIN->getFamilyLogs($FirstName, $MiddleName, $LastName, $Suffix);
     </nav>
     <!-- End Navbar -->
 
-    <div class="content">
+    <div class="dashboard-content content ">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-auto">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title ">View Family Logs</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class="text-warning">
-                        <th>Log ID</th>
-                        <th>Date</th>
-                        <th>LOG DETAILS</th>
-                      </thead>
+        <div class="row justify-content-center">
+          <div class="col-lg-12 dashboard-left">
 
-                      <tbody>
-                        <?php while($rows= mysqli_fetch_assoc($result)){?>
-                        <tr>
-                          <td>
-                            <?php echo $rows['UpdateLogID'];?>
-                          </td>
-                          <td>
-                            <?php echo $rows['DateOfPublish'];?>
-                          </td>
-                          <td>
-                            <?php echo $rows['UpdateLogDetails'];?>
-                          </td>
-                        </tr>
-                        <?php }?>
+            <div class="row justify-content-center">
+              <div class="col-lg-3  text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getNumStudents(); ?></h2>
+                <canvas id="chart" width="400" height="400"></canvas>
+                <h2>Students</h2>
+              </div>
 
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              <div class="col-lg-3  text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getEducationGrantTotal() + $ADMIN->getEducationGrantTotal(); ?></h2>
+                <canvas id="chart2" width="400" height="400"></canvas>
+                <h2>Cash Grants Given</h2>
+              </div>
+
+              <div class="col-lg-3 text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getTotalFamilies();?></h2>
+                <canvas id="chart1" width="400" height="400"></canvas>
+                <h2>Families</h2>
               </div>
             </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-3 text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getMale() + $ADMIN->getFemale(); ?></h2>
+                <canvas id="chart3" width="400" height="400"></canvas>
+                <h2>Male/Female</h2>
+              </div>
+
+              <div class="col-lg-3  text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getTotalBeneficiaries(); ?></h2>
+                <canvas id="chart4" width="400" height="400"></canvas>
+                <h2>Number of Beneficiaries</h2>
+              </div>
+
+              <div class="col-lg-3 text-center dashboard-tile">
+                <h2><?php echo $ADMIN->getNumRegionNCR() + $ADMIN->getNumRegionCAR() + $ADMIN->getNumRegion1() + $ADMIN->getNumRegion2() + $ADMIN->getNumRegion3() + $ADMIN->getNumRegion4A() + $ADMIN->getNumRegionMIM() + $ADMIN->getNumRegion5(); ?></h2>
+                <canvas id="chart5" width="400" height="400"></canvas>
+                <h2>Beneficiaries per Region</h2>
+              </div>
+            </div>
+
+
 
           </div>
 
         </div>
-
       </div>
     </div>
+
   </div>
 
 
+  <!--   Chart JS Files   -->
 
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Student'],
+        datasets: [{
+          label: '# of Students',
+          data: [<?php echo $ADMIN->getNumStudents(); ?>],
+          backgroundColor: [
+            'rgb(255, 157, 10)',
+          ],
+          borderColor: [
+            'rgb(163, 97, 0)',
+          ],
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart1').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Family'],
+        datasets: [{
+          label: '# of Family',
+          data: [<?php echo $ADMIN->getTotalFamilies();?>],
+          backgroundColor: [
+            'rgb(60, 204, 163)',
+          ],
+          borderColor: [
+            'rgb(12, 48, 38)',
+          ],
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Education', 'Health'],
+        datasets: [{
+          label: ['Cash Grant'],
+          data: [<?php echo $ADMIN->getEducationGrantTotal(); ?>, <?php echo $ADMIN->getEducationGrantTotal(); ?>],
+          backgroundColor: [
+            'rgb(225, 59, 59)',
+            'rgb(46, 76, 223)',
+          ],
+          borderColor: [
+            'rgb(115, 17, 17)',
+            'rgb(15, 29, 102)',
+          ],
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+          label: ['Male/Female'],
+          data: [<?php echo $ADMIN->getMale();?>, <?php echo $ADMIN->getFemale();?>],
+          backgroundColor: [
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart4').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Total Number of Beneficiaries'],
+        datasets: [{
+          label: ['Total Number of Beneficiaries'],
+          data: [<?php echo $ADMIN->getTotalBeneficiaries();?>],
+          backgroundColor: [
+            'rgb(239, 155, 46)',
+          ],
+          borderColor: [
+            'rgb(123, 73, 9)',
+          ],
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('chart5').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['NCR', 'CAR', 'Region 1', 'Region 2', 'Region 3', 'Region 4A', 'MIMAROPA', 'Region 5'],
+        datasets: [{
+          label: ['Male/Female'],
+            data: [<?php echo $ADMIN->getNumRegionNCR();?>, <?php echo $ADMIN->getNumRegionCAR();?>, <?php echo $ADMIN->getNumRegion1();?>,
+            <?php echo $ADMIN->getNumRegion2();?>, <?php echo $ADMIN->getNumRegion3();?>, <?php echo $ADMIN->getNumRegion4A();?>,
+            <?php echo $ADMIN->getNumRegionMIM();?>, <?php echo $ADMIN->getNumRegion5();?>],
+          backgroundColor: [
+            'rgb(191, 63, 63)',
+            'rgb(234, 135, 35)',
+            'rgb(147, 232, 63)',
+            'rgb(28, 221, 221)',
+            'rrgb(137, 45, 230)',
+            'rgb(240, 55, 240)',
+            'rgb(217, 72, 145)',
+            'rgb(69, 242, 155)'
+          ],
+          borderColor: [
+            'rgb(76, 25, 25)',
+            'rgb(107, 58, 9)',
+            'rgb(71, 127, 14)',
+            'rgb(11, 85, 85)',
+            'rgb(61, 12, 109)',
+            'rgb(132, 9, 132)',
+            'rgb(114, 23, 68)',
+            'rgb(6, 100, 53)'
+          ],
+          borderWidth: 1
+        }]
+      }
+    });
+  </script>
+
+
+  <link rel="stylesheet" src="../DESIGN_EXTENSIONS/package/dist/Chart.css">
+  <link rel="stylesheet" src="../DESIGN_EXTENSIONS/package/dist/Chart.min.css">
+  <script src="../DESIGN_EXTENSIONS/package/dist/Chart.bundle.js"></script>
+  <script src="../DESIGN_EXTENSIONS/package/dist/Chart.bundle.min.js"></script>
 
   <!--   Core JS Files   -->
-  <script src="../../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/core/jquery.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/core/popper.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Plugin for the momentJs  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/moment.min.js"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/sweetalert2.js"></script>
   <!-- Forms Validations Plugin -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/jquery.bootstrap-wizard.js"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/bootstrap-selectpicker.js"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/bootstrap-datetimepicker.min.js"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/jquery.dataTables.min.js"></script>
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/bootstrap-tagsinput.js"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/jasny-bootstrap.min.js"></script>
   <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/fullcalendar.min.js"></script>
   <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/jquery-jvectormap.js"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/nouislider.min.js"></script>
   <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/arrive.min.js"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
+  <script src="../DESIGN_EXTENSIONS/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+  <script src="../DESIGN_EXTENSIONS/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../../DESIGN_EXTENSIONS/demo/demo.js"></script>
+  <script src="../DESIGN_EXTENSIONS/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

@@ -787,24 +787,29 @@ class ADMIN {
         return FALSE;
     }
 
-    function getNumStudents(){
+    function getMale(){
         try{
-            $command = "Select count(StudentID) from student";
+            $command = "Select count(Gender) as malecount from members where Gender=1";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0){
-                return true;
+               while($rows=mysqli_fetch_assoc($result)){
+                   return (int)$rows['malecount'];
+               }
             }
         } catch (Exception $ex) {
             echo $ex->getTraceAsString();
         }
     }
 
+
     function getTotalBeneficiaries(){
         try{
-            $command = "Select count(MemberID) from members";
+            $command = "Select count(MemberID) as membercount from members";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0){
-                return true;
+              while($rows=mysqli_fetch_assoc($result)){
+                  return (int)$rows['membercount'];
+              }
             }
         } catch (Exception $ex) {
             echo $ex->getTraceAsString();
@@ -813,10 +818,42 @@ class ADMIN {
 
     function getTotalFamilies(){
         try{
-            $command = "Select count(FamilyID) from family";
+            $command = "Select count(FamilyID) as familycount from Family";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result))
+              {
+                echo $rows['familycount'];
+                return $rows['familycount'];
+              }
+            }
+        } catch (Exception $ex) {
+            echo $ex->getTraceAsString();
+        }
+    }
+
+    function getFemale(){
+        try{
+            $command = "Select count(Gender) as femalecount from members where Gender=0";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0){
+                 while($rows=mysqli_fetch_assoc($result)){
+                   return (int)$rows['femalecount'];
+               }
+            }
+        } catch (Exception $ex) {
+            echo $ex->getTraceAsString();
+        }
+    }
+
+    function getNumStudents(){
+        try{
+            $command = "Select count(StudentID) as studentcount from student";
+            $result = mysqli_query($this->conn, $command);
+            if (mysqli_num_rows($result) > 0){
+                while($rows = mysqli_fetch_assoc($result)){
+                  return $rows['studentcount'];
+                }
             }
         } catch (Exception $ex) {
             echo $ex->getTraceAsString();
@@ -825,10 +862,12 @@ class ADMIN {
 
     function getHealthGrantTotal(){
         try{
-            $command = "Select sum(HealthBank) from familyaccount";
+            $command = "Select sum(HealthBank) as healthgrant from familyaccount";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result)  > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['healthgrant'];
+              }
             }
         } catch (Exception $ex) {
             echo $ex->getTraceAsString();
@@ -837,10 +876,12 @@ class ADMIN {
 
     function getEducationGrantTotal(){
         try{
-            $command = "Select sum(EducationBank) from educationaccount";
+            $command = "Select sum(EducationBank) as educationgrant from educationaccount";
             $result = mysqli_query($this->conn, $command);
             if (mysqli_num_rows($result) > 0){
-                return true;
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['educationgrant'];
+              }
             }
         } catch (Exception $ex) {
             echo $ex->getTraceAsString();
@@ -849,22 +890,26 @@ class ADMIN {
 
     function getNumRegionNCR(){
         try{
-            $command = "Select count(FamilyID) from family where Region = NCR";
+            $command = "Select count(FamilyID) as regionncr from family where Region = 'NCR'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['regionncr'];
+              }
             }
         } catch (Exception $ex) {
-            $ex->getTraceAsString();
+            echo $ex->getTraceAsString();
         }
     }
 
     function getNumRegionCAR(){
         try{
-            $command = "Select count(FamilyID) from family where Region = CAR";
+            $command = "Select count(FamilyID) as regioncar from family where Region = 'CAR'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['regioncar'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -873,10 +918,12 @@ class ADMIN {
 
     function getNumRegion1(){
         try{
-            $command = "Select count(FamilyID) from family where Region = 1";
+            $command = "Select count(FamilyID) as region1 from family where Region = '1'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['region1'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -885,10 +932,12 @@ class ADMIN {
 
     function getNumRegion2(){
         try{
-            $command = "Select count(FamilyID) from family where Region = 2";
+            $command = "Select count(FamilyID) as region2 from family where Region = '2'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['region2'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -897,10 +946,12 @@ class ADMIN {
 
     function getNumRegion3(){
         try{
-            $command = "Select count(FamilyID) from family where Region = 3";
+            $command = "Select count(FamilyID) as region3 from family where Region = '3'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['region3'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -909,10 +960,12 @@ class ADMIN {
 
     function getNumRegion4A(){
         try{
-            $command = "Select count(FamilyID) from family where Region = 4-A";
+            $command = "Select count(FamilyID) as region4a from family where Region = '4-A'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['region4a'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -921,10 +974,12 @@ class ADMIN {
 
     function getNumRegionMIM(){
         try{
-            $command = "Select count(FamilyID) from family where Region = Mimaropa";
+            $command = "Select count(FamilyID) as regionmim from family where Region = 'Mimaropa'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['regionmim'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();
@@ -933,10 +988,12 @@ class ADMIN {
 
     function getNumRegion5(){
         try{
-            $command = "Select count(FamilyID) from family where Region = 5";
+            $command = "Select count(FamilyID) as region5 from family where Region = '5'";
             $result = mysqli_query($this->conn, $command);
-            if (mysqli_num_rows($result > 0)){
-                return true;
+            if (mysqli_num_rows($result) > 0){
+              while($rows = mysqli_fetch_assoc($result)){
+                return (int)$rows['region5'];
+              }
             }
         } catch (Exception $ex) {
             $ex->getTraceAsString();

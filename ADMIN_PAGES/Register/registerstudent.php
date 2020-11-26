@@ -102,7 +102,11 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="justify-content-end">
           <ul class="navbar-nav">
             <li class="register-nav-item">
-              <a class="register-nav-link " href="#">Dashboard</a>
+              <form action="../dashboard.php" method="POST">
+                <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
+                <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
+                <button type="submit" class="dashboard-button">Dashboard</button>
+              </form>
             </li>
             <li class="register-nav-item">
               <a class="register-nav-link " href="#">Notification</a>
