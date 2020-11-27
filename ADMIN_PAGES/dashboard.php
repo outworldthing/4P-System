@@ -68,7 +68,7 @@ The above copyright notice and this permission notice shall be included in all c
         </form>
       </li>
       <li>
-        <form action="../adminPortal.php" method="POST">
+        <form action="adminPortal.php" method="POST">
           <input type="hidden" name="loginUsername" value="<?php echo $username; ?>" />
           <input type="hidden" name="loginPassword" value="<?php echo $password; ?>" />
           <button type="submit" class="sidebar-button">Return to Portal</button>
@@ -94,7 +94,7 @@ The above copyright notice and this permission notice shall be included in all c
               <a class="register-nav-link " href="#">Notification</a>
             </li>
             <li class="register-nav-item">
-              <a class="register-nav-link" href="../logIn/logIn.php">Logout</a>
+              <a class="register-nav-link" href="logIn/logIn.php">Logout</a>
             </li>
           </ul>
         </div>
