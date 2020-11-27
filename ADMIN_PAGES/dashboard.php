@@ -111,19 +111,19 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="col-lg-3  text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getNumStudents(); ?></h2>
                 <canvas id="chart" width="400" height="400"></canvas>
-                <h2>Students</h2>
+                <h3>Students</h3>
               </div>
 
               <div class="col-lg-3  text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getEducationGrantTotal() + $ADMIN->getEducationGrantTotal(); ?></h2>
                 <canvas id="chart2" width="400" height="400"></canvas>
-                <h2>Cash Grants Given</h2>
+                <h3>Cash Grants Given</h3>
               </div>
 
               <div class="col-lg-3 text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getTotalFamilies();?></h2>
                 <canvas id="chart1" width="400" height="400"></canvas>
-                <h2>Families</h2>
+                <h3>Families</h3>
               </div>
             </div>
 
@@ -131,19 +131,19 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="col-lg-3 text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getMale() + $ADMIN->getFemale(); ?></h2>
                 <canvas id="chart3" width="400" height="400"></canvas>
-                <h2>Male/Female</h2>
+                <h3>Male/Female</h3>
               </div>
 
               <div class="col-lg-3  text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getTotalBeneficiaries(); ?></h2>
                 <canvas id="chart4" width="400" height="400"></canvas>
-                <h2>Number of Beneficiaries</h2>
+                <h3>Number of Beneficiaries</h3>
               </div>
 
               <div class="col-lg-3 text-center dashboard-tile">
                 <h2><?php echo $ADMIN->getNumRegionNCR() + $ADMIN->getNumRegionCAR() + $ADMIN->getNumRegion1() + $ADMIN->getNumRegion2() + $ADMIN->getNumRegion3() + $ADMIN->getNumRegion4A() + $ADMIN->getNumRegionMIM() + $ADMIN->getNumRegion5(); ?></h2>
                 <canvas id="chart5" width="400" height="400"></canvas>
-                <h2>Beneficiaries per Region</h2>
+                <h3>Beneficiaries per Region</h3>
               </div>
             </div>
 
@@ -205,7 +205,7 @@ The above copyright notice and this permission notice shall be included in all c
   <script type="text/javascript">
     var ctx = document.getElementById('chart2').getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'doughnut',
+      type: 'pie',
       data: {
         labels: ['Education', 'Health'],
         datasets: [{
@@ -251,7 +251,7 @@ The above copyright notice and this permission notice shall be included in all c
   <script type="text/javascript">
     var ctx = document.getElementById('chart4').getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: ['Total Number of Beneficiaries'],
         datasets: [{

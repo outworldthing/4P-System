@@ -867,7 +867,7 @@ SIDEBAR
   bottom: 0;
   left: 0;
   z-index: 1500;
-  width: 280px;
+  width: 19.5vw;
   background: #f99744;
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
@@ -998,6 +998,12 @@ SIDEBAR
 	font-weight: 600;
 }
 
+.main-panel>.content {
+  margin-top: 70px;
+  padding: 30px 15px;
+  min-height: calc(100vh - 123px);
+}
+
 
 /**********************
 DASHBOARD
@@ -1018,26 +1024,23 @@ DASHBOARD
 	color: black;
 }
 
-.dashboard-left {
-	padding: 30px;
-}
-
-.dashboard-right {
-	padding: 50px;
-}
 
 .dashboard-tile {
 	margin: 20px 10px;
 	border-radius: 20px;
-	padding: 50px;
+	padding: 1.5vw 0;
 	background-color: white;
 }
 
-.dashboard-long-tile {
-	border-radius: 20px;
-	padding: 550px 50px;
-	background-color: white;
+.dashboard-tile h2{
+	font-size: 1.6vw;
 }
+
+.dashboard-tile h3{
+	margin: 2vw 0;
+	font-size: 1.6vw;
+}
+
 
 
 
